@@ -1,0 +1,210 @@
+header
+    max-width: 1920px
+    margin: auto
+.header__inner
+    height: 97px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: 14px
+    @media (max-width: 1366px)
+        height: 69px
+    @media (max-width: 1200px)
+        font-size: 12px
+    @media (max-width: 720px)
+        height: 50px
+.header__inner__left
+    display: flex
+    height: 100%
+    align-items: center
+.header__inner__right
+    display: flex
+    height: 100%
+    align-items: center
+    @media (max-width: 1200px)
+        & .header__item:nth-child(1)
+            display: none
+        & .header__item:nth-child(2)
+            display: none
+    @media (max-width:720px)
+        & .header__item:nth-child(3)
+            display: none
+    @media (max-width:576px)
+        & .header__item:nth-child(5)
+            display: none
+.header__item
+    height: 100%
+    padding: 0 30px
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    @media (max-width: 1600px)
+        padding: 0 22px
+    @media (max-width: 576px)
+        padding: 0 5px
+.menu__btn
+    background: #FF671F
+    width: 159px
+    font-weight: 600
+    color: #fff
+    cursor: pointer
+    & svg
+        margin-right: 15px
+    @media (max-width: 1366px)
+        padding: 0
+        width: 113px
+    @media (max-width: 720px)
+        width: 50px
+        & span
+            display: none
+        & svg
+            margin: 0
+.header__logo
+    width: 170px
+    border-right: 1px solid #E4E4E4
+    & a
+        width: 100%
+        height: 100%
+        line-height: 97px
+        @media (max-width: 1366px)
+            line-height: 69px
+        @media (max-width: 720px)
+            line-height: 50px
+    & svg
+        vertical-align: middle
+    & .mobile-logo
+        display: none
+    @media (max-width: 1366px)
+        width: 196px
+    @media (max-width: 1200px)
+        width: 140px
+        & .mobile-logo
+            display: inline
+        & .desktop-logo
+            display: none
+    @media (max-width: 576px)
+        width: 110px
+        border: none
+.opt-price__btn
+    cursor: pointer
+.lang__block
+    padding-left: 60px
+    @media (max-width: 567px)
+        margin-left: 10px
+.search__btn
+    width: 96px
+    cursor: pointer
+    border-left: 1px solid #E4E4E4
+    border-right: 1px solid #E4E4E4
+    @media (max-width: 1366px)
+        width: 68px
+    @media (max-width: 576px)
+        width: 50px
+.callback__btn
+    width: 220px
+    border-right: 1px solid #E4E4E4
+    cursor: pointer
+    @media (max-width: 1366px)
+        width: 165px
+.cart__btn
+    width: 96px
+    cursor: pointer
+    @media (max-width: 1366px)
+        width: 68px
+    @media (max-width: 576px)
+        width: 50px
+        & svg
+            width: 17px
+.cart__btn__inner
+    position: relative
+    cursor: pointer
+.cart__btn__count
+    position: absolute
+    top: -8px
+    right: -8px
+    width: 19px
+    height: 19px
+    background: #FF671F
+    color: #fff
+    font-family: "Montserrat-Bold"
+    font-size: 12px
+    border-radius: 50%
+    line-height: 18px
+    @media (max-width: 576px)
+        top: -2px
+        right: -5px
+        width: 13px
+        height: 13px
+        & span
+            display: none
+.menu-toggle
+    opacity: 0
+    visibility: hidden
+    transition: all .4s
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    position: fixed
+    top: 0
+    z-index: 100
+    &.active
+        opacity: 1
+        visibility: visible
+.menu-toggle__inner
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    transform: translateX(-100%)
+    transition: transform .6s
+    width: 370px
+    height: 100%
+    background: #fff
+    &.active
+        transform: translateX(0)
+    @media (max-width: 660px)
+        width: 100%
+.menu-toggle__header
+    min-height: 163px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 50px
+    @media (max-width: 1366px)
+        min-height: 70px
+.menu-toggle__title
+    font-size: 24px
+    font-family: "Montserrat-Bold"
+.menu-toggle__close
+    cursor: pointer
+.menu-toggle__body
+    padding: 0 50px
+    margin-top: 45px
+    height: 100%
+.nav-toggle__item
+    margin-bottom: 45px
+    font-size: 18px
+    @media (max-width: 1366px)
+        margin-bottom: 20px
+        font-size: 16px
+    & a
+        position: relative
+        &::after
+            position: absolute
+            content: url(../img/svg/arrow-drop-list.svg)
+            right: -20px
+    &:nth-child(5)
+        & a
+            &::after
+                content: none
+    &:nth-child(6)
+        & a
+            &::after
+                content: none
+
+.menu-toggle__footer
+    color: #828282
+    padding: 0 50px
+    padding-bottom: 50px
+.toggle-footer__item
+    line-height: 25px
