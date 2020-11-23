@@ -1,0 +1,92 @@
+.сontacts
+	height: auto
+	padding: 30px
+.сontacts_content
+	display: flex
+.contacts__header
+	padding: 30px 0
+.contacts_map
+	width: 50%
+.contacts_top
+	display: flex
+	flex-wrap: wrap
+.contact_title
+	font-family:  Montserrat, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 17px
+.contact_content
+
+.contacts_item
+	margin-bottom: 30px
+.contacts_left
+	width: 50%
+.contact_content
+	p 
+		font-family:  Montserrat, Arial
+		font-style: normal
+		font-weight: normal
+		font-size: 14px
+		line-height: 17px
+		color: #494E53
+		margin-bottom: 10px
+.contacts_item1
+	width: 31%
+.contacts_item2, .contacts_item3, .contacts_item4
+	width: 23%
+	min-width: 130px
+.contacts_item5
+	.contact_title
+		p 
+			font-family:  Montserrat, Arial
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 17px
+			color: #494E53
+			margin-bottom: 10px
+.contact_form_content
+	height: 22vw
+	font-family:  Montserrat, Arial
+	font-style: normal
+	font-weight: 400
+	font-size: 15px
+	line-height: 20px
+	color: #494E53
+	margin-bottom: 10px
+	border: 1px solid #BEC8D0
+	text-align: center
+	p 
+		margin: 20% auto
+#map
+	border: 0
+	width: 100%
+	height: 30vw
+.contacts_map
+	padding: 0 20px
+	min-width: 260px
+@media (max-width: 768px)
+	.contacts_item1, .contacts_item2, .contacts_item3, .contacts_item4
+		width: 50%
+	.contact_form_content
+		height: 50vw
+	.contacts_map
+		width: 100%
+		padding: 0
+	#map 
+		height: 50vw
+	.contacts_left
+		width: 100%
+	.сontacts_content
+		flex-wrap: wrap
+@media (max-width: 420px)
+	.contacts_item
+		flex-direction: column
+	.contact_content, .contact_title
+		width: 100%
+	.contact_content
+		p 
+			padding-left: 0
+	.contact_title
+		margin-bottom: 20px
