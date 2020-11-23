@@ -2,20 +2,63 @@
 	margin-top: 30px
 .spares_repair__header
 	padding: 30px 30px
+	border-bottom: 1px solid #E4E4E4
 	& p
 		margin-top: 50px
 		color: #797C80
 		font-size: 14px
-.spares
-	margin: 0px 30px
+.spares_repair_block
+	display: flex
+.spares_repair_block__item1, .spares_repair_block__item2
+	width: 50%
 	padding: 30px 30px
-	background: #fff
-	& p
+	height: 440px
+	p 
+		font-family: Montserrat, Arial
+		font-style: normal
+		font-weight: normal
+		font-size: 18px
+		line-height: 22px
+.spares_repair_block__item1_block
+	display: flex
+	margin-top: 50px
+.spares_repair_block__item1_button
+	display: block
+	width: 250px
+	height: 70px
+	margin-top: 50px
+	border: 1px solid #000
+	text-align: center
+	line-height: 70px
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+.spares_repair_block__item11, .spares_repair_block__item12
+	padding-right: 30px
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 24px
+.spares_repair_block_form
+	width: 100%
+	height: 100%
+	padding-top: 130px
+	text-align: center
+	border: 1px solid #a7a7a7
+.main_color
+	color: #FF671F
+@media (max-width: 1360px)
+	.spares_repair_block__item1_block
+		flex-direction: column
+	.spares_repair_block__item12
 		margin-top: 30px
-		color: #797C80
-		font-size: 15px
-		line-height: 2
-		a
-			color: #B51850
-			&:hover
-				color: #FF0800
+@media (max-width: 768px)
+	.spares_repair_block
+		flex-direction: column
+	.spares_repair_block__item1, .spares_repair_block__item2
+		width: 100%
+@media (max-width: 400px)
+	.spares_repair_block__item1, .spares_repair_block__item2
+		height: 480px
