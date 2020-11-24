@@ -24,11 +24,9 @@
             </div>
             <div class="header__item header__logo">
                 <a href="/">
-                    <svg class="desktop-logo" width="104" height="48" viewBox="0 0 104 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="desktop-logo" width="104" height="48" viewBox="0 0 104 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="img/icons/icons.svg#logo-siba-header"></use>
-                    </svg>
-                    <svg class="mobile-logo" width="94" height="21" viewBox="0 0 94 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/icons/icons.svg#logo-siba-header-mob"></use>
                     </svg>
                 </a>
             </div>
@@ -43,28 +41,52 @@
             <div class="header__item">
                 <a href="tel:+380930921234" target="_blank">+38 (093) 092 12 34</a>
             </div>
-            <div class="header__item opt-price__btn">
+            <button class="header__item opt-price__btn" type="button" data-toggle="modal"
+                data-target="#popup_opt_price">
                 Оптовый прайс
-            </div>
+            </button>
             <div class="header__item search__btn">
                 <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/icons.svg#search"></use>
                 </svg>
             </div>
-            <div class="header__item callback__btn">
+            <button class="header__item callback__btn" type="button" data-toggle="modal" data-target="#popup_callback">
                 Заказать звонок
-            </div>
+            </button>
             <div class="header__item cart__btn">
                 <div class="cart__btn__inner">
                     <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="img/icons/icons.svg#cart-black"></use>
                     </svg>
-                    <div class="cart__btn__count"><span>12</span></div>
+                    <div class="cart__btn__count" data-orders="12"></div>
                 </div>
             </div>
         </div>
     </div>
 </header>
+<div class="search" id="search">
+    <div class="search__inner">
+        <label class="search__label">
+            <input type="text" value="" class="search__input" autocomplete="off" name="search"
+                placeholder="Что желаете найти?">
+            <i class="search__icon search__start">
+                <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M23.7458 24.4696L17.5579 17.7054C19.5169 15.8314 20.7392 13.2035 20.7392 10.2956C20.7392 4.61849 16.0873 0 10.3696 0C4.65172 0 0 4.61849 0 10.2956C0 15.9726 4.65172 20.5912 10.3696 20.5912C12.5028 20.5912 14.4872 19.9477 16.1375 18.847L22.4335 25.7226C22.6123 25.9071 22.8509 26 23.0898 26C23.3168 26 23.5441 25.9162 23.7206 25.7476C24.083 25.4015 24.0943 24.8293 23.7458 24.4696ZM1.82073 10.2956C1.82073 5.61539 5.65579 1.80772 10.3696 1.80772C15.0835 1.80772 18.9184 5.61539 18.9184 10.2956C18.9184 14.9758 15.0835 18.7835 10.3696 18.7835C5.65579 18.7833 1.82073 14.9758 1.82073 10.2956Z"
+                        fill="black" />
+                </svg>
+            </i>
+        </label>
+        <i class="search__icon__close">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186" transform="rotate(-45 0.279785 1.12012)"
+                    fill="#C4C4C4" />
+                <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186" transform="rotate(45 19.6001 0.279785)"
+                    fill="#C4C4C4" />
+            </svg>
+        </i>
+    </div>
+</div>
 <div class="menu-toggle" id="menu-toggle">
     <div class="menu-toggle__inner">
         <div class="menu-toggle__header">
@@ -99,6 +121,280 @@
         </div>
     </div>
 </div>
+<div class="cart" id="cart">
+    <div class="cart__inner">
+        <div class="cart__header">
+            <div class="cart__close">
+                <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.97949 0.178983L0.175093 4.0679C-0.0583639 4.30654 -0.0583639 4.69346 0.175093 4.9321L3.97949 8.82102C4.21294 9.05966 4.59145 9.05966 4.82491 8.82102C5.05836 8.58237 5.05836 8.19546 4.82491 7.95681L1.44322 4.5L4.82491 1.04319C5.05836 0.804543 5.05836 0.417626 4.82491 0.178983C4.59145 -0.0596608 4.21294 -0.0596608 3.97949 0.178983Z"
+                        fill="black" />
+                </svg>
+                Продолжить покупки
+            </div>
+            <div class="cart__title">
+                <span>Корзина</span>
+            </div>
+        </div>
+        <form class="cart__form" action="">
+            <div class="cart__wrap">
+                <div class="cart__steps">
+                    <div class="cart__step step--ative" data-step="1">Шаг 1. Список товара</div>
+                    <div class="cart__step" data-step="2">Шаг 2. Оформление товара</div>
+                </div>
+                <div class="cart__body">
+                    <div class="cart__order">
+                        <div class="cart__order_list">
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__footer">
+                    <div class="cart__total__container">
+                        <p class="cart__total">₴26 350</p>
+                    </div>
+                    <div class="cart__submit__container">
+                        <a href="" class="cart__submit" type="submit">Оформить заказ</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     <main class="main">
         <section class="privacy_policy">
             <header class="privacy_policy__header">
@@ -130,7 +426,64 @@
             </content>
         </section>
     </main>
-    
+    <footer class="footer" id="footer">
+    <div class="footer__inner">
+        <div class="footer__inner__top">
+            <div class="footer__left__info">
+                <div class="footer__logo">
+                    <svg width="104" height="48" viewBox="0 0 104 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/icons/icons.svg#logo-footer"></use>
+                    </svg>
+                </div>
+                <div class="footer__link">
+                    <a href="">Договор публичной оферты</a>
+                    <a href="">Политика конфиденциальности</a>
+                </div>
+            </div>
+            <div class="footer__social">
+                <div class="footer-icon icon--twitter">
+                    <a href="" target="_blank">
+                        <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M29 2.72285C27.9216 3.18462 26.7724 3.49069 25.5744 3.63931C26.8069 2.921 27.7476 1.79223 28.1898 0.431692C27.0407 1.10046 25.7719 1.57285 24.4198 1.83646C23.3287 0.702385 21.7736 0 20.0771 0C16.7856 0 14.1357 2.60785 14.1357 5.80485C14.1357 6.26485 14.1756 6.70715 14.2734 7.12823C9.33075 6.89292 4.95719 4.58054 2.01912 1.058C1.50619 1.92669 1.20531 2.921 1.20531 3.99138C1.20531 6.00123 2.26562 7.78285 3.84612 8.81431C2.89094 8.79661 1.95387 8.52592 1.16 8.09954C1.16 8.11723 1.16 8.14023 1.16 8.16323C1.16 10.9834 3.22081 13.3258 5.92325 13.8655C5.43931 13.9946 4.91187 14.0565 4.3645 14.0565C3.98388 14.0565 3.59962 14.0353 3.23894 13.9575C4.00925 16.2557 6.19513 17.9453 8.79425 18.0002C6.7715 19.5447 4.20319 20.4753 1.42281 20.4753C0.93525 20.4753 0.467625 20.4541 0 20.3957C2.63356 22.0535 5.75469 23 9.1205 23C20.0607 23 26.042 14.1538 26.042 6.486C26.042 6.22946 26.0329 5.98177 26.0203 5.73585C27.2002 4.91846 28.1916 3.89762 29 2.72285Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-icon icon--facebook">
+                    <a href="" target="_blank">
+                        <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.43881 23V12.5094H12.2701L12.8449 8.4198H8.43881V5.80919C8.43881 4.62553 8.79512 3.81888 10.6448 3.81888L13 3.81799V0.160114C12.5927 0.111487 11.1946 0 9.56729 0C6.16927 0 3.84292 1.90551 3.84292 5.40416V8.4198H0V12.5094H3.84292V23H8.43881Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-icon icon--linkedin">
+                    <a href="" target="_blank">
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.14337 7.1875H0V23H5.14337V7.1875Z" fill="white" />
+                            <path
+                                d="M19.1532 7.37294C19.0986 7.35569 19.0469 7.337 18.9894 7.32119C18.9204 7.30538 18.8514 7.29244 18.7809 7.28094C18.5078 7.22631 18.2088 7.1875 17.8581 7.1875C14.8594 7.1875 12.9576 9.36819 12.3309 10.2106V7.1875H7.1875V23H12.3309V14.375C12.3309 14.375 16.2179 8.96138 17.8581 12.9375C17.8581 16.4867 17.8581 23 17.8581 23H23V12.3294C23 9.94031 21.3627 7.94938 19.1532 7.37294Z"
+                                fill="white" />
+                            <path
+                                d="M2.51562 5.03125C3.90497 5.03125 5.03125 3.90497 5.03125 2.51562C5.03125 1.12628 3.90497 0 2.51562 0C1.12628 0 0 1.12628 0 2.51562C0 3.90497 1.12628 5.03125 2.51562 5.03125Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__inner__bottom">
+            <div class="footer__copyright">
+                ©2020 Siba
+            </div>
+            <div>
+                Разработка сайта Mango.agency
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>

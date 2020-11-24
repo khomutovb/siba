@@ -24,11 +24,9 @@
             </div>
             <div class="header__item header__logo">
                 <a href="/">
-                    <svg class="desktop-logo" width="104" height="48" viewBox="0 0 104 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="desktop-logo" width="104" height="48" viewBox="0 0 104 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="img/icons/icons.svg#logo-siba-header"></use>
-                    </svg>
-                    <svg class="mobile-logo" width="94" height="21" viewBox="0 0 94 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/icons/icons.svg#logo-siba-header-mob"></use>
                     </svg>
                 </a>
             </div>
@@ -43,28 +41,52 @@
             <div class="header__item">
                 <a href="tel:+380930921234" target="_blank">+38 (093) 092 12 34</a>
             </div>
-            <div class="header__item opt-price__btn">
+            <button class="header__item opt-price__btn" type="button" data-toggle="modal"
+                data-target="#popup_opt_price">
                 Оптовый прайс
-            </div>
+            </button>
             <div class="header__item search__btn">
                 <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/icons.svg#search"></use>
                 </svg>
             </div>
-            <div class="header__item callback__btn">
+            <button class="header__item callback__btn" type="button" data-toggle="modal" data-target="#popup_callback">
                 Заказать звонок
-            </div>
+            </button>
             <div class="header__item cart__btn">
                 <div class="cart__btn__inner">
                     <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="img/icons/icons.svg#cart-black"></use>
                     </svg>
-                    <div class="cart__btn__count"><span>12</span></div>
+                    <div class="cart__btn__count" data-orders="12"></div>
                 </div>
             </div>
         </div>
     </div>
 </header>
+<div class="search" id="search">
+    <div class="search__inner">
+        <label class="search__label">
+            <input type="text" value="" class="search__input" autocomplete="off" name="search"
+                placeholder="Что желаете найти?">
+            <i class="search__icon search__start">
+                <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M23.7458 24.4696L17.5579 17.7054C19.5169 15.8314 20.7392 13.2035 20.7392 10.2956C20.7392 4.61849 16.0873 0 10.3696 0C4.65172 0 0 4.61849 0 10.2956C0 15.9726 4.65172 20.5912 10.3696 20.5912C12.5028 20.5912 14.4872 19.9477 16.1375 18.847L22.4335 25.7226C22.6123 25.9071 22.8509 26 23.0898 26C23.3168 26 23.5441 25.9162 23.7206 25.7476C24.083 25.4015 24.0943 24.8293 23.7458 24.4696ZM1.82073 10.2956C1.82073 5.61539 5.65579 1.80772 10.3696 1.80772C15.0835 1.80772 18.9184 5.61539 18.9184 10.2956C18.9184 14.9758 15.0835 18.7835 10.3696 18.7835C5.65579 18.7833 1.82073 14.9758 1.82073 10.2956Z"
+                        fill="black" />
+                </svg>
+            </i>
+        </label>
+        <i class="search__icon__close">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186" transform="rotate(-45 0.279785 1.12012)"
+                    fill="#C4C4C4" />
+                <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186" transform="rotate(45 19.6001 0.279785)"
+                    fill="#C4C4C4" />
+            </svg>
+        </i>
+    </div>
+</div>
 <div class="menu-toggle" id="menu-toggle">
     <div class="menu-toggle__inner">
         <div class="menu-toggle__header">
@@ -87,7 +109,7 @@
                 <div class="nav-toggle__item"><a href="">Ингредиенты</a></div>
                 <div class="nav-toggle__item"><a href="">Запчасти и ремонт</a></div>
                 <div class="nav-toggle__item"><a href="">О нас</a></div>
-                <div class="nav-toggle__item"><a href="contacts.html">Контакты</a></div>
+                <div class="nav-toggle__item"><a href="">Контакты</a></div>
             </nav>
         </div>
         <div class="menu-toggle__footer">
@@ -97,6 +119,280 @@
                 Email: info@siba.ua<br>
             </div>
         </div>
+    </div>
+</div>
+<div class="cart" id="cart">
+    <div class="cart__inner">
+        <div class="cart__header">
+            <div class="cart__close">
+                <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.97949 0.178983L0.175093 4.0679C-0.0583639 4.30654 -0.0583639 4.69346 0.175093 4.9321L3.97949 8.82102C4.21294 9.05966 4.59145 9.05966 4.82491 8.82102C5.05836 8.58237 5.05836 8.19546 4.82491 7.95681L1.44322 4.5L4.82491 1.04319C5.05836 0.804543 5.05836 0.417626 4.82491 0.178983C4.59145 -0.0596608 4.21294 -0.0596608 3.97949 0.178983Z"
+                        fill="black" />
+                </svg>
+                Продолжить покупки
+            </div>
+            <div class="cart__title">
+                <span>Корзина</span>
+            </div>
+        </div>
+        <form class="cart__form" action="">
+            <div class="cart__wrap">
+                <div class="cart__steps">
+                    <div class="cart__step step--ative" data-step="1">Шаг 1. Список товара</div>
+                    <div class="cart__step" data-step="2">Шаг 2. Оформление товара</div>
+                </div>
+                <div class="cart__body">
+                    <div class="cart__order">
+                        <div class="cart__order_list">
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__order_item">
+                                <div class="order__inner">
+                                    <div class="order__photo">
+                                        <img src="img/product1.png">
+                                    </div>
+                                    <div class="order__info">
+                                        <div class="order__info__left">
+                                            <div class="order__title">
+                                                Lavazza Crema & Aroma
+                                            </div>
+                                            <div class="order__price">
+                                                ₴325
+                                            </div>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="counter__inner">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--subtract counter_subtract">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                                <input type="number" min="1" value="1" class="counter__input">
+                                                <button type="button"
+                                                    class="counter__btn counter__btn--add counter_add">
+                                                    <i class="counter__btn_icon">
+                                                        <svg class="counter__btn_svg" width="10" height="10"
+                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 4H10V6H0V4Z"></path>
+                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
+                                                        </svg>
+                                                    </i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="remove_item">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__footer">
+                    <div class="cart__total__container">
+                        <p class="cart__total">₴26 350</p>
+                    </div>
+                    <div class="cart__submit__container">
+                        <a href="" class="cart__submit" type="submit">Оформить заказ</a>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
     <main class="main">
@@ -208,12 +504,12 @@
         <div class="slider__arrow">
             <div class="previous_arrow">
                 <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/icons.svg#arrow-left"></use>
+                    <path d="M5.71429 1L2.28572 5L5.71429 9" stroke="#FF671F" stroke-width="2" />
                 </svg>
             </div>
             <div class="next_arrow">
                 <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/icons.svg#arrow-right"></use>
+                    <path d="M1.28571 1L4.71428 5L1.28571 9" stroke="#FF671F" stroke-width="2" />
                 </svg>
             </div>
         </div>
@@ -222,7 +518,7 @@
         <div class="product__list">
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -232,22 +528,26 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Lavazza Pronto Crema</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
-                        </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
                     </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item label__top"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -257,22 +557,26 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Lavazza Crema & Aroma</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
-                        </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
                     </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item label__sale"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -282,22 +586,31 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
-                        </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
                     </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">
+                            <span class="product__cost__sale">
+                                ₴188 </span>
+                            <span class="product__cost__price">
+                                ₴188 </span>
+                        </p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -307,22 +620,26 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Boasi Gran Caffe (молотый)</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
-                        </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
                     </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -332,22 +649,26 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Covim Gran Bar</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
-                        </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
                     </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="product__item">
                 <div class="product__label">
-                    <div class="product__label_item label__new"></div>
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -357,27 +678,618 @@
                 <div class="info-product-wrapper">
                     <a href="" class="product__title">Lavazza Pronto Crema</a>
                     <a href="" class="category__title" title="">Кофе Lavazza</a>
-                    <div class="product__price_container">
-                        <div class="product__price">
-                            ₴222
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
+                    </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product__item">
+                <div class="product__label">
+                    <div class="product__label_item"></div>
+                </div>
+                <div class="photo-product-wrapper">
+                    <a href="">
+                        <img src="img/product3.png" alt="Tovar">
+                    </a>
+                </div>
+                <div class="info-product-wrapper">
+                    <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
+                    <a href="" class="category__title" title="">Кофе Lavazza</a>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
+                    </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product__item">
+                <div class="product__label">
+                    <div class="product__label_item"></div>
+                </div>
+                <div class="photo-product-wrapper">
+                    <a href="">
+                        <img src="img/product3.png" alt="Tovar">
+                    </a>
+                </div>
+                <div class="info-product-wrapper">
+                    <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
+                    <a href="" class="category__title" title="">Кофе Lavazza</a>
+                    <div class="info-product-more">
+                        <a href="" class="product__more-info">О товаре</a>
+                        <button class="product__more-info" type="button" data-toggle="modal"
+                            data-target="#popup_opt_price">Узнать оптовые цены</button>
+                    </div>
+                </div>
+                <div class="product__price_container">
+                    <div class="product__price">
+                        <p class="product__cost">₴222</p>
+                    </div>
+                    <button class="product__buy">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/icons/icons.svg#cart"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section class="banner-home" id="banner-home">
+    <div class="banner-home__inner">
+        <div class="banner-home__leaf">
+            <img src="img/home-leaf.png" alt="homeleaf">
+        </div>
+        <div class="banner-home__coffe">
+            <img src="img/home-coffe.png" alt="homecoffe">
+        </div>
+    </div>
+</section>
+        <section class="about-us" id="about-us">
+    <div class="section__top__line">
+        <h3 class="section__title">О нас</h3>
+    </div>
+    <div class="about-us__inner">
+        <div class="about-us__line">
+            <div class="about-us__title">
+                <img src="img/siba-title.png" alt="sibatitle">
+            </div>
+            <div class="about-us__first-description">
+                Siba - один з найбільших постачальників на ринку кави, вендингового обладнання та інгредієнтів. За час
+                роботи ми зібрали кращі світові рішення в приготуванні кави і готові ділитися досвідом та стати надійним
+                партнером для вас.
+                На ринку з 2004 року.
+                <div class="about-us__more-btn">
+                    <a href="#">
+                        <svg class="about-us__circle" width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25.5" cy="25.4996" r="25" stroke="#FF671F" />
+                        </svg>
+                        <span>Подробнее о нас</span>
+                        <svg class="about-us__arrow" width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M30.3536 4.35313C30.5488 4.15786 30.5488 3.84128 30.3536 3.64602L27.1716 0.464039C26.9763 0.268777 26.6597 0.268777 26.4645 0.464039C26.2692 0.659301 26.2692 0.975883 26.4645 1.17115L29.2929 3.99957L26.4645 6.828C26.2692 7.02326 26.2692 7.33984 26.4645 7.53511C26.6597 7.73037 26.9763 7.73037 27.1716 7.53511L30.3536 4.35313ZM0 4.49957H30V3.49957H0V4.49957Z"
+                                fill="black" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="about-us__second-description">
+                Щорічно імпортуємо з Італії
+                250 тон кави, та маэмо 700+ щасливих партнерів.
+            </div>
+        </div>
+    </div>
+</section>
+        <section class="advantages" id="advantages">
+    <div class="advantages__inner">
+        <div class="advantages__item">
+            <img src="img/advantages-left.jpg" alt="advantages">
+        </div>
+        <div class="advantages__item">
+            <div class="advantages__item__block">
+                <div class="advantages__block__inner">
+                    <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M34.0172 24.4416C33.9616 23.8201 33.6623 23.246 33.1844 22.8448L28.1247 18.5949C29.3422 16.997 29.472 14.8214 28.4533 13.09L29.2434 12.1493L30.326 13.0586C29.8247 13.6567 29.9022 14.5479 30.4993 15.0505L33.0253 17.1722C34.0224 18.0077 35.5074 17.8785 36.3452 16.8835C36.5126 16.6842 36.4869 16.3871 36.2876 16.2197C36.2876 16.2196 36.2875 16.2196 36.2875 16.2195L31.5962 12.2791C31.397 12.1117 31.0998 12.1375 30.9324 12.3367C30.9324 12.3368 30.9323 12.3368 30.9323 12.3369L29.652 11.2615C29.8348 10.2405 29.1553 9.26472 28.1343 9.08187C27.8072 9.02327 27.4702 9.05257 27.1581 9.16678L25.8801 8.09335C26.0475 7.89413 26.0217 7.59697 25.8225 7.42955C25.8225 7.42952 25.8224 7.42945 25.8223 7.42941L21.131 3.48898C20.9318 3.32156 20.6347 3.34733 20.4672 3.54656C20.4672 3.5466 20.4671 3.54668 20.4671 3.54672C19.6317 4.54373 19.7609 6.02879 20.7559 6.86659L23.282 8.98833C23.8802 9.48967 24.7713 9.41216 25.2739 8.81508L26.3565 9.72441L25.5662 10.6653C23.6849 9.96097 21.5645 10.4644 20.2007 11.9393L15.1411 7.68943C14.144 6.854 12.659 6.98317 11.8212 7.97818C10.3142 9.76752 10.5432 12.4397 12.3326 13.9467C12.3354 13.9491 12.3383 13.9515 12.3411 13.9539L16.6739 17.5932L12.2243 24.94C11.0254 23.9989 9.29647 24.1769 8.31446 25.3425C7.98029 25.7413 8.03194 26.3353 8.42999 26.6704L10.2559 28.2041C9.70647 29.1928 9.94709 30.4333 10.8263 31.1449C11.2715 31.5208 11.837 31.7244 12.4196 31.7188C12.933 31.7122 13.4283 31.5288 13.8221 31.1995L15.6473 32.7326C16.0461 33.0667 16.6402 33.0151 16.9753 32.6171C17.9613 31.4512 17.8379 29.7118 16.6972 28.6967L23.1649 23.0453L27.4975 26.6845C29.2921 28.1884 31.9653 27.9559 33.4733 26.1647C33.8756 25.685 34.0712 25.0653 34.0172 24.4416ZM31.3509 13.3039L35.2586 16.5862C34.7421 16.8896 34.0907 16.8352 33.6316 16.4505L31.1056 14.3288C30.9065 14.1612 30.8806 13.8642 31.0478 13.6648L31.3509 13.304L31.3509 13.3039ZM24.5521 8.20885C24.3846 8.40789 24.0876 8.43377 23.8882 8.2666L21.3622 6.14485C20.904 5.75913 20.738 5.12682 20.9476 4.56576L24.8553 7.848L24.5522 8.20889L24.5521 8.20885ZM12.9473 13.2322C11.5526 12.0643 11.3686 9.98681 12.5365 8.59211C12.5387 8.58953 12.5408 8.58695 12.543 8.58441C13.0456 7.98733 13.9367 7.90982 14.5349 8.41116L14.8957 8.71426L13.6833 10.1577C13.5159 10.357 13.5418 10.6542 13.7411 10.8216C13.9404 10.989 14.2376 10.9632 14.405 10.7639L15.6174 9.32045L16.3392 9.92672L14.5206 12.0919C14.3532 12.2912 14.3791 12.5884 14.5784 12.7558C14.7777 12.9232 15.0749 12.8973 15.2423 12.6981L17.0609 10.5329L17.7827 11.1391L15.9641 13.3043C15.7966 13.5036 15.8225 13.8008 16.0218 13.9682C16.2211 14.1356 16.5184 14.1097 16.6858 13.9105L18.5044 11.7453L19.6386 12.698L17.1669 16.7764L12.9473 13.2322ZM27.0782 10.3306C27.1483 10.247 27.2333 10.1772 27.329 10.1247C27.6705 9.92156 28.1034 9.95787 28.4062 10.2151C28.7156 10.4746 28.8238 10.9032 28.6748 11.2786C28.6402 11.3753 28.5884 11.4649 28.5217 11.5431L27.8826 12.3039C27.8772 12.2978 27.8705 12.2929 27.865 12.2868C27.7128 12.1167 27.5487 11.9574 27.3742 11.8101L27.0133 11.507C26.8381 11.3605 26.6529 11.2264 26.4589 11.1058C26.4521 11.1015 26.4461 11.0957 26.4392 11.0915L27.0782 10.3306ZM9.03621 25.9487C9.70635 25.1526 10.8945 25.0492 11.6921 25.7177L11.7326 25.7518L10.7441 27.3833L9.03617 25.9487L9.03621 25.9487ZM16.263 31.9996C16.2598 32.0034 16.2567 32.0071 16.2536 32.0109L14.5459 30.5765L15.9824 29.3213L16.0225 29.355C16.8192 30.0189 16.9269 31.2029 16.263 31.9996ZM26.6997 18.705L13.5112 30.2285L13.5087 30.2319L13.3068 30.4085C13.0657 30.642 12.7438 30.7738 12.408 30.7763C12.0511 30.7791 11.7049 30.6539 11.4324 30.4232C10.8618 29.9725 10.733 29.1592 11.1364 28.5542L11.2642 28.3432L11.2653 28.3421L12.7482 25.895L12.7501 25.8899L20.3689 13.3115L22.113 14.7764L18.7789 18.7459C18.1093 19.543 18.2128 20.7321 19.0099 21.4017C19.8071 22.0713 20.9962 21.9679 21.6658 21.1707L24.9999 17.2012L26.744 18.6662L26.6997 18.705ZM24.2783 16.5951L20.9441 20.5645C20.6093 20.9632 20.0148 21.0149 19.6162 20.6801C19.2176 20.3452 19.1658 19.7507 19.5006 19.3521L22.8348 15.3826L24.2783 16.5951ZM23.441 14.6609C23.7758 14.2623 24.3704 14.2106 24.769 14.5454C25.1676 14.8803 25.2193 15.4748 24.8845 15.8734L23.441 14.6609ZM25.6062 16.4796C26.2758 15.6824 26.1724 14.4933 25.3752 13.8237C24.578 13.1541 23.3889 13.2576 22.7193 14.0547L20.9203 12.5436C22.1019 11.2946 23.9492 10.9397 25.5097 11.6618C25.8332 11.8091 26.1352 11.9999 26.4072 12.2288L26.768 12.5319C27.0414 12.7611 27.2821 13.0266 27.4837 13.321C28.4626 14.7331 28.4311 16.6124 27.4054 17.9907L25.6063 16.4795L25.6062 16.4796ZM32.7515 25.5585C31.5787 26.9516 29.4995 27.1324 28.1038 25.9627L23.8842 22.4185L27.4745 19.2797L28.6087 20.2324L26.7901 22.3976C26.6227 22.5969 26.6486 22.8941 26.8479 23.0615C27.0472 23.2289 27.3444 23.203 27.5118 23.0038L29.3304 20.8386L30.0522 21.4448L28.2335 23.61C28.0661 23.8093 28.092 24.1065 28.2913 24.2739C28.4906 24.4414 28.7879 24.4155 28.9553 24.2162L30.7739 22.051L31.4956 22.6573L30.2832 24.1007C30.1158 24.3 30.1417 24.5973 30.341 24.7646C30.5403 24.932 30.8375 24.9062 31.0049 24.7069L32.2173 23.2635L32.5782 23.5666C33.1759 24.0669 33.2549 24.9571 32.7546 25.5548C32.7536 25.556 32.7525 25.5573 32.7515 25.5585Z"
+                            fill="black" />
+                        <path
+                            d="M15.0699 26.0931C15.0699 26.093 15.0698 26.093 15.0697 26.0929C14.8705 25.9255 14.5733 25.9513 14.4059 26.1505C14.4059 26.1505 14.4058 26.1506 14.4058 26.1507L11.981 29.0376C11.8136 29.2369 11.8394 29.5341 12.0387 29.7015C12.238 29.8689 12.5353 29.843 12.7027 29.6437L15.1275 26.7569C15.2949 26.5577 15.2691 26.2604 15.0699 26.0931Z"
+                            fill="black" />
+                    </svg>
+                    <p class="advantages__block__title">Прямі поставки</p>
+                    <p class="advantages__block__subtitle">Власна логістика з Італії.</p>
+                </div>
+            </div>
+            <div class="advantages__item__block">
+                <div class="advantages__block__inner">
+                    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.0338 25.2021L23.8804 21.7697C23.4773 20.5713 22.4489 19.6868 21.1953 19.4605L17.8656 18.8596V18.6036C18.445 18.27 18.9492 17.8238 19.3508 17.2955H20.3568C21.1809 17.2955 21.8515 16.6304 21.8515 15.8131V9.88312C21.8515 6.34096 18.9458 3.45901 15.3743 3.45901C11.8029 3.45901 8.89716 6.34096 8.89716 9.88312V13.3423C8.89716 14.295 9.58025 15.0921 10.4861 15.2779C10.7656 16.6981 11.6604 17.8999 12.8831 18.6036V18.8596L9.55285 19.4605C8.29976 19.6868 7.27089 20.5713 6.8683 21.7697L6.66901 22.3632L4.97198 20.6801C4.77767 20.4873 4.77767 20.1735 4.97198 19.9808L6.94005 18.0294L3.24606 14.3657L1.0219 16.5716C0.36322 17.2249 0.000498242 18.0936 0.000498242 19.0177C0.000498242 19.9418 0.36322 20.81 1.0219 21.4633L7.75568 28.1419C8.41436 28.7952 9.29027 29.1554 10.222 29.1554C11.1537 29.1554 12.0291 28.7952 12.6724 28.1567L15.0993 25.9513L14.3425 25.2021H25.0338ZM20.855 15.8131C20.855 16.0858 20.6313 16.3072 20.3568 16.3072H19.9378C20.0823 15.9806 20.1919 15.6362 20.2626 15.2779C20.4759 15.2339 20.6722 15.1499 20.855 15.0441V15.8131ZM20.3568 14.1932V12.4913C20.6532 12.6628 20.855 12.9781 20.855 13.3423C20.855 13.7064 20.6532 14.0217 20.3568 14.1932ZM10.3919 14.1932C10.0954 14.0217 9.89365 13.7064 9.89365 13.3423C9.89365 12.9781 10.0954 12.6628 10.3919 12.4913V14.1932ZM10.3919 10.8714V11.4358C10.2145 11.4817 10.0481 11.5509 9.89365 11.6404V9.88312C9.89365 6.88603 12.3525 4.44734 15.3743 4.44734C18.3962 4.44734 20.855 6.88603 20.855 9.88312V11.6404C20.7006 11.5509 20.5342 11.4812 20.3568 11.4358V10.8714H19.8585C18.3852 10.8714 17.0001 10.3022 15.9578 9.26887L15.3743 8.69021L14.7909 9.26887C13.7486 10.3022 12.3634 10.8714 10.8901 10.8714H10.3919ZM11.3884 14.3306V11.841C12.8846 11.7293 14.2797 11.117 15.3743 10.0847C16.469 11.117 17.8641 11.7298 19.3603 11.841V14.3306C19.3603 15.0511 19.162 15.7251 18.8212 16.3072H15.3743V17.2955H18.0021C17.2996 17.9088 16.3813 18.2839 15.3743 18.2839C13.1766 18.2839 11.3884 16.5103 11.3884 14.3306ZM16.8691 19.0444V19.0676L15.3743 20.5501L13.8796 19.0676V19.0444C14.3519 19.1916 14.8537 19.2722 15.3743 19.2722C15.895 19.2722 16.3967 19.1916 16.8691 19.0444ZM7.81298 22.082C8.10046 21.2261 8.83537 20.5941 9.73072 20.432L13.2134 19.8044L15.3743 21.9476L17.5347 19.8049L21.017 20.4325C21.9123 20.5946 22.6472 21.2261 22.9347 22.0825L23.6517 24.2138H13.346L11.4053 22.2891L9.24892 24.2237C9.06108 24.411 8.73274 24.411 8.5444 24.2237L7.45623 23.1444L7.81298 22.082ZM3.24557 15.7631L5.53052 18.0294L4.98942 18.566L2.70447 16.2998L3.24557 15.7631ZM11.9823 27.4441C11.5119 27.9097 10.8861 28.1671 10.221 28.1671C9.55584 28.1671 8.93004 27.9097 8.4592 27.4432L1.72542 20.7651C1.25508 20.2986 0.995991 19.6779 0.995991 19.0182C0.995991 18.358 1.25508 17.7373 1.72542 17.2708L1.99946 16.9991L4.28441 19.2653L4.26647 19.2831C3.68402 19.8612 3.68402 20.8016 4.26647 21.3798L7.83938 24.9234C8.12189 25.2031 8.49706 25.3578 8.89666 25.3578C9.29625 25.3578 9.67143 25.2036 9.9355 24.9407L9.97287 24.9076L12.2683 27.1842L11.9823 27.4441ZM13.0037 26.5151L10.7133 24.2435L11.3714 23.6534L13.6579 25.9211L13.0037 26.5151Z"
+                            fill="black" />
+                        <path
+                            d="M15.3743 -0.00012207C8.86427 -0.00012207 3.25653 4.46611 1.79866 10.696L0.85449 9.13496L0 9.64345L1.75133 12.5378L4.66955 10.8008L4.15686 9.95329L2.80661 10.7568C4.21864 5.05763 9.38593 0.988202 15.3743 0.988202C16.6832 0.988202 17.9747 1.18093 19.2128 1.56143L19.5078 0.61758C18.174 0.207426 16.7834 -0.00012207 15.3743 -0.00012207Z"
+                            fill="black" />
+                        <path
+                            d="M30.5778 9.45913L27.6596 7.72215L25.9087 10.6169L26.7632 11.1254L27.6351 9.68397C28.094 11.0157 28.3287 12.4088 28.3287 13.8364C28.3287 16.7752 27.3023 19.6483 25.4394 21.9258L26.2132 22.5485C28.2201 20.0955 29.3252 17.001 29.3252 13.8364C29.3252 12.3248 29.0796 10.8487 28.6007 9.43541L30.0651 10.3066L30.5778 9.45913Z"
+                            fill="black" />
+                    </svg>
+                    <p class="advantages__block__title">Бездоганний сервіс</p>
+                    <p class="advantages__block__subtitle">Оперативна та професійна робота на кожному етапі співпраці.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="advantages__item">
+            <div class="advantages__item__abs__block">
+                <svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.6412 30.9414C11.4712 30.9458 10.3097 30.7436 9.21004 30.3442C5.26791 28.8992 2.6382 26.6235 1.39473 23.581C-0.646174 18.5859 1.7771 13.3804 1.88098 13.1616C1.91961 13.0802 1.9822 13.0125 2.06037 12.9677C2.13854 12.9228 2.22855 12.9029 2.31834 12.9107C2.40812 12.9184 2.4934 12.9534 2.56273 13.011C2.63207 13.0685 2.68215 13.1459 2.70627 13.2328C3.06168 14.243 3.68879 15.1356 4.51865 15.8125C5.53048 10.7343 9.96018 7.66127 10.1569 7.52644C13.0151 5.23843 10.6807 0.692471 10.6568 0.646941C10.6097 0.556859 10.5951 0.453287 10.6154 0.353676C10.6357 0.254065 10.6898 0.164504 10.7684 0.100081C10.8471 0.0356593 10.9455 0.000314386 11.0472 2.08737e-06C11.1488 -0.000310211 11.2475 0.0344292 11.3265 0.0983669C19.198 6.48588 18.7453 12.9194 18.1101 15.5628C18.7014 15.0999 19.1607 14.4898 19.4422 13.7937C19.7236 13.0975 19.8173 12.3396 19.7138 11.5959C19.7 11.497 19.72 11.3963 19.7707 11.3103C19.8213 11.2242 19.8996 11.1579 19.9928 11.122C20.0859 11.0861 20.1885 11.0829 20.2838 11.1127C20.3791 11.1426 20.4614 11.2038 20.5175 11.2865C21.3717 12.6178 22.0653 14.0457 22.5836 15.5402C23.2672 17.4977 23.4355 19.5982 23.0723 21.6396C22.709 23.681 21.8265 25.5945 20.5095 27.196L20.4149 27.3114C19.4681 28.4535 18.2798 29.3714 16.9356 29.9991C15.5914 30.6268 14.1247 30.9486 12.6412 30.9414ZM9.51416 29.5141C10.5164 29.8778 11.575 30.0617 12.6412 30.0573C13.994 30.0641 15.3316 29.7709 16.5576 29.1988C17.7836 28.6268 18.8676 27.7902 19.7315 26.7491L19.8199 26.6386C21.0414 25.1542 21.8603 23.3804 22.1978 21.488C22.5354 19.5955 22.3802 17.648 21.7472 15.8329C21.4189 14.8987 21.0217 13.9902 20.559 13.1147C20.0728 15.7745 17.5279 17.0113 17.497 17.0259C17.4146 17.0649 17.3222 17.0775 17.2325 17.0619C17.1427 17.0464 17.0599 17.0035 16.9954 16.9391C16.931 16.8747 16.888 16.7919 16.8724 16.7021C16.8568 16.6124 16.8693 16.52 16.9082 16.4376C17.0479 16.1379 20.0909 9.32069 12.0811 1.92046C12.5921 3.69173 12.8976 6.462 10.6794 8.23636C10.6056 8.28852 5.91108 11.5543 5.27012 16.6794C5.26052 16.7543 5.23186 16.8256 5.18688 16.8863C5.1419 16.947 5.08211 16.9952 5.01321 17.0262C4.94431 17.0573 4.8686 17.0701 4.79332 17.0636C4.71803 17.057 4.64568 17.0313 4.58318 16.9888C3.65924 16.3336 2.88097 15.4943 2.29738 14.5235C1.71698 16.2214 0.820522 19.8462 2.21516 23.2499C3.36182 26.0502 5.81737 28.1565 9.51372 29.5118L9.51416 29.5141Z"
+                        fill="black" />
+                    <path
+                        d="M10.7576 30.7611C10.6535 30.761 10.5526 30.7243 10.473 30.6572C4.84001 25.9088 8.80867 19.8364 8.84933 19.7759C8.90077 19.699 8.97498 19.6403 9.06155 19.6079C9.14811 19.5754 9.24267 19.5709 9.33191 19.595C9.42115 19.6191 9.50059 19.6706 9.55906 19.7422C9.61752 19.8138 9.65207 19.902 9.65783 19.9942C9.66899 20.6725 9.91239 21.3264 10.3474 21.8468C10.1181 20.1795 10.3618 18.4813 11.0508 16.9457C11.7397 15.4101 12.8462 14.0989 14.244 13.1616C14.3267 13.1135 14.4227 13.0935 14.5176 13.1046C14.6126 13.1157 14.7014 13.1573 14.7707 13.2231C14.84 13.289 14.8861 13.3755 14.9021 13.4698C14.9181 13.5641 14.9031 13.661 14.8593 13.746C14.6155 14.2064 14.4929 14.7214 14.5031 15.2423C14.5259 15.8484 14.7183 16.436 15.0583 16.9384L15.2351 17.2085C15.8208 18.078 16.4554 18.9137 17.1359 19.7113C17.6654 20.352 18.0891 21.0732 18.3908 21.8477C20.6063 26.4153 16.7995 30.0158 16.7623 30.052C16.676 30.1293 16.5628 30.1696 16.447 30.1643C16.3312 30.1589 16.2222 30.1083 16.1434 30.0233C16.0646 29.9384 16.0223 29.8259 16.0256 29.71C16.0289 29.5942 16.0776 29.4843 16.1612 29.404C16.2995 29.2749 19.5317 26.1948 17.5859 22.2142C17.5782 22.1985 17.5716 22.1824 17.566 22.166C17.2981 21.4813 16.9233 20.8435 16.4556 20.2763C15.7533 19.4529 15.0985 18.5903 14.4942 17.6925L14.3174 17.4224C13.8868 16.7815 13.6445 16.0326 13.6181 15.2608C13.6146 15.0886 13.6222 14.9163 13.6411 14.745C12.368 15.9487 10.5026 18.5112 11.3822 22.7017C11.3981 22.7769 11.394 22.8549 11.3706 22.928C11.3471 23.0011 11.305 23.0668 11.2483 23.1187C11.1917 23.1706 11.1226 23.2069 11.0477 23.2239C10.9728 23.2409 10.8948 23.2381 10.8213 23.2158C10.3994 23.0544 10.0192 22.8003 9.70855 22.4723C9.39794 22.1443 9.16489 21.7508 9.02659 21.3208C8.24241 23.1066 7.30263 26.8291 11.0419 29.9822C11.1112 30.0406 11.161 30.1189 11.1843 30.2065C11.2077 30.2942 11.2035 30.3869 11.1724 30.4721C11.1412 30.5572 11.0847 30.6308 11.0103 30.6827C10.936 30.7347 10.8474 30.7625 10.7567 30.7624L10.7576 30.7611Z"
+                        fill="black" />
+                </svg>
+                <p class="advantages__block__title">Конкурентні ціни</p>
+                <p class="advantages__block__subtitle">Доступні ціни та гнучка система знижок.</p>
+            </div>
+            <img src="img/advantages-right.jpg" alt="">
+        </div>
+    </div>
+</section>
+        <!-- Modal callback-->
+<div class="modal fade" id="popup_callback" tabindex="-1" role="dialog" aria-labelledby="popup_callback"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
+                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
+                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
+                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
+                    autocomplete="off">
+                    <span class="popup__errors"></span>
+                    <input type="tel" name="telephone" id="tel" class="popup_callback__input popup_callback__input--tel"
+                        placeholder="Телефон*" required="">
+                    <button type="submit" class="popup_callback__submit">
+                        Отправить заявку </button>
+                </form>
+            </div>
+            <div class="modal-body__coffe coffe1">
+                <img src="img/zerno1.png" alt="Coffe">
+            </div>
+            <div class="modal-body__coffe coffe2">
+                <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal opt_price-->
+<div class="modal fade" id="popup_opt_price" tabindex="-1" role="dialog" aria-labelledby="popup_opt_price"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
+                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
+                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
+                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="popup_opt_price__form" name="callback" id="callback"
+                    autocomplete="off">
+                    <span class="popup__errors"></span>
+                    <input type="text" name="name" id="name" class="popup_opt_price__input popup_opt_price__input--name"
+                        placeholder="ФИО*" required="">
+                    <input type="text" name="company-name" id="company-name"
+                        class="popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
+                        required="">
+                    <input type="tel" name="telephone" id="tel"
+                        class="popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
+                    <input type="email" name="email" id="email"
+                        class="popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
+                    <button type="submit" class="popup_opt_price__submit">
+                        Отправить заявку </button>
+                </form>
+            </div>
+            <div class="modal-body__coffe coffe1">
+                <img src="img/zerno1.png" alt="Coffe">
+            </div>
+            <div class="modal-body__coffe coffe2">
+                <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
+        <section class="counter-animation" id="counter-animation">
+    <div class="counter-animation__inner">
+        <div class="counter-animation__item">
+            <div class="counter-animation__title">100+</div>
+            <div class="counter-animation__subtitle">Сотрудников</div>
+        </div>
+        <div class="counter-animation__item">
+            <div class="counter-animation__title">20</div>
+            <div class="counter-animation__subtitle">Лет на рынке</div>
+        </div>
+        <div class="counter-animation__item">
+            <div class="counter-animation__title">300</div>
+            <div class="counter-animation__subtitle">Тонн кофе в год</div>
+        </div>
+        <div class="counter-animation__item">
+            <div class="counter-animation__title">700+</div>
+            <div class="counter-animation__subtitle">Счастливых партнеров</div>
+        </div>
+    </div>
+    <div class="counter-animation__coffe">
+        <img src="img/counter-animation-coffe.png" alt="Coffe">
+    </div>
+    <div class="counter-animation__leaf">
+        <img src="img/counter-animation-leaf.png" alt="leaf">
+    </div>
+</section>
+        <section class="brands">
+    <div class="section__top__line">
+        <h3 class="section__title">Бренды</h3>
+        <div class="bradns__center__content">
+            <div class="bradns__title">
+                <p><span>которые</span> мы предлагаем</p>
+            </div>
+            <div class="bradns__subtitle">
+                <p>Мы лучшие, потому что мы с лучшими!</p>
+            </div>
+        </div>
+        <div class="slider__arrow">
+            <div class="previous_arrow">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.71429 1L2.28572 5L5.71429 9" stroke="#FF671F" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="next_arrow">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.28571 1L4.71428 5L1.28571 9" stroke="#FF671F" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="slider brands__slider">
+        <div class="brands__list">
+            <div class="brands__item">
+                <img src="img/brand/brand2.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand1.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand3.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand1.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand2.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand3.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand1.png" alt="brand">
+            </div>
+            <div class="brands__item">
+                <img src="img/brand/brand2.png" alt="brand">
+            </div>
+        </div>
+    </div>
+</section>
+        <section class="home-review" id="home-review">
+    <div class="home-review__inner">
+        <div class="section__top__line">
+            <h3 class="section__title">Отзывы о нас</h3>
+            <div class="slider__arrow">
+                <div class="previous_arrow">
+                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.71429 1L2.28572 5L5.71429 9" stroke="#FF671F" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="next_arrow">
+                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.28571 1L4.71428 5L1.28571 9" stroke="#FF671F" stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="slider home-review__slider">
+            <div class="home-review__list">
+                <div class="home-review__item">
+                    <div class="home-review__border">
+                        <div class="home-review__item__inner">
+                            <div class="home-review__header">
+                                <div class="home-review__img">
+                                    <img src="img/review/review-avatar1.png" alt="avatar1">
+                                </div>
+                                <div class="home-review__info">
+                                    <p class="home-review__name">Николай</p>
+                                    <p class="home-review__data">10.10.2020</p>
+                                </div>
+                            </div>
+                            <div class="home-review__body">
+                                <p class="home-review__description">
+                                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                    Ipsum
+                                    является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                </p>
+                            </div>
+                            <div class="home-review__footer">
+                                <div class="home-review__rating">
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                </div>
+                            </div>
                         </div>
-                        <button class="product__buy">
-                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/icons/icons.svg#cart"></use>
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="home-review__item">
+                    <div class="home-review__border">
+                        <div class="home-review__item__inner">
+                            <div class="home-review__header">
+                                <div class="home-review__img">
+                                    <img src="img/review/review-avatar2.png" alt="avatar2">
+                                </div>
+                                <div class="home-review__info">
+                                    <p class="home-review__name">Андрей</p>
+                                    <p class="home-review__data">10.10.2020</p>
+                                </div>
+                            </div>
+                            <div class="home-review__body">
+                                <p class="home-review__description">
+                                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                    Ipsum
+                                    является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                </p>
+                            </div>
+                            <div class="home-review__footer">
+                                <div class="home-review__rating">
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star"></span>
+                                    <span class="home-review__star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-review__item">
+                    <div class="home-review__border">
+                        <div class="home-review__item__inner">
+                            <div class="home-review__header">
+                                <div class="home-review__img">
+                                    <img src="img/review/review-avatar3.png" alt="avatar3">
+                                </div>
+                                <div class="home-review__info">
+                                    <p class="home-review__name">Денис</p>
+                                    <p class="home-review__data">10.10.2020</p>
+                                </div>
+                            </div>
+                            <div class="home-review__body">
+                                <p class="home-review__description">
+                                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                    Ipsum
+                                    является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                </p>
+                            </div>
+                            <div class="home-review__footer">
+                                <div class="home-review__rating">
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-review__item">
+                    <div class="home-review__border">
+                        <div class="home-review__item__inner">
+                            <div class="home-review__header">
+                                <div class="home-review__img">
+                                    <img src="img/review/review-avatar4.png" alt="avatar4">
+                                </div>
+                                <div class="home-review__info">
+                                    <p class="home-review__name">Светлана</p>
+                                    <p class="home-review__data">10.10.2020</p>
+                                </div>
+                            </div>
+                            <div class="home-review__body">
+                                <p class="home-review__description">
+                                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                    Ipsum
+                                    является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                </p>
+                            </div>
+                            <div class="home-review__footer">
+                                <div class="home-review__rating">
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star"></span>
+                                    <span class="home-review__star"></span>
+                                    <span class="home-review__star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-review__item">
+                    <div class="home-review__border">
+                        <div class="home-review__item__inner">
+                            <div class="home-review__header">
+                                <div class="home-review__img">
+                                    <img src="img/review/review-avatar4.png" alt="avatar4">
+                                </div>
+                                <div class="home-review__info">
+                                    <p class="home-review__name">Светлана</p>
+                                    <p class="home-review__data">10.10.2020</p>
+                                </div>
+                            </div>
+                            <div class="home-review__body">
+                                <p class="home-review__description">
+                                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+                                    Ipsum
+                                    является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                </p>
+                            </div>
+                            <div class="home-review__footer">
+                                <div class="home-review__rating">
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star star--active"></span>
+                                    <span class="home-review__star"></span>
+                                    <span class="home-review__star"></span>
+                                    <span class="home-review__star"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+        <section class="subscribe" id="subscribe">
+    <div class="subscribe__inner">
+        <div class="section__top__line">
+            <h3 class="section__title">Напишите нам</h3>
+        </div>
+        <form name="subscribe" action="" method="post" class="subscribe__form" id="subscribe">
+            <div class="subscribe__input__container">
+                <input id="name" class="subscribe__input subscribe__input--name" type="name" name="name"
+                    placeholder="Имя*" autocomplete="off" required="">
+                <input id="email" class="subscribe__input subscribe__input--email" type="email" name="email"
+                    placeholder="Электронная почта" autocomplete="off" required="">
+                <input id="massage" class="subscribe__input subscribe__input--massage" type="massage" name="massage"
+                    placeholder="Сообщение*" autocomplete="off" required="">
+                <button class="subscribe_button" type="submit">Отправить</button>
+            </div>
+            <span class="subscribe_error_block"></span>
+        </form>
+    </div>
+</section>
+        <section class="seo-text" id="seo-text">
+    <div class="seo-text__inner">
+        <div class="section__top__line">
+            <h3 class="section__title">История Сиба</h3>
+        </div>
+        <div class="seo-text__description">
+            <p>Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации системы
+                обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также
+                консультация с широким активом способствует подготовки и реализации существенных финансовых и
+                административных условий. Равным образом начало повседневной работы по формированию позиции позволяет
+                оценить значение новых предложений.
+                Повседневная практика показывает, что сложившаяся структура организации влечет за собой процесс
+                внедрения и модернизации направлений прогрессивного развития. Товарищи! рамки и место обучения кадров
+                играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.
+                Значимость этих проблем настолько очевидна, что сложившаяся структура организации играет важную роль в
+                формировании форм развития.</p>
+        </div>
+    </div>
+</section>
     </main>
-    
+    <footer class="footer" id="footer">
+    <div class="footer__inner">
+        <div class="footer__inner__top">
+            <div class="footer__left__info">
+                <div class="footer__logo">
+                    <svg width="104" height="48" viewBox="0 0 104 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/icons/icons.svg#logo-footer"></use>
+                    </svg>
+                </div>
+                <div class="footer__link">
+                    <a href="">Договор публичной оферты</a>
+                    <a href="">Политика конфиденциальности</a>
+                </div>
+            </div>
+            <div class="footer__social">
+                <div class="footer-icon icon--twitter">
+                    <a href="" target="_blank">
+                        <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M29 2.72285C27.9216 3.18462 26.7724 3.49069 25.5744 3.63931C26.8069 2.921 27.7476 1.79223 28.1898 0.431692C27.0407 1.10046 25.7719 1.57285 24.4198 1.83646C23.3287 0.702385 21.7736 0 20.0771 0C16.7856 0 14.1357 2.60785 14.1357 5.80485C14.1357 6.26485 14.1756 6.70715 14.2734 7.12823C9.33075 6.89292 4.95719 4.58054 2.01912 1.058C1.50619 1.92669 1.20531 2.921 1.20531 3.99138C1.20531 6.00123 2.26562 7.78285 3.84612 8.81431C2.89094 8.79661 1.95387 8.52592 1.16 8.09954C1.16 8.11723 1.16 8.14023 1.16 8.16323C1.16 10.9834 3.22081 13.3258 5.92325 13.8655C5.43931 13.9946 4.91187 14.0565 4.3645 14.0565C3.98388 14.0565 3.59962 14.0353 3.23894 13.9575C4.00925 16.2557 6.19513 17.9453 8.79425 18.0002C6.7715 19.5447 4.20319 20.4753 1.42281 20.4753C0.93525 20.4753 0.467625 20.4541 0 20.3957C2.63356 22.0535 5.75469 23 9.1205 23C20.0607 23 26.042 14.1538 26.042 6.486C26.042 6.22946 26.0329 5.98177 26.0203 5.73585C27.2002 4.91846 28.1916 3.89762 29 2.72285Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-icon icon--facebook">
+                    <a href="" target="_blank">
+                        <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.43881 23V12.5094H12.2701L12.8449 8.4198H8.43881V5.80919C8.43881 4.62553 8.79512 3.81888 10.6448 3.81888L13 3.81799V0.160114C12.5927 0.111487 11.1946 0 9.56729 0C6.16927 0 3.84292 1.90551 3.84292 5.40416V8.4198H0V12.5094H3.84292V23H8.43881Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-icon icon--linkedin">
+                    <a href="" target="_blank">
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.14337 7.1875H0V23H5.14337V7.1875Z" fill="white" />
+                            <path
+                                d="M19.1532 7.37294C19.0986 7.35569 19.0469 7.337 18.9894 7.32119C18.9204 7.30538 18.8514 7.29244 18.7809 7.28094C18.5078 7.22631 18.2088 7.1875 17.8581 7.1875C14.8594 7.1875 12.9576 9.36819 12.3309 10.2106V7.1875H7.1875V23H12.3309V14.375C12.3309 14.375 16.2179 8.96138 17.8581 12.9375C17.8581 16.4867 17.8581 23 17.8581 23H23V12.3294C23 9.94031 21.3627 7.94938 19.1532 7.37294Z"
+                                fill="white" />
+                            <path
+                                d="M2.51562 5.03125C3.90497 5.03125 5.03125 3.90497 5.03125 2.51562C5.03125 1.12628 3.90497 0 2.51562 0C1.12628 0 0 1.12628 0 2.51562C0 3.90497 1.12628 5.03125 2.51562 5.03125Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__inner__bottom">
+            <div class="footer__copyright">
+                ©2020 Siba
+            </div>
+            <div>
+                Разработка сайта Mango.agency
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 

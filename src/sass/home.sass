@@ -1,3 +1,4 @@
+/** Home slider **/
 .home-slider
     position: relative
 .home-slider__text
@@ -172,14 +173,20 @@
         bottom: 20px
     @media (max-width: 768px)
         left: 15px
+/** Section offers **/
 section
     padding: 20px 60px
     @media (max-width: 1366px)
         padding: 0 40px
     @media (max-width: 768px)
         padding: 0 20px
+.section__title
+    font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
+    font-weight: 400
 section.offers
     padding: 115px 60px
+    @media (max-width: 1366px)
+        padding: 115px 40px
 .offers__title
     font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
     text-align: center
@@ -204,11 +211,13 @@ section.offers
     width: 25%
     height: 267px
     transition: background .4s
+    @media (max-width: 1366px)
+        height: 190px
     &:nth-child(1)
         background: #FCF2F2
         & .offers__item__img
             &::after
-                left: 0px
+                left: -35px
         &:hover
             background: #FFE9E9
     &:nth-child(2)
@@ -234,6 +243,13 @@ section.offers
             bottom: -55px
             opacity: 0
             transition: opacity .6s
+        @media (max-width: 1366px)
+            top: -80px
+            height: 153px
+            &::after
+                left: -45px
+            & img
+                max-height: 100%
     & .offers__item__content
         margin-bottom: 64px
         transition: height .4s linear
@@ -276,6 +292,7 @@ section.offers
             transform: translateY(0px)
             opacity: 1
             pointer-events: initial
+/** Section product **/
 .section__title
     @media (max-width: 550px)
         font-size: 14px
@@ -295,24 +312,453 @@ section.offers
     display: flex
     justify-content: space-between
     margin: 0 -60px
+    @media (max-width: 1400px)
+        margin: 0 -20px
 .product__item
+    padding: 15px 0px
     position: relative
     width: 200px
     margin: 0 60px
+    @media (max-width: 1400px)
+        margin: 0 20px
+    &:hover
+        & .photo-product-wrapper
+            filter: blur(6px)
+            &::before
+                opacity: 1
+        & .info-product-wrapper
+            transform: translate(0, -70px)
+        & .info-product-more
+            opacity: 1
+    @media (max-width: 992px)
+        &:hover
+            & .photo-product-wrapper
+                filter: none
+                &::before
+                    display: none
+            & .info-product-wrapper
+                transform: none
+.product__label
+    position: absolute
+    z-index: 2
+    transform: rotate(-90deg)
+    width: 43px
+    height: 22px
+    & .product__label_item
+        &::before
+            display: block
+            text-align: center
+            width: 43px
+            padding: 4px
+            color: #fff
+            font-weight: 700
+            font-size: 12px
+        &.label__new
+            &::before
+                content: "NEW"
+                background: #13AC35
+        &.label__top
+            &::before
+                content: "TOP"
+                background: #0079FF
+        &.label__sale
+            &::before
+                content: "SALE"
+                background: #EB0E0E
 .photo-product-wrapper
+    position: relative
     text-align: center
+    transition: filter .4s
+    &::before
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 1
+        content: ""
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 90%)
+        left: 0
+        right: 0
+        opacity: 0
+        transition: opacity .4s
 .info-product-wrapper
     text-align: center
     margin-top: 43px
+    max-height: 70px
+    min-height: 70px
+    transition: transform .4s
+.info-product-more
+    margin-top: 19px
+    opacity: 0
+    transition: .4s
+    @media (max-width:992px)
+        display: none
 .product__title
+    display: block
     font-family: Montserrat-Medium
     font-size: 14px
 .category__title
     display: block
-    margin-top: 9px
+    margin-top: 3px
     color: #989898
+.product__more-info
+    width: 100%
+    display: block
+    padding: 16px 0
+    border: 1px solid #D3D3D3
+    font-size: 14px
+    margin-bottom: 10px
+    @media (max-width: 1600px)
+        font-size: 12px
 .product__price_container
     display: flex
     justify-content: space-between
     align-items: center
     margin-top: 55px
+.product__cost
+    display: flex
+    align-items: center
+.product__cost__sale
+    font-family: Montserrat-SemiBold
+    font-size: 16px
+    color: #EE0E00
+.product__cost__price
+    line-height: 17px
+    text-decoration-line: line-through
+    color: #808080
+    margin-left: 25px
+    font-size: 14px
+.slider__arrow div
+    width: 40px
+    height: 40px
+    line-height: 40px
+    border: 1px solid #DFDFDF
+    text-align: center
+    transition: background .4s, border-color .4s
+    cursor: pointer
+    & path
+        transition: all .4s
+    &:hover
+        background: #ff671f
+        border-color: #ff671f
+        & path
+            stroke: #ffffff
+/** Banner home **/
+.banner-home
+    width: 100%
+    height: 100%
+    padding: 126px 0 20px
+.banner-home__inner
+    width: 100%
+    position: relative
+    height: 596px
+    background-image: url(../img/banner-section.jpg)
+.banner-home__coffe
+    position: absolute
+    right: 0
+    top: -90px
+.banner-home__leaf
+    position: absolute
+    left: 0
+    bottom: -130px
+/** Section about us **/
+.about-us
+    padding-top: 190px
+.about-us__line
+    position: relative
+    display: flex
+    justify-content: flex-end
+.about-us__title
+    width: 665px
+    height: 191px
+    position: absolute
+    left: 172px
+    top: -82px
+    z-index: -1
+.about-us__first-description
+    max-width: 621px
+    margin-right: 82px
+    font-size: 14px
+    line-height: 27px
+.about-us__second-description
+    max-width: 349px
+    margin-right: 200px
+    font-size: 14px
+    line-height: 27px
+.about-us__more-btn
+    font-family: Montserrat-Bold
+    margin-top: 119px
+    & a
+        display: flex
+        align-items: center
+    & span
+        margin-left: -26px
+    & .about-us__arrow
+        margin-left: 11px
+/** Section advantages **/
+section.advantages
+    padding-top: 170px
+.advantages__inner
+    height: 100%
+    width: 100%
+    display: flex
+    justify-content: space-between
+.advantages__item
+    position: relative
+.advantages__item__block
+    width: 450px
+    min-height: calc(50% - 2px)
+    height: calc(50% - 2px)
+    background: #fff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 92px
+    transition: background .4s, border-color .4s
+    &:hover
+        background: #ff671f
+        border-color: #ff671f !important
+        color: #fff
+        & .advantages__block__subtitle
+            color: #fff
+        & svg
+            fill: #fff
+            & path
+                fill: #fff
+    & img
+        height: 100%
+        object-fit: cover
+    &:nth-child(1)
+        border-top: 1px solid #DFDFDF
+        & .advantages__block__subtitle
+            max-width: 160px
+    &:nth-child(2)
+        border-top: 1px solid #DFDFDF
+        border-bottom: 1px solid #DFDFDF
+        & .advantages__block__subtitle
+            max-width: 265px
+    & svg
+        transition: fill .4s
+        & path
+            transition: fill .4s
+.advantages__item__abs__block
+    position: absolute
+    left: 0
+    bottom: 4px
+    width: 450px
+    min-height: calc(50% - 2px)
+    height: calc(50% - 2px)
+    background: #fff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 92px
+    border-left: 1px solid #DFDFDF
+    border-bottom: 1px solid #DFDFDF
+    transition: background .4s, border-color .4s
+    &:hover
+        background: #ff671f
+        border-color: #ff671f !important
+        color: #fff
+        & .advantages__block__subtitle
+            color: #fff
+        & svg
+            fill: #fff
+            & path
+                fill: #fff
+.advantages__block__title
+    font-family: Montserrat-Bold
+    font-size: calc(16px + 8 * ((100vw - 320px)/ 1600))
+    max-width: 120px
+    margin-top: 41px
+    transition: color .4s
+.advantages__block__subtitle
+    font-size: 14px
+    line-height: 24px
+    color: #828282
+    margin-top: 18px
+    transition: color .4s
+/** Counter animation **/
+section.counter-animation
+    position: relative
+    padding: 0
+    margin-top: 100px
+    background: linear-gradient(73.49deg, #F0F7FF 12.45%, #FFF3EF 97.56%)
+.counter-animation__inner
+    width: 100%
+    min-height: 354px
+    display: flex
+    justify-content: space-between
+    max-width: 1581px
+    margin: auto
+    align-items: center
+.counter-animation__title
+    font-family: Montserrat-Bold
+    font-size: calc(30px + 30 * ((100vw - 320px)/ 1600))
+.counter-animation__subtitle
+    font-size: 18px
+    line-height: 22px
+    color: #606060
+.counter-animation__coffe
+    position: absolute
+    right: 0
+    top: -100px
+    pointer-events: none
+.counter-animation__leaf
+    position: absolute
+    left: 0
+    bottom: -100px
+    pointer-events: none
+/** Section brands **/
+section.brands
+    padding-top: 112px
+    & .section__top__line
+        align-items: flex-start
+.bradns__center__content
+    width: 60%
+    border-left: 1px solid #DFDFDF
+    padding-left: 72px
+.bradns__title
+    & p
+        font-family: Montserrat-Bold
+        font-size: calc(35px + 35 * ((100vw - 320px)/ 1600))
+        line-height: calc(32px + 30 * ((100vw - 320px)/ 1600))
+        text-transform: uppercase
+        color: transparent
+        -webkit-text-stroke: 1px #C8C8C8
+        max-width: 686px
+        transition: all .4s
+    &:hover
+        & p
+            color: #000
+            -webkit-text-stroke: initial
+    & span
+        display: block
+.bradns__subtitle
+    margin-top: 70px
+    & p
+        max-width: 184px
+        font-size: 14px
+.brands__list
+    padding-top: 138px
+    display: flex
+    justify-content: space-between
+    margin: 0 -60px
+    align-items: center
+    @media (max-width: 1400px)
+        margin: 0 -20px
+.brands__item
+    padding: 15px 0px
+    position: relative
+    width: 200px
+    margin: 0 60px
+    @media (max-width: 1400px)
+        margin: 0 20px
+/** Section home-review **/
+section.home-review
+    padding-top: 100px
+.home-review__inner
+    padding-top: 94px
+    border-top: 1px solid #DFDFDF
+.home-review__list
+    padding-top: 43px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: -2px
+.home-review__item
+    &:nth-child(2n)
+        .home-review__border
+            border-left: 0
+            border-right: 0
+    &:last-child
+        .home-review__border
+            border-right: 1px solid #DFDFDF
+.home-review__border
+    border: 1px solid #DFDFDF
+.home-review__item__inner
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 15px 0px
+    position: relative
+    width: 450px
+    min-height: 433px
+    max-width: 312px
+    margin: auto
+.home-review__header
+    display: flex
+    align-items: center
+.home-review__info
+    padding-left: 22px
+    font-size: 14px
+.home-review__name
+    font-family: Montserrat-Bold
+    margin-bottom: 7px
+.home-review__data
+    color: #606060
+.home-review__description
+    color: #606060
+    margin-top: 40px
+.home-review__rating
+    display: inline-block
+    font-size: 0
+    & span
+        padding: 0
+        font-size: 20px
+        line-height: 1
+        color: #D1D1D1
+        &:before
+            content: '★'
+        &.star--active
+            color: #FF671F
+.home-review__footer
+    margin-top: 58px
+/** Section subscribe **/
+section.subscribe
+    width: 100%
+    height: 344px
+    margin-top: 100px
+    background: linear-gradient(73.49deg, #F0F7FF 12.45%, #FFF3EF 97.56%)
+.subscribe__inner
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: center
+.subscribe__input__container
+    display: flex
+    justify-content: space-between
+    margin: 0 -19px
+.subscribe__input
+    width: 100%
+    height: 70px
+    background: #fff
+    border: 1px solid #E3EAF2
+    margin: 15px 19px
+    padding-left: 28px
+    color: #000000
+    &::placeholder
+        color: #000
+.subscribe_button
+    background: #FF671F
+    font-family: Montserrat-Bold
+    color: #fff
+    width: 202px
+    height: 70px
+    line-height: 70px
+    margin-top: 15px
+.subscribe__input--name
+    width: 25%
+.subscribe__input--email
+    width: 25%
+.subscribe__input--massage
+    width: 55%
+/** Section seo-text **/
+.seo-text__inner
+    min-height: 300px
+    padding: 45px 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+.seo-text__description
+    color: #606060
+    font-size: 14px

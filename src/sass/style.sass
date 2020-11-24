@@ -6,9 +6,13 @@
         font-weight: #{$weight}
         font-style: #{$style}
 @import "../../node_modules/bootstrap/scss/bootstrap-grid"
+@import "../../node_modules/bootstrap/scss/mixins"
+@import "../../node_modules/bootstrap/scss/_modal"
+@import "../../node_modules/bootstrap/scss/_transitions"
 @import "fonts"
 @import "header"
 @import "home"
+@import "modal"
 @import "footer"
 
 @import "public_offer_agreement"
@@ -21,11 +25,25 @@
 body
     background: #fff
     font-family: Montserrat-Regular
-    overflow: overlay
+    overflow-x: hidden
     @media (max-width: 992px)
         overflow: auto
     &.overflow
         overflow: hidden
+/** ::-webkit-scrollbar
+ width: 12px **/
+
+/** ::-webkit-scrollbar-track
+ background: rgba(0, 0, 0, 0) **/
+
+/** ::-webkit-scrollbar-thumb
+ background: #ff671f
+ border-radius: 5px **/
+
+/** .w-ibanner.animation_nike .w-ibanner-image
+ filter: grayscale(0) !important
+ transform: translateY(0%) !important **/
+
 a
     color: #000
     text-decoration: none
@@ -58,6 +76,21 @@ input, button, textarea
 
 input[type=number]
     -moz-appearance: textfield
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+input[type="number"]
+    -moz-appearance: textfield
+
+input[type="number"]:hover,
+input[type="number"]:focus
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0
+
 select
     font-family: Montserrat-Regular
     outline: none
@@ -69,5 +102,13 @@ img
 main
     max-width: 1920px
     margin: auto
+    position: relative
+    top: 97px
+    @media (max-width: 1366px)
+        top: 69px
+    @media (max-width: 768px)
+        top: 50px
 .slick-slide
-    outline: none
+    outline: none !important
+    & img
+        margin: auto
