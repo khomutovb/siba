@@ -1,0 +1,174 @@
+.repair_equipment
+	margin-top: 30px
+.repair_equipment__header
+	padding: 30px 0px
+	& p
+		margin-top: 50px
+		color: #797C80
+		font-size: 14px
+.repair_equipment_img
+	text-align: center
+	padding: 0
+.repair_equipment_achievements
+	display: flex
+	padding: 30px 0px
+	margin-top: 50px
+.repair_equipment_achievements1
+	width: 40%
+	padding-right: 50px
+	line-height: 30px
+.repair_equipment_achievements2
+	width: 60%
+	display: flex
+	justify-content: space-between
+.repair_equipment_achievements_tittle
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: bold
+	font-size: 24px
+	line-height: 26px
+.repair_equipment_achievements_text
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 24px
+.repair_equipment_achievements21, .repair_equipment_achievements22, .repair_equipment_achievements23
+	width: 33.33%
+	padding: 0px 10px
+	p
+		margin-top: 15px
+
+.repair_equipment_services
+	display: flex
+	padding: 30px
+	margin-top: 50px
+.repair_equipment_services__left, .repair_equipment_services__right
+	width: 50%
+
+.repair_equipment_services_item
+	position: relative
+	padding: 30px
+	border: 1px solid #000
+
+    // accordeons
+.accordion_left, .accordion_right
+	position: relative
+	margin: 0px
+	dt, dd 
+	  padding: 10px
+	  border-bottom: 0
+	  a 
+	    display: block
+	    color: black
+	    font-weight: bold
+	dd 
+	 border-top: 0
+	 font-size: 12px
+	 &:last-of-type 
+	   border-top: 1px solid white
+	   position: relative
+	   top: -1px
+.accordion_title
+	padding: 30px 20px!important
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: 400
+	font-size: 14px
+	line-height: 24px
+	a 
+		display: block
+		position: relative
+		padding: 10px 10px 10px 30px
+		background-color: #E2F6E8
+.accordion_title_p
+	display: block
+	width: 80%
+.accordion_text
+	p 
+		margin-bottom: 20px
+		font-family: Montserrat, Arial
+		font-style: normal
+		font-weight: 400
+		font-size: 14px
+		line-height: 24px
+.repair_equipment_services_closeimg
+	display: none
+.repair_equipment_services_openimg, .repair_equipment_services_closeimg
+	position: absolute
+	right: 30px
+	top: 10px
+	width: 30px
+    height: 30px
+    text-align: center
+    line-height: 30px
+.main_color
+	color: #FF671F!important
+.hide_openimg
+	display: none
+.show_closeimg
+	display: block
+.repair_equipment
+	margin: 0 30px
+	border-bottom: 1px solid #797C80
+.repair_equipment_footer
+	display: flex
+	height: 400px
+	padding: 30px
+.repair_equipment_footer_form, .repair_equipment_footer_help
+	width: 50%
+.repair_equipment_footer_text1, .repair_equipment_footer_help1
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: 400
+	font-size: 18px
+	line-height: 22px
+.repair_equipment_footer_text2, .repair_equipment_footer_help2, .repair_equipment_footer_help3
+	font-family: Montserrat, Arial
+	font-style: normal
+	font-weight: 400
+	font-size: 14px
+	line-height: 24px
+	margin-top: 30px
+.repair_equipment_services
+	border-bottom: #000
+@media (max-width: 768px)
+	.repair_equipment_achievements, .repair_equipment_services, .repair_equipment_footer
+		flex-direction: column
+	.repair_equipment_achievements1, .repair_equipment_achievements2, .repair_equipment_services__left, .repair_equipment_services__right, .repair_equipment_footer_form, .repair_equipment_footer_help
+		width: 100%
+	.repair_equipment_achievements21, .repair_equipment_achievements22, .repair_equipment_achievements23
+		width: 33.33%
+		padding: 0
+		img
+			min-width: 50px
+	.repair_equipment_footer_form
+		height: 400px
+	.repair_equipment_achievements1
+		margin-bottom: 50px
+	.repair_equipment_services
+		margin-top: 10px
+		padding: 20px 0px
+	.accordion_title
+		padding: 10px 0px!important
+	.repair_equipment_achievements1
+    	padding-right: 0
+	.repair_equipment_achievements
+		padding: 20px 0
+		margin-top: 0px
+
+@media (max-width: 480px)
+	.repair_equipment_services_closeimg, .repair_equipment_services_openimg
+		top: 10px
+		right: 0px
+	.repair_equipment
+    	margin: 0 10px
+	.accordion_title
+		padding: 10px 30px 10px 40px!important
+	.repair_equipment_achievements2
+		overflow-x: scroll
+	.repair_equipment_achievements21, .repair_equipment_achievements22, .repair_equipment_achievements23
+		min-width: 46%
+@media (max-width: 320px)
+	.accordion_title
+		padding: 10px!important
