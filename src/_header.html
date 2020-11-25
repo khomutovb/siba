@@ -89,8 +89,26 @@
         </div>
         <div class="menu-toggle__body">
             <nav class="nav-toggle">
-                <div class="nav-toggle__item"><a href="">Кофе оптом</a></div>
-                <div class="nav-toggle__item"><a href="">Оборудование</a></div>
+                <div class="nav-toggle__item">
+                    <a href="">Кофе оптом</a>
+                    <div class="drop-nav-toggle__item">
+                        <div class="drop__inner">
+                            <a href="">Кофе в зернах</a>
+                            <a href="">Кофе молотый</a>
+                            <a href="">Кофе в капсулах</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-toggle__item">
+                    <a href="">Оборудование</a>
+                    <div class="drop-nav-toggle__item">
+                        <div class="drop__inner">
+                            <a href="">Кофе в зернах</a>
+                            <a href="">Кофе молотый</a>
+                            <a href="">Кофе в капсулах</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav-toggle__item"><a href="">Ингредиенты</a></div>
                 <div class="nav-toggle__item"><a href="">Запчасти и ремонт</a></div>
                 <div class="nav-toggle__item"><a href="">О нас</a></div>
@@ -123,257 +141,259 @@
         </div>
         <form class="cart__form" action="">
             <div class="cart__wrap">
-                <div class="cart__steps">
-                    <div class="cart__step step--ative" data-step="1">Шаг 1. Список товара</div>
-                    <div class="cart__step" data-step="2">Шаг 2. Оформление товара</div>
-                </div>
                 <div class="cart__body">
-                    <div class="cart__order">
-                        <div class="cart__order_list">
-                            <div class="cart__order_item">
-                                <div class="order__inner">
-                                    <div class="order__photo">
-                                        <img src="img/product1.png">
-                                    </div>
-                                    <div class="order__info">
-                                        <div class="order__info__left">
-                                            <div class="order__title">
-                                                Lavazza Crema & Aroma
-                                            </div>
-                                            <div class="order__price">
-                                                ₴325
+                    <ul class="stepper parallel horizontal">
+                        <li class="step active">
+                            <div class="cart__step" data-step="1">Шаг 1. Список товара</div>
+                            <div class="step-content">
+                                <div class="cart__order">
+                                    <div class="cart__order_list">
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="counter">
-                                            <div class="counter__inner">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--subtract counter_subtract">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                                <input type="number" min="1" value="1" class="counter__input">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--add counter_add">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="remove_item">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
-                                        </svg>
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" Богдан
+                                                        Хомутов, [25.11.20 17:02] xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cart__order_item">
-                                <div class="order__inner">
-                                    <div class="order__photo">
-                                        <img src="img/product1.png">
-                                    </div>
-                                    <div class="order__info">
-                                        <div class="order__info__left">
-                                            <div class="order__title">
-                                                Lavazza Crema & Aroma
-                                            </div>
-                                            <div class="order__price">
-                                                ₴325
-                                            </div>
-                                        </div>
-                                        <div class="counter">
-                                            <div class="counter__inner">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--subtract counter_subtract">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                                <input type="number" min="1" value="1" class="counter__input">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--add counter_add">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="remove_item">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
-                                        </svg>
+                        </li>
+                        <li class="step">
+                            <div class="cart__step" data-step="2">Шаг 2. Оформление товара</div>
+                            <div class="step-content">
+                                <div class="form-buy">
+                                    <div class="form-buy__inner">
+                                        <span class="popup__errors"></span>
+                                        <input type="text" name="name" id="name"
+                                            class="popup_opt_price__input popup_opt_price__input--name"
+                                            placeholder="ФИО*" required="">
+                                        <input type="text" name="company-name" id="company-name"
+                                            class="popup_opt_price__input popup_opt_price__input--company"
+                                            placeholder="Название компании*" required="">
+                                        <input type="tel" name="telephone" id="tel"
+                                            class="popup_opt_price__input popup_opt_price__input--tel"
+                                            placeholder="Телефон*" required="">
+                                        <input type="email" name="email" id="email"
+                                            class="popup_opt_price__input popup_opt_price__input--email"
+                                            placeholder="Email">
                                     </div>
                                 </div>
                             </div>
-                            <div class="cart__order_item">
-                                <div class="order__inner">
-                                    <div class="order__photo">
-                                        <img src="img/product1.png">
-                                    </div>
-                                    <div class="order__info">
-                                        <div class="order__info__left">
-                                            <div class="order__title">
-                                                Lavazza Crema & Aroma
-                                            </div>
-                                            <div class="order__price">
-                                                ₴325
-                                            </div>
-                                        </div>
-                                        <div class="counter">
-                                            <div class="counter__inner">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--subtract counter_subtract">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                                <input type="number" min="1" value="1" class="counter__input">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--add counter_add">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="remove_item">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart__order_item">
-                                <div class="order__inner">
-                                    <div class="order__photo">
-                                        <img src="img/product1.png">
-                                    </div>
-                                    <div class="order__info">
-                                        <div class="order__info__left">
-                                            <div class="order__title">
-                                                Lavazza Crema & Aroma
-                                            </div>
-                                            <div class="order__price">
-                                                ₴325
-                                            </div>
-                                        </div>
-                                        <div class="counter">
-                                            <div class="counter__inner">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--subtract counter_subtract">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                                <input type="number" min="1" value="1" class="counter__input">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--add counter_add">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="remove_item">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart__order_item">
-                                <div class="order__inner">
-                                    <div class="order__photo">
-                                        <img src="img/product1.png">
-                                    </div>
-                                    <div class="order__info">
-                                        <div class="order__info__left">
-                                            <div class="order__title">
-                                                Lavazza Crema & Aroma
-                                            </div>
-                                            <div class="order__price">
-                                                ₴325
-                                            </div>
-                                        </div>
-                                        <div class="counter">
-                                            <div class="counter__inner">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--subtract counter_subtract">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                                <input type="number" min="1" value="1" class="counter__input">
-                                                <button type="button"
-                                                    class="counter__btn counter__btn--add counter_add">
-                                                    <i class="counter__btn_icon">
-                                                        <svg class="counter__btn_svg" width="10" height="10"
-                                                            viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 4H10V6H0V4Z"></path>
-                                                            <path d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="remove_item">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/icons/icons.svg#cart-close"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="cart__footer">
                     <div class="cart__total__container">
                         <p class="cart__total">₴26 350</p>
                     </div>
                     <div class="cart__submit__container">
-                        <a href="" class="cart__submit" type="submit">Оформить заказ</a>
+                        <button type="button" class="cart__submit">Далее</button>
                     </div>
                 </div>
             </div>

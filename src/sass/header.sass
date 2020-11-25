@@ -158,7 +158,7 @@ header
     justify-content: space-between
     transform: translateX(-100%)
     transition: transform .6s
-    width: 370px
+    width: 315px
     height: 100%
     background: #fff
     will-change: transform
@@ -172,6 +172,7 @@ header
     justify-content: space-between
     align-items: center
     padding: 0 50px
+    background: #fff
     @media (max-width: 1366px)
         min-height: 70px
 .menu-toggle__title
@@ -181,12 +182,13 @@ header
     cursor: pointer
 .menu-toggle__body
     padding-left: 50px
-    margin-top: 45px
+    padding-top: 45px
     height: 100%
+    background: #fff
 .nav-toggle
     cursor: pointer
 .nav-toggle__item
-    margin-bottom: 45px
+    padding: 22px 0px
     font-size: 18px
     @media (max-width: 1366px)
         margin-bottom: 20px
@@ -205,11 +207,41 @@ header
         & a
             &::after
                 content: none
-
+    &:hover
+        & .drop-nav-toggle__item
+            opacity: 1
+            visibility: visible
+            pointer-events: auto
+            transform: translate(225px, 0px)
+            & .drop__inner
+                transform: translate(10px, 0px)
+.drop-nav-toggle__item
+    position: absolute
+    height: 100%
+    width: 225px
+    background: #fff
+    top: 0
+    right: 0
+    padding-top: 208px
+    opacity: 0
+    visibility: hidden
+    pointer-events: none
+    transition: all .4s
+    z-index: -1
+.drop__inner
+    transform: translate(-80px, 0px)
+    transition: transform .9s
+    & a
+        display: block
+        padding: 22px 0px
+        color: #7D7D7D
+        &::after
+            content: none
 .menu-toggle__footer
     color: #828282
     padding: 0 50px
     padding-bottom: 50px
+    background: #fff
 .toggle-footer__item
     line-height: 25px
 /** Cart inner **/
@@ -275,7 +307,7 @@ header
 .cart__order_list
     display: flex
     flex-direction: column
-    overflow: hidden
+    overflow: auto
     padding: 0 50px
     @media (max-width: 550px)
         padding: 0 10px
@@ -290,10 +322,15 @@ header
         border: none
     @media (max-width: 1366px)
         min-height: 150px
+.stepper
+    & .step.active
+        & .cart__step
+            color: #000
+            font-weight: 600
 .cart__steps
     display: flex
 .cart__step
-    width: 50%
+    width: 100%
     text-align: center
     height: 80px
     background: #FBFBFB
@@ -301,9 +338,6 @@ header
     border: 1px solid #E4E4E4
     color: #7D7D7D
     cursor: pointer
-    &.step--ative
-        color: #000
-        font-weight: 600
 .order__inner
     width: 100%
     display: flex
@@ -331,7 +365,7 @@ header
     padding-bottom: 10px
 .cart__footer
     background: #F6FAFD
-    min-height: 144px
+    height: 144px
     display: flex
     justify-content: space-between
     align-items: center
@@ -355,6 +389,11 @@ header
         color: #000000
         @media (max-width: 550px)
             font-size: 14px
+.cart__order
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
 .cart__submit__container
     width: 50%
     height: 100%
@@ -376,13 +415,20 @@ header
     display: flex
     justify-content: center
     align-items: center
+    border: none
+    border-top: 1px solid #e4e4e4
     &:hover
         /** background: #D61258 **/
     @media (max-width: 550px)
-        height: 30px
-        line-height: 30px
-        width: 120px
         font-size: 12px
+.form-buy
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+.form-buy__inner
+    overflow: auto
+    padding: 0 60px
 .remove_item
     width: 30px
     height: 30px
