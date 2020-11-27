@@ -1,0 +1,57 @@
+.catalog__inner
+    display: flex
+.left-sidebar
+    min-width: 363px
+    height: 100%
+    background: #fbfbfb
+    padding-left: 60px
+.breadcrumb
+    background: 0 0
+    display: flex
+    flex-wrap: wrap
+    padding: 0
+    list-style: none
+    margin: 22px 0
+.breadcrumb-item
+    color: #555555
+.breadcrumb-item.active a
+    color: #A8A8A8
+.breadcrumb-item+.breadcrumb-item::before
+    display: inline-block
+    padding: 0 1rem
+    color: #A8A8A8
+    content: ''
+    background-image: url(../img/svg/arrow-back.svg)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    height: 10px
+    width: 5px
+.catalog__main
+    width: 100%
+    padding: 0 60px
+.catalog__top__line
+    display: flex
+    justify-content: space-between
+.settings__inner
+    display: flex
+.settings__sort
+    font-size: 14px
+    display: flex
+    color: #A0A0A0
+.settings__showing
+    display: flex
+    margin-left: 80px
+    font-size: 14px
+    color: #A0A0A0
+.catalog__body
+    margin-top: 60px
+.catalog__products
+    margin-top: 79px
+.catalog__list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin: 0 -40px
+    & .product__item
+        margin: 15px 40px

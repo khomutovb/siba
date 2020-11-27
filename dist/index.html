@@ -13,7 +13,7 @@
     <title>Siba</title>
 </head>
 
-<body>
+<body class="home-page">
     <header class="header" id="header">
     <div class="header__inner">
         <div class="header__inner__left">
@@ -125,8 +125,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav-toggle__item"><a href="">Ингредиенты</a></div>
-                <div class="nav-toggle__item"><a href="">Запчасти и ремонт</a></div>
+                <div class="nav-toggle__item">
+                    <a href="">Ингредиенты</a>
+                    <div class="drop-nav-toggle__item">
+                        <div class="drop__inner">
+                            <a href="">Кофе в зернах</a>
+                            <a href="">Кофе молотый</a>
+                            <a href="">Кофе в капсулах</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-toggle__item">
+                    <a href="">Запчасти и ремонт</a>
+                    <div class="drop-nav-toggle__item">
+                        <div class="drop__inner">
+                            <a href="">Кофе в зернах</a>
+                            <a href="">Кофе молотый</a>
+                            <a href="">Кофе в капсулах</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav-toggle__item"><a href="">О нас</a></div>
                 <div class="nav-toggle__item"><a href="">Контакты</a></div>
             </nav>
@@ -443,25 +461,25 @@
         </div>
         <div class="home-slider__itemTxt">
             <div class="home-slider__content">
-                <p class="home-slider__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem?</p>
+                <p class="home-slider__title">Оптовые продажи кофе и товаров для вендинга</p>
                 <a href="" class="home_slider__btn">
-                    Lorem ipsum dolor sit.
+                    Подробнее о товаре
                 </a>
             </div>
         </div>
         <div class="home-slider__itemTxt">
             <div class="home-slider__content">
-                <p class="home-slider__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum iusto velit dolore magni eveniet! Sint?</p>
+                <p class="home-slider__title">Оптовые продажи кофе и товаров для вендинга</p>
                 <a href="" class="home_slider__btn">
-                    Lorem ipsum dolor sit.
+                    Подробнее о товаре
                 </a>
             </div>
         </div>
         <div class="home-slider__itemTxt">
             <div class="home-slider__content">
-                <p class="home-slider__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="home-slider__title">Оптовые продажи кофе и товаров для вендинга</p>
                 <a href="" class="home_slider__btn">
-                    Lorem ipsum dolor, sit amet consectetur.
+                    Подробнее о товаре
                 </a>
             </div>
         </div>
@@ -567,8 +585,8 @@
                 </div>
             </div>
             <div class="product__item">
-                <div class="product__label">
-                    <div class="product__label_item label__top"></div>
+                <div class="product__label label__top">
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -596,8 +614,8 @@
                 </div>
             </div>
             <div class="product__item">
-                <div class="product__label">
-                    <div class="product__label_item label__sale"></div>
+                <div class="product__label label__sale">
+                    <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
                     <a href="">
@@ -615,12 +633,10 @@
                 </div>
                 <div class="product__price_container">
                     <div class="product__price">
-                        <p class="product__cost">
-                            <span class="product__cost__sale">
-                                ₴188 </span>
-                            <span class="product__cost__price">
-                                ₴188 </span>
-                        </p>
+                        <p class="product__cost__sale">₴222</p>
+                    </div>
+                    <div class="product__price">
+                        <p class="product__cost__price">₴188</p>
                     </div>
                     <button class="product__buy">
                         <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -878,83 +894,6 @@
         </div>
     </div>
 </section>
-        <!-- Modal callback-->
-<div class="modal fade" id="popup_callback" tabindex="-1" role="dialog" aria-labelledby="popup_callback"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
-                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
-                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
-                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
-                    autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="tel" name="telephone" id="tel" class="popup_callback__input popup_callback__input--tel"
-                        placeholder="Телефон*" required="">
-                    <button type="submit" class="popup_callback__submit">
-                        Отправить заявку </button>
-                </form>
-            </div>
-            <div class="modal-body__coffe coffe1">
-                <img src="img/zerno1.png" alt="Coffe">
-            </div>
-            <div class="modal-body__coffe coffe2">
-                <img src="img/zerno2.png" alt="Coffe">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal opt_price-->
-<div class="modal fade" id="popup_opt_price" tabindex="-1" role="dialog" aria-labelledby="popup_opt_price"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
-                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
-                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
-                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post" class="popup_opt_price__form" name="callback" id="callback"
-                    autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="text" name="name" id="name" class="popup_opt_price__input popup_opt_price__input--name"
-                        placeholder="ФИО*" required="">
-                    <input type="text" name="company-name" id="company-name"
-                        class="popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
-                        required="">
-                    <input type="tel" name="telephone" id="tel"
-                        class="popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
-                    <input type="email" name="email" id="email"
-                        class="popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
-                    <button type="submit" class="popup_opt_price__submit">
-                        Отправить заявку </button>
-                </form>
-            </div>
-            <div class="modal-body__coffe coffe1">
-                <img src="img/zerno1.png" alt="Coffe">
-            </div>
-            <div class="modal-body__coffe coffe2">
-                <img src="img/zerno2.png" alt="Coffe">
-            </div>
-        </div>
-    </div>
-</div>
         <section class="counter-animation" id="counter-animation">
     <div class="counter-animation__inner">
         <div class="counter-animation__item">
@@ -1222,10 +1161,12 @@
                 <input id="name" class="subscribe__input subscribe__input--name" type="name" name="name"
                     placeholder="Имя*" autocomplete="off" required="">
                 <input id="email" class="subscribe__input subscribe__input--email" type="email" name="email"
-                    placeholder="Электронная почта" autocomplete="off" required="">
-                <input id="massage" class="subscribe__input subscribe__input--massage" type="massage" name="massage"
-                    placeholder="Сообщение*" autocomplete="off" required="">
-                <button class="subscribe_button" type="submit">Отправить</button>
+                    placeholder="Email*" autocomplete="off" required="">
+                <div class="subscribe__input__container__right">
+                    <input id="massage" class="subscribe__input subscribe__input--massage" type="massage" name="massage"
+                        placeholder="Сообщение*" autocomplete="off" required="">
+                    <button class="subscribe_button" type="submit">Отправить</button>
+                </div>
             </div>
             <span class="subscribe_error_block"></span>
         </form>
@@ -1250,6 +1191,83 @@
         </div>
     </div>
 </section>
+        <!-- Modal callback-->
+<div class="modal fade" id="popup_callback" tabindex="-1" role="dialog" aria-labelledby="popup_callback"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
+                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
+                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
+                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
+                    autocomplete="off">
+                    <span class="popup__errors"></span>
+                    <input type="tel" name="telephone" id="tel" class="popup_callback__input popup_callback__input--tel"
+                        placeholder="Телефон*" required="">
+                    <button type="submit" class="popup_callback__submit">
+                        Отправить заявку </button>
+                </form>
+            </div>
+            <div class="modal-body__coffe coffe1">
+                <img src="img/zerno1.png" alt="Coffe">
+            </div>
+            <div class="modal-body__coffe coffe2">
+                <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal opt_price-->
+<div class="modal fade" id="popup_opt_price" tabindex="-1" role="dialog" aria-labelledby="popup_opt_price"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Закажи обратный звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
+                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
+                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
+                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="popup_opt_price__form" name="callback" id="callback"
+                    autocomplete="off">
+                    <span class="popup__errors"></span>
+                    <input type="text" name="name" id="name" class="popup_opt_price__input popup_opt_price__input--name"
+                        placeholder="ФИО*" required="">
+                    <input type="text" name="company-name" id="company-name"
+                        class="popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
+                        required="">
+                    <input type="tel" name="telephone" id="tel"
+                        class="popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
+                    <input type="email" name="email" id="email"
+                        class="popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
+                    <button type="submit" class="popup_opt_price__submit">
+                        Отправить заявку </button>
+                </form>
+            </div>
+            <div class="modal-body__coffe coffe1">
+                <img src="img/zerno1.png" alt="Coffe">
+            </div>
+            <div class="modal-body__coffe coffe2">
+                <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <footer class="footer" id="footer">
     <div class="footer__inner">

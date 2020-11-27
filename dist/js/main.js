@@ -125,10 +125,10 @@ $(document).ready(function () {
                 }
             },
             {
-                breakpoint: 700,
+                breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
                 }
             },
             {
@@ -158,27 +158,12 @@ $(document).ready(function () {
                 }
             },
             {
-                breakpoint: 1200,
+                breakpoint: 768,
                 settings: {
-                    dots: false,
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
                 }
             },
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 550,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            }
         ]
     });
     $(".home-review .home-review__slider .home-review__list").slick({
@@ -189,6 +174,30 @@ $(document).ready(function () {
         nextArrow: '.home-review .next_arrow',
         prevArrow: '.home-review .previous_arrow',
         focusOnSelect: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    dots: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    variableWidth: true,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     });
 });
 /*!
@@ -205,7 +214,6 @@ $(".popup_opt_price__input.popup_opt_price__input--tel").inputmask("+38(999)999-
 $(document).ready(function () {
     $('.stepper').activateStepper();
 })
-
 function validateStepOne() {
     // Extract the checked checkboxes from the first step
     if ($('.step').first().find('input[type="checkbox"]:checked').length)
@@ -244,14 +252,14 @@ var firstStep = $('.step').first();
 var lastStep = $('.step').last();
 firstStep.click(function () {
     setTimeout(function () {
-        $(".cart__submit").attr('type','button')
+        $(".cart__submit").attr('type', 'button')
         $(".cart__submit").text("Далее")
     }, 100);
 })
 lastStep.click(function () {
     setTimeout(function () {
         $(".cart__submit").removeAttr("type")
-            $(".cart__submit").text("Оформить заказ")
+        $(".cart__submit").text("Оформить заказ")
     }, 100);
 })
 

@@ -8,6 +8,8 @@ footer
         top: 69px
     @media (max-width: 992px)
         top: 50px
+    @media (max-width: 576px)
+        height: auto
 .footer__inner
     background: #0057b8
     display: -ms-flexbox
@@ -26,10 +28,20 @@ footer
     display: flex
     justify-content: space-between
     width: 100%
+    @media (max-width: 576px)
+        flex-direction: column
 .footer__left__info
     display: flex
+    @media (max-width: 576px)
+        flex-direction: column
+        margin-top: 30px
 .footer__link
     margin-left: 204px
+    @media (max-width: 992px)
+        margin-left: 50px
+    @media (max-width: 576px)
+        margin-left: 0px
+        margin: 37px 0
     & a
         margin: 5px 0
         color: #fff
@@ -47,3 +59,9 @@ footer
     border-top: 1px solid #2771C4
     padding-top: 29px
     margin-top: 70px
+    padding-bottom: 29px
+    @media (max-width: 576px)
+        margin-top: 40px
+        flex-direction: column
+.footer__copyright
+    margin-bottom: 10px

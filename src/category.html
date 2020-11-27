@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <title>Siba</title>
+</head>
+
+<body class="category-page">
+    //include('_header.html')
+    <main class="main">
+        <div class="catalog">
+            <div class="catalog__inner">
+                <div class="left-sidebar">
+                    Фільтр товаров
+                </div>
+                <div class="catalog__main">
+                    <div class="catalog__header">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active"><a href="#">Главная</a></li>
+                                <li class="breadcrumb-item active prev"><a href="#">Каталог</a></li>
+                                <li class="breadcrumb-item">Оптовые продажи кофе</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="catalog__body">
+                        <div class="catalog__top__line">
+                            <h3 class="section__title">Оптовые продажи кофе</h3>
+                            <div class="settings">
+                                <div class="settings__inner">
+                                    <div class="settings__sort">
+                                        <p class="settings__sort_title">Сортировать:</p>
+                                        <div class="select_wrap">
+                                            <div class="settings__showing_select_arrow2"></div>
+                                            <select name="settings_sort" id="settings_sort"
+                                                class="settings__sort_select">
+                                                <option value="">По популярности</option>
+                                                <option value="">Новый товар</option>
+                                                <option value="" selected="selected">По возрастанию цены</option>
+                                                <option value="">По убыванию цены</option>
+                                                <option value="">Акционные</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="settings__showing">
+                                        <p class="settings__showing_title">Показывать по:</p>
+                                        <div class="select_wrap">
+                                            <div class="settings__showing_select_arrow1"></div>
+                                            <select name="settings_showing" id="settings_showing"
+                                                class="settings__showing_select">
+                                                <option value="" selected="selected">16 шт.</option>
+                                                <option value="">32 шт.</option>
+                                                <option value="">64 шт.</option>
+                                                <option value="">128 шт.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__products">
+                            <div class="catalog__list">
+                                <div class="product__item">
+                                    <div class="product__label label__unavailable">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product1.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Pronto Crema</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product1.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Pronto Crema</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product1.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Pronto Crema</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label label__top">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product2.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Crema & Aroma</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label label__sale">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product3.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost__sale">₴222</p>
+                                        </div>
+                                        <div class="product__price">
+                                            <p class="product__cost__price">₴188</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product4.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Boasi Gran Caffe (молотый)</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product5.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Covim Gran Bar</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label label__discontinued">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product6.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Pronto Crema</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product3.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__label">
+                                        <div class="product__label_item"></div>
+                                    </div>
+                                    <div class="photo-product-wrapper">
+                                        <a href="">
+                                            <img src="img/product3.png" alt="Tovar">
+                                        </a>
+                                    </div>
+                                    <div class="info-product-wrapper">
+                                        <a href="" class="product__title">Lavazza Bourbon Intenso Vending</a>
+                                        <a href="" class="category__title" title="">Кофе Lavazza</a>
+                                        <div class="info-product-more">
+                                            <a href="" class="product__more-info">О товаре</a>
+                                            <button class="product__more-info" type="button" data-toggle="modal"
+                                                data-target="#popup_opt_price">Узнать оптовые цены</button>
+                                        </div>
+                                    </div>
+                                    <div class="product__price_container">
+                                        <div class="product__price">
+                                            <p class="product__cost">₴222</p>
+                                        </div>
+                                        <button class="product__buy">
+                                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/icons/icons.svg#cart"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    //include('_modal.html')
+    //include('_footer.html')
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>

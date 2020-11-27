@@ -26,10 +26,13 @@
         @media (max-width: 1200px)
             margin-left: 40px
             max-width: 200px
+        @media (max-width: 768px)
+            margin-left: 20px
         @media (max-width: 576px)
             position: relative
             max-width: 100%
             margin: auto
+            margin: 26px 15px
     & .home-slider__title
         font-size: 36px
         font-family: Montserrat-SemiBold
@@ -62,7 +65,7 @@
         @media (max-width: 576px)
             width: 100%
             background: #BACCFA
-            margin-top: 0px
+            margin-top: 26px
     & .slick-list
         height: 100%
     & .slick-track
@@ -76,7 +79,7 @@
     @media (max-width: 720px)
         height: calc(100vh - 50px)
     @media (max-width: 576px)
-        height: calc(100vh - 250px)
+        height: calc(100vh - 285px)
     & .home-slider__item
         display: flex
         flex-direction: column
@@ -128,6 +131,8 @@
         width: initial
         @media (max-width: 1200px)
             top: initial
+        @media (max-width: 576px)
+            bottom: 0
     & .slick-prev
         left: 60px
         z-index: 1
@@ -173,13 +178,15 @@
         bottom: 20px
     @media (max-width: 768px)
         left: 15px
+    @media (max-width: 576px)
+        display: none
 /** Section offers **/
 section
     padding: 20px 60px
     @media (max-width: 1366px)
         padding: 0 40px
     @media (max-width: 768px)
-        padding: 0 20px
+        padding: 0 15px
 .section__title
     font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
     font-weight: 400
@@ -187,9 +194,19 @@ section.offers
     padding: 115px 60px
     @media (max-width: 1366px)
         padding: 115px 40px
+    @media (max-width: 992px)
+        padding: 54px 40px
+    @media (max-width: 768px)
+        padding: 54px 20px
+    @media (max-width: 660px)
+        padding-right: 0
+        padding-left: 0
 .offers__title
     font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
     text-align: center
+    @media (max-width: 660px)
+        padding-right: 15px
+        padding-left: 15px
 .offers__description
     text-align: center
     max-width: 540px
@@ -197,10 +214,29 @@ section.offers
     margin-top: 53px
     font-size: 14px
     line-height: 27px
+    @media (max-width: 660px)
+        padding-right: 15px
+        padding-left: 15px
+    @media (max-width: 576px)
+        margin-top: 40px
 .offers__product
-    margin-top: 236px
+    padding-top: 236px
     width: 100%
     display: flex
+    @media (max-width: 992px)
+        padding-top: 135px
+    @media (max-width: 660px)
+        overflow-x: scroll
+        &::before
+            content: "."
+            color: transparent
+            min-width: 15px
+        &::after
+            content: "."
+            color: transparent
+            min-width: 15px
+    @media (max-width: 576px)
+        padding-top: 120px
 .offers__item
     position: relative
     display: flex
@@ -213,6 +249,13 @@ section.offers
     transition: background .4s
     @media (max-width: 1366px)
         height: 190px
+    @media (max-width: 992px)
+        height: 211px
+    @media (max-width: 660px)
+        min-width: 300px
+    @media (max-width: 576px)
+        min-width: 184px
+        height: 238px
     &:nth-child(1)
         background: #FCF2F2
         & .offers__item__img
@@ -250,6 +293,9 @@ section.offers
                 left: -45px
             & img
                 max-height: 100%
+        @media (max-width: 992px)
+            &::after
+                display: none
     & .offers__item__content
         margin-bottom: 64px
         transition: height .4s linear
@@ -260,6 +306,14 @@ section.offers
             text-align: center
             transition: transform .4s, opacity .4s
             pointer-events: none
+            @media (max-width: 1366px)
+                font-size: 16px
+            @media (max-width: 992px)
+                font-size: 14px
+        @media (max-width: 1366px)
+            margin-bottom: 50px
+        @media (max-width: 992px)
+            margin-bottom: 100px
     & .offer__btn
         position: absolute
         border: 1px solid #000
@@ -278,20 +332,29 @@ section.offers
         bottom: 64px
         opacity: 0
         pointer-events: none
-    &:hover
-        & .offers__item__img
-            transform: translateY(-50px)
-            &::after
-                opacity: 1
-        & .offers__item__content
-            height: auto
-            & p
-                transform: translateY(-100px)
-                opacity: 0
-        & .offer__btn
-            transform: translateY(0px)
+        @media (max-width: 992px)
+            font-size: 14px
+            width: 135px
+            min-width: 135px
+            bottom: 110px
+            padding: 14px 24px
             opacity: 1
-            pointer-events: initial
+            pointer-events: auto
+    @media (min-width: 992px)
+        &:hover
+            & .offers__item__img
+                transform: translateY(-50px)
+                &::after
+                    opacity: 1
+            & .offers__item__content
+                height: auto
+                & p
+                    transform: translateY(-100px)
+                    opacity: 0
+            & .offer__btn
+                transform: translateY(0px)
+                opacity: 1
+                pointer-events: initial
 /** Section product **/
 .section__title
     @media (max-width: 550px)
@@ -313,14 +376,14 @@ section.offers
     justify-content: space-between
     margin: 0 -60px
     @media (max-width: 1400px)
-        margin: 0 -20px
+        margin: 0 -15px
 .product__item
     padding: 15px 0px
     position: relative
     width: 200px
     margin: 0 60px
     @media (max-width: 1400px)
-        margin: 0 20px
+        margin: 0 15px
     &:hover
         & .photo-product-wrapper
             filter: blur(6px)
@@ -344,27 +407,82 @@ section.offers
     transform: rotate(-90deg)
     width: 43px
     height: 22px
-    & .product__label_item
+    &::before
+        display: block
+        text-align: center
+        width: 43px
+        padding: 4px
+        color: #fff
+        font-weight: 700
+        font-size: 12px
+    &.label__new
         &::before
-            display: block
-            text-align: center
-            width: 43px
-            padding: 4px
-            color: #fff
-            font-weight: 700
-            font-size: 12px
-        &.label__new
+            content: "NEW"
+            background: #13AC35
+    &.label__top
+        &::before
+            content: "TOP"
+            background: #0079FF
+    &.label__sale
+        &::before
+            content: "SALE"
+            background: #EB0E0E
+    &.label__discontinued
+        transform: rotate(0)
+        width: 100%
+        top: 0
+        bottom: 0
+        margin: auto
+        height: 100%
+        background: rgba(255, 255, 255,0.6)
+        &::before
+            content: "Снят с производства"
+            background: #000
+            width: 146px
+            margin: auto
+            margin-top: 90px
+            padding: 13px
+        & + .photo-product-wrapper
+            filter: none
+            filter: grayscale(1)
             &::before
-                content: "NEW"
-                background: #13AC35
-        &.label__top
+                display: none
+            & + .info-product-wrapper
+                transform: none
+                & .info-product-more
+                    opacity: 0
+                    display: none
+                & + .product__price_container
+                    & .product__cost
+                        color: #989898
+    &.label__unavailable
+        transform: rotate(0)
+        width: 100%
+        top: 0
+        bottom: 0
+        margin: auto
+        height: 100%
+        background: rgba(255, 255, 255,0.6)
+        &::before
+            content: "Нет в наличии"
+            background: #0057B8
+            width: 146px
+            margin: auto
+            margin-top: 90px
+            padding: 13px
+        & + .photo-product-wrapper
+            filter: none
+            filter: grayscale(1)
             &::before
-                content: "TOP"
-                background: #0079FF
-        &.label__sale
-            &::before
-                content: "SALE"
-                background: #EB0E0E
+                display: none
+            & + .info-product-wrapper
+                transform: none
+                & .info-product-more
+                    opacity: 0
+                    display: none
+                & + .product__price_container
+                    & .product__cost
+                        color: #989898
 .photo-product-wrapper
     position: relative
     text-align: center
@@ -410,6 +528,8 @@ section.offers
     @media (max-width: 1600px)
         font-size: 12px
 .product__price_container
+    position: relative
+    z-index: 4
     display: flex
     justify-content: space-between
     align-items: center
@@ -425,8 +545,15 @@ section.offers
     line-height: 17px
     text-decoration-line: line-through
     color: #808080
-    margin-left: 25px
     font-size: 14px
+    @media (max-width:576px)
+        font-size: 12px
+        margin-left: 5px
+.product__buy
+    @media (max-width:576px)
+        & svg
+            width: 20px
+            height: 18px
 .slider__arrow div
     width: 40px
     height: 40px
@@ -447,26 +574,66 @@ section.offers
     width: 100%
     height: 100%
     padding: 126px 0 20px
+    @media (max-width: 1366px)
+        padding: 90px 0 20px
+    @media (max-width: 992px)
+        padding: 50px 0 20px
+    @media (max-width: 481px)
+        padding: 20px 0 20px
 .banner-home__inner
     width: 100%
     position: relative
     height: 596px
     background-image: url(../img/banner-section.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    @media (max-width: 1366px)
+        height: 422px
+    @media (max-width: 768px)
+        height: 256px
+    @media (max-width: 576px)
+        height: 180px
 .banner-home__coffe
     position: absolute
     right: 0
     top: -90px
+    @media (max-width: 1366px)
+        width: 190px
+        top: -65px
+    @media (max-width: 992px)
+        top: -30px
+    @media (max-width: 768px)
+        width: 15%
+    @media (max-width: 481px)
+        top: 0
 .banner-home__leaf
     position: absolute
     left: 0
     bottom: -130px
+    @media (max-width: 992px)
+        bottom: -40px
+        width: 200px
+        left: -25px
+    @media (max-width: 768px)
+        width: 20%
+    @media (max-width: 481px)
+        bottom: 0
 /** Section about us **/
 .about-us
     padding-top: 190px
+    @media (max-width: 1366px)
+        padding-top: 120px
+    @media (max-width: 992px)
+        padding-top: 70px
+    @media (max-width: 481px)
+        padding-top: 10px
 .about-us__line
     position: relative
     display: flex
     justify-content: flex-end
+    @media (max-width: 992px)
+        flex-direction: column
 .about-us__title
     width: 665px
     height: 191px
@@ -474,19 +641,42 @@ section.offers
     left: 172px
     top: -82px
     z-index: -1
+    @media (max-width: 1366px)
+        left: 60px
+    @media (max-width: 992px)
+        top: -50px
+        width: auto
+        max-width: 665px
 .about-us__first-description
     max-width: 621px
     margin-right: 82px
     font-size: 14px
     line-height: 27px
+    @media (max-width: 992px)
+        max-width: 100%
+    @media (max-width: 460px)
+        margin-right: 0
 .about-us__second-description
     max-width: 349px
     margin-right: 200px
     font-size: 14px
     line-height: 27px
+    @media (max-width: 1366px)
+        margin-right: 0
+    @media (max-width: 992px)
+        margin: auto
+        margin-right: 0
+        margin-top: 30px
+    @media (max-width: 460px)
+        margin: 0
+        margin-top: 30px
 .about-us__more-btn
     font-family: Montserrat-Bold
-    margin-top: 119px
+    margin-top: 100px
+    @media (max-width: 992px)
+        position: absolute
+    @media (max-width: 332px)
+        margin-top: 125px
     & a
         display: flex
         align-items: center
@@ -497,13 +687,65 @@ section.offers
 /** Section advantages **/
 section.advantages
     padding-top: 170px
+    @media (max-width: 720px)
+        padding-right: 0
+        padding-left: 0
+        padding-top: 125px
 .advantages__inner
     height: 100%
     width: 100%
     display: flex
     justify-content: space-between
+    @media (max-width: 720px)
+        overflow-x: scroll
+        &::before
+            content: "."
+            color: transparent
+            min-width: 15px
+        &::after
+            content: "."
+            color: transparent
+            min-width: 15px
 .advantages__item
     position: relative
+    & img
+        height: calc(100% - 4px)
+        object-fit: cover
+    @media (max-width: 1200px)
+        width: 100%
+        min-height: 438px
+        & img
+            width: 100%
+            height: auto
+        &:nth-child(1)
+            & img
+                height: 99%
+        &:nth-child(3)
+            & img
+                height: 50%
+    @media (max-width: 720px)
+        min-height: 200px
+        width: initial
+        &:nth-child(1)
+            display: none
+        &:nth-child(2)
+            display: flex
+        &:nth-child(3)
+            & img
+                display: none
+            & .advantages__item__abs__block
+                position: static
+        & .advantages__item__block
+            width: 246px
+            border: 1px solid #dfdfdf
+            height: initial
+            min-height: inherit
+            border-right: 0
+        & .advantages__item__abs__block
+            width: 246px
+            border: 1px solid #dfdfdf
+            height: initial
+            min-height: inherit
 .advantages__item__block
     width: 450px
     min-height: calc(50% - 2px)
@@ -536,10 +778,20 @@ section.advantages
         border-bottom: 1px solid #DFDFDF
         & .advantages__block__subtitle
             max-width: 265px
+        @media (max-width: 1366px)
+            & .advantages__block__subtitle
+                max-width: 205px
     & svg
         transition: fill .4s
         & path
             transition: fill .4s
+    @media (max-width: 1366px)
+        width: 320px
+        padding-left: 54px
+    @media (max-width: 1200px)
+        width: 100%
+    @media (max-width:992px)
+        padding-left: 30px
 .advantages__item__abs__block
     position: absolute
     left: 0
@@ -565,12 +817,28 @@ section.advantages
             fill: #fff
             & path
                 fill: #fff
+    @media (max-width: 1366px)
+        width: 320px
+        padding-left: 54px
+    @media (max-width: 1200px)
+        width: 100%
+        border-right: 1px solid #DFDFDF
+    @media (max-width: 992px)
+        padding-left: 30px
+        & svg
+            width: 30px
+            height: 30px
 .advantages__block__title
     font-family: Montserrat-Bold
     font-size: calc(16px + 8 * ((100vw - 320px)/ 1600))
     max-width: 120px
     margin-top: 41px
     transition: color .4s
+    @media (max-width: 1366px)
+        margin-top: 18px
+        font-size: 18px
+    @media (max-width: 992px)
+        font-size: 16px
 .advantages__block__subtitle
     font-size: 14px
     line-height: 24px
@@ -583,6 +851,8 @@ section.counter-animation
     padding: 0
     margin-top: 100px
     background: linear-gradient(73.49deg, #F0F7FF 12.45%, #FFF3EF 97.56%)
+    @media (max-width: 481px)
+        margin-top: 50px
 .counter-animation__inner
     width: 100%
     min-height: 354px
@@ -591,6 +861,24 @@ section.counter-animation
     max-width: 1581px
     margin: auto
     align-items: center
+    @media (max-width: 1581px)
+        padding: 0 60px
+    @media (max-width: 1366px)
+        padding: 0 40px
+    @media (max-width: 768px)
+        padding: 0 15px
+    @media (max-width: 660px)
+        flex-wrap: wrap
+        justify-content: space-between
+        margin: auto
+        max-width: 450px
+        margin: 0 30px
+        min-height: 260px
+        margin: auto
+        & .counter-animation__item
+            width: 50%
+            flex-basis: 50%
+            max-width: 35%
 .counter-animation__title
     font-family: Montserrat-Bold
     font-size: calc(30px + 30 * ((100vw - 320px)/ 1600))
@@ -598,25 +886,46 @@ section.counter-animation
     font-size: 18px
     line-height: 22px
     color: #606060
+    @media (max-width: 992px)
+        font-size: 14px
 .counter-animation__coffe
     position: absolute
     right: 0
     top: -100px
     pointer-events: none
+    @media (max-width: 720px)
+        width: 75px
+        top: -50px
 .counter-animation__leaf
     position: absolute
     left: 0
     bottom: -100px
     pointer-events: none
+    @media (max-width: 720px)
+        width: 100px
 /** Section brands **/
 section.brands
     padding-top: 112px
     & .section__top__line
         align-items: flex-start
+        @media (max-width: 660px)
+            align-items: center
+    @media (max-width: 481px)
+        padding-top: 80px
 .bradns__center__content
     width: 60%
     border-left: 1px solid #DFDFDF
     padding-left: 72px
+    @media (max-width: 992px)
+        width: 68%
+        padding-left: 36px
+    @media (max-width: 660px)
+        position: absolute
+        width: 100%
+        margin-top: 190px
+        padding-left: 15px
+        border: none
+        left: 0
 .bradns__title
     & p
         font-family: Montserrat-Bold
@@ -627,6 +936,8 @@ section.brands
         -webkit-text-stroke: 1px #C8C8C8
         max-width: 686px
         transition: all .4s
+        @media (max-width: 660px)
+            font-size: 28px
     &:hover
         & p
             color: #000
@@ -635,6 +946,8 @@ section.brands
         display: block
 .bradns__subtitle
     margin-top: 70px
+    @media (max-width: 1366px)
+        margin-top: 20px
     & p
         max-width: 184px
         font-size: 14px
@@ -645,36 +958,59 @@ section.brands
     margin: 0 -60px
     align-items: center
     @media (max-width: 1400px)
-        margin: 0 -20px
+        margin: 0 -15px
+    @media (max-width: 1366px)
+        padding-top: 92px
+    @media (max-width: 660px)
+        padding-top: 132px
 .brands__item
     padding: 15px 0px
     position: relative
     width: 200px
     margin: 0 60px
     @media (max-width: 1400px)
-        margin: 0 20px
+        margin: 0 15px
 /** Section home-review **/
 section.home-review
     padding-top: 100px
+    @media (max-width: 481px)
+        padding-top: 40px
 .home-review__inner
     padding-top: 94px
     border-top: 1px solid #DFDFDF
+    @media (max-width: 481px)
+        padding-top: 40px
 .home-review__list
     padding-top: 43px
     display: flex
     justify-content: space-between
     align-items: center
     margin: -2px
-.home-review__item
-    &:nth-child(2n)
-        .home-review__border
-            border-left: 0
-            border-right: 0
-    &:last-child
-        .home-review__border
-            border-right: 1px solid #DFDFDF
+    @media (max-width: 481px)
+        padding-top: 7px
+    & .slick-list.draggable
+        border: 1px solid  #DFDFDF
+        position: relative
+        &::before
+            content: url(../img/gradiet.png)
+            position: absolute
+            width: 30px
+            height: 100%
+            left: 0
+            z-index: 9
+            top: 0
+        &::after
+            content: url(../img/gradiet-right.png)
+            position: absolute
+            width: 30px
+            height: 100%
+            right: -6px
+            top: 0
 .home-review__border
-    border: 1px solid #DFDFDF
+    border-right: 1px solid  #DFDFDF
+.home-review__item
+    @media (max-width: 576px)
+        width: 247px
 .home-review__item__inner
     display: flex
     flex-direction: column
@@ -685,9 +1021,16 @@ section.home-review
     min-height: 433px
     max-width: 312px
     margin: auto
+    @media (max-width: 1600px)
+        max-width: 253px
+    @media (max-width: 992px)
+        max-width: 199px
 .home-review__header
     display: flex
     align-items: center
+.home-review__img
+    @media (max-width: 992px)
+        width: 50px
 .home-review__info
     padding-left: 22px
     font-size: 14px
@@ -699,12 +1042,14 @@ section.home-review
 .home-review__description
     color: #606060
     margin-top: 40px
+    font-size: 14px
+    line-height: 27px
 .home-review__rating
     display: inline-block
     font-size: 0
     & span
         padding: 0
-        font-size: 20px
+        font-size: 16px
         line-height: 1
         color: #D1D1D1
         &:before
@@ -713,12 +1058,19 @@ section.home-review
             color: #FF671F
 .home-review__footer
     margin-top: 58px
+    @media (max-width: 1366px)
+        margin-top: 27px
 /** Section subscribe **/
 section.subscribe
     width: 100%
     height: 344px
     margin-top: 100px
     background: linear-gradient(73.49deg, #F0F7FF 12.45%, #FFF3EF 97.56%)
+    @media (max-width: 768px)
+        height: auto
+        padding: 40px 15px
+    @media (max-width: 481px)
+        margin-top: 30px
 .subscribe__inner
     display: flex
     flex-direction: column
@@ -728,6 +1080,15 @@ section.subscribe
     display: flex
     justify-content: space-between
     margin: 0 -19px
+    @media (max-width: 768px)
+        flex-direction: column
+        margin: 0
+.subscribe__input__container__right
+    display: flex
+    width: 100%
+    align-items: center
+    @media (max-width: 481px)
+        flex-direction: column
 .subscribe__input
     width: 100%
     height: 70px
@@ -738,6 +1099,11 @@ section.subscribe
     color: #000000
     &::placeholder
         color: #000
+    @media (max-width:768px)
+        margin: 7px 0
+        width: 100%
+    @media (max-width: 481px)
+        height: 48px
 .subscribe_button
     background: #FF671F
     font-family: Montserrat-Bold
@@ -745,13 +1111,19 @@ section.subscribe
     width: 202px
     height: 70px
     line-height: 70px
-    margin-top: 15px
+    margin-left: 15px
+    @media (max-width: 481px)
+        width: 100%
+        margin-left: 0
+        margin-top: 7px
+        height: 48px
+        line-height: 48px
 .subscribe__input--name
     width: 25%
 .subscribe__input--email
     width: 25%
 .subscribe__input--massage
-    width: 55%
+    width: 80%
 /** Section seo-text **/
 .seo-text__inner
     min-height: 300px
@@ -762,3 +1134,4 @@ section.subscribe
 .seo-text__description
     color: #606060
     font-size: 14px
+    line-height: 24px

@@ -12,8 +12,12 @@
 @import "fonts"
 @import "header"
 @import "home"
+@import "catalog"
+
 @import "modal"
 @import "footer"
+
+
 
 @import "public_offer_agreement"
 @import "privacy_policy"
@@ -188,6 +192,8 @@ ul.stepper.horizontal .step
     -webkit-box-align: center
     align-items: center
     height: 84px !important
+    @media (max-width: 660px)
+        height: 52px !important
 
 ul.stepper>li:not(:last-of-type)
     margin-bottom: 10px
@@ -319,6 +325,9 @@ ul.stepper.horizontal .step-content
     overflow-y: auto
     overflow-x: hidden
     margin: 0
+    @media (max-width: 660px)
+        top: 50px
+        height: calc(100% - 50px)
 
 .card-content ul.stepper.horizontal .step-content
     padding-left: 40px
