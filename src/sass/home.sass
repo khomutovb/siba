@@ -76,7 +76,7 @@
     height: calc(100vh - 97px)
     @media (max-width: 1366px)
         height: calc(100vh - 69px)
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         height: calc(100vh - 50px)
     @media (max-width: 576px)
         height: calc(100vh - 285px)
@@ -357,15 +357,15 @@ section.offers
                 pointer-events: initial
 /** Section product **/
 .section__title
-    @media (max-width: 550px)
-        font-size: 14px
+    @media (max-width: 576px)
+        font-size: 16px
         width: 50%
 .section__top__line
     display: flex
     justify-content: space-between
     align-items: center
     padding-bottom: 50px
-    @media (max-width: 550px)
+    @media (max-width: 576px)
         padding-bottom: 33px
 .slider__arrow
     display: flex
@@ -386,7 +386,6 @@ section.offers
         margin: 0 15px
     &:hover
         & .photo-product-wrapper
-            filter: blur(6px)
             &::before
                 opacity: 1
         & .info-product-wrapper
@@ -396,7 +395,6 @@ section.offers
     @media (max-width: 992px)
         &:hover
             & .photo-product-wrapper
-                filter: none
                 &::before
                     display: none
             & .info-product-wrapper
@@ -408,6 +406,7 @@ section.offers
     width: 43px
     height: 22px
     &::before
+        content: attr(data-label)
         display: block
         text-align: center
         width: 43px
@@ -417,26 +416,24 @@ section.offers
         font-size: 12px
     &.label__new
         &::before
-            content: "NEW"
             background: #13AC35
+            text-transform: uppercase
     &.label__top
         &::before
-            content: "TOP"
             background: #0079FF
+            text-transform: uppercase
     &.label__sale
         &::before
-            content: "SALE"
             background: #EB0E0E
+            text-transform: uppercase
     &.label__discontinued
         transform: rotate(0)
         width: 100%
         top: 0
         bottom: 0
-        margin: auto
-        height: 100%
+        height: 50%
         background: rgba(255, 255, 255,0.6)
         &::before
-            content: "Снят с производства"
             background: #000
             width: 146px
             margin: auto
@@ -449,6 +446,10 @@ section.offers
                 display: none
             & + .info-product-wrapper
                 transform: none
+                & .product__title
+                    opacity: 0.5
+                & .category__title
+                    opacity: 0.5
                 & .info-product-more
                     opacity: 0
                     display: none
@@ -460,11 +461,9 @@ section.offers
         width: 100%
         top: 0
         bottom: 0
-        margin: auto
-        height: 100%
+        height: 50%
         background: rgba(255, 255, 255,0.6)
         &::before
-            content: "Нет в наличии"
             background: #0057B8
             width: 146px
             margin: auto
@@ -480,13 +479,9 @@ section.offers
                 & .info-product-more
                     opacity: 0
                     display: none
-                & + .product__price_container
-                    & .product__cost
-                        color: #989898
 .photo-product-wrapper
     position: relative
     text-align: center
-    transition: filter .4s
     &::before
         position: absolute
         width: 100%
@@ -499,10 +494,12 @@ section.offers
         opacity: 0
         transition: opacity .4s
 .info-product-wrapper
+    position: relative
+    z-index: 1
     text-align: center
     margin-top: 43px
     max-height: 70px
-    min-height: 70px
+    min-height: 77px
     transition: transform .4s
 .info-product-more
     margin-top: 19px
@@ -687,7 +684,7 @@ section.offers
 /** Section advantages **/
 section.advantages
     padding-top: 170px
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         padding-right: 0
         padding-left: 0
         padding-top: 125px
@@ -696,7 +693,7 @@ section.advantages
     width: 100%
     display: flex
     justify-content: space-between
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         overflow-x: scroll
         &::before
             content: "."
@@ -723,7 +720,7 @@ section.advantages
         &:nth-child(3)
             & img
                 height: 50%
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         min-height: 200px
         width: initial
         &:nth-child(1)
@@ -893,7 +890,7 @@ section.counter-animation
     right: 0
     top: -100px
     pointer-events: none
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         width: 75px
         top: -50px
 .counter-animation__leaf
@@ -901,7 +898,7 @@ section.counter-animation
     left: 0
     bottom: -100px
     pointer-events: none
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         width: 100px
 /** Section brands **/
 section.brands

@@ -104,6 +104,10 @@
             </div>
         </div>
         <div class="menu-toggle__body">
+            <div class="menu-toggle__btn">
+                <button class="menu-toggle__opt" data-toggle="modal" data-target="#popup_opt_price">Оптовый прайс</button>
+                <button class="menu-toggle__call" data-toggle="modal" data-target="#popup_callback">Заказать звонок</button>
+            </div>
             <nav class="nav-toggle">
                 <div class="nav-toggle__item">
                     <a href="">Кофе оптом</a>
@@ -169,7 +173,7 @@
                 </svg>
                 Продолжить покупки
             </div>
-            <div class="cart__title">
+            <div class="cart__title" data-orders="12">
                 <span>Корзина</span>
             </div>
         </div>
@@ -405,16 +409,16 @@
                                     <div class="form-buy__inner">
                                         <span class="popup__errors"></span>
                                         <input type="text" name="name" id="name"
-                                            class="popup_opt_price__input popup_opt_price__input--name"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--name"
                                             placeholder="ФИО*" required="">
                                         <input type="text" name="company-name" id="company-name"
-                                            class="popup_opt_price__input popup_opt_price__input--company"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--company"
                                             placeholder="Название компании*" required="">
                                         <input type="tel" name="telephone" id="tel"
-                                            class="popup_opt_price__input popup_opt_price__input--tel"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--tel"
                                             placeholder="Телефон*" required="">
                                         <input type="email" name="email" id="email"
-                                            class="popup_opt_price__input popup_opt_price__input--email"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--email"
                                             placeholder="Email">
                                     </div>
                                 </div>
@@ -585,7 +589,7 @@
                 </div>
             </div>
             <div class="product__item">
-                <div class="product__label label__top">
+                <div class="product__label label__top" data-label="Top">
                     <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
@@ -614,7 +618,7 @@
                 </div>
             </div>
             <div class="product__item">
-                <div class="product__label label__sale">
+                <div class="product__label label__sale" data-label="Sale">
                     <div class="product__label_item"></div>
                 </div>
                 <div class="photo-product-wrapper">
@@ -1158,12 +1162,12 @@
         </div>
         <form name="subscribe" action="" method="post" class="subscribe__form" id="subscribe">
             <div class="subscribe__input__container">
-                <input id="name" class="subscribe__input subscribe__input--name" type="name" name="name"
+                <input id="name" class="input-form subscribe__input subscribe__input--name" type="name" name="name"
                     placeholder="Имя*" autocomplete="off" required="">
-                <input id="email" class="subscribe__input subscribe__input--email" type="email" name="email"
+                <input id="email" class="input-form subscribe__input subscribe__input--email" type="email" name="email"
                     placeholder="Email*" autocomplete="off" required="">
                 <div class="subscribe__input__container__right">
-                    <input id="massage" class="subscribe__input subscribe__input--massage" type="massage" name="massage"
+                    <input id="massage" class="input-form subscribe__input subscribe__input--massage" type="massage" name="massage"
                         placeholder="Сообщение*" autocomplete="off" required="">
                     <button class="subscribe_button" type="submit">Отправить</button>
                 </div>
@@ -1211,9 +1215,9 @@
                 <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
                     autocomplete="off">
                     <span class="popup__errors"></span>
-                    <input type="tel" name="telephone" id="tel" class="popup_callback__input popup_callback__input--tel"
+                    <input type="tel" name="telephone" id="tel" class="input-form popup_callback__input popup_callback__input--tel"
                         placeholder="Телефон*" required="">
-                    <button type="submit" class="popup_callback__submit">
+                    <button type="submit" class="input-form__submit popup_callback__submit">
                         Отправить заявку </button>
                 </form>
             </div>
@@ -1246,17 +1250,56 @@
                 <form action="" method="post" class="popup_opt_price__form" name="callback" id="callback"
                     autocomplete="off">
                     <span class="popup__errors"></span>
-                    <input type="text" name="name" id="name" class="popup_opt_price__input popup_opt_price__input--name"
+                    <input type="text" name="name" id="name" class="input-form popup_opt_price__input popup_opt_price__input--name"
                         placeholder="ФИО*" required="">
                     <input type="text" name="company-name" id="company-name"
-                        class="popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
+                        class="input-form popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
                         required="">
                     <input type="tel" name="telephone" id="tel"
-                        class="popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
+                        class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
                     <input type="email" name="email" id="email"
-                        class="popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
-                    <button type="submit" class="popup_opt_price__submit">
+                        class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
+                    <button type="submit" class="input-form__submit popup_opt_price__submit">
                         Отправить заявку </button>
+                </form>
+            </div>
+            <div class="modal-body__coffe coffe1">
+                <img src="img/zerno1.png" alt="Coffe">
+            </div>
+            <div class="modal-body__coffe coffe2">
+                <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reminder popup -->
+<div class="modal fade" id="popup_reminder" tabindex="-1" role="dialog" aria-labelledby="popup_reminder"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Уведомить о поступлении товара</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.279785" y="1.12012" width="1.58392" height="27.7186"
+                            transform="rotate(-45 0.279785 1.12012)" fill="#C4C4C4" />
+                        <rect x="19.6001" y="0.279785" width="1.58392" height="27.7186"
+                            transform="rotate(45 19.6001 0.279785)" fill="#C4C4C4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="popup_reminder__form" name="callback" id="callback"
+                    autocomplete="off">
+                    <span class="popup__errors"></span>
+                    <input type="text" name="name" id="name" class="input-form popup_reminder__input popup_reminder__input--name"
+                        placeholder="Имя*" required="">
+                    <input type="email" name="email" id="email"
+                        class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email">
+                    <input type="tel" name="telephone" id="tel" class="popup_reminder__input popup_reminder__input--tel"
+                        placeholder="Телефон*" required="">
+                    <button type="submit" class="input-form__submit popup_reminder__submit">
+                        Сообщить мне на Email </button>
                 </form>
             </div>
             <div class="modal-body__coffe coffe1">

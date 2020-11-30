@@ -16,7 +16,7 @@ header
     justify-content: space-between
     @media (max-width: 1366px)
         height: 69px
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         height: 50px
 .header__inner__left
     display: flex
@@ -31,7 +31,7 @@ header
             display: none
         & .header__item:nth-child(2)
             display: none
-    @media (max-width:720px)
+    @media (max-width:768px)
         & .header__item:nth-child(3)
             display: none
     @media (max-width:576px)
@@ -46,7 +46,7 @@ header
     justify-content: center
     font-size: 14px
     @media (max-width: 1600px)
-        padding: 0 22px
+        padding: 0 18px
     @media (max-width: 1200px)
         font-size: 12px
     @media (max-width: 576px)
@@ -62,7 +62,7 @@ header
     @media (max-width: 1366px)
         padding: 0
         width: 113px
-    @media (max-width: 720px)
+    @media (max-width: 768px)
         width: 50px
         & span
             display: none
@@ -77,11 +77,11 @@ header
         line-height: 97px
         @media (max-width: 1366px)
             line-height: 69px
-        @media (max-width: 720px)
+        @media (max-width: 768px)
             line-height: 50px
     & svg
         vertical-align: middle
-        @media (max-width: 720px)
+        @media (max-width: 768px)
             height: 30px
     @media (max-width: 1366px)
         width: 196px
@@ -166,6 +166,8 @@ header
     will-change: transform
     &.active
         transform: translateX(0)
+    @media (max-width: 1024px)
+        overflow: auto
     @media (max-width: 660px)
         width: 100%
         overflow: auto
@@ -177,7 +179,7 @@ header
     padding: 0 50px
     background: #fff
     @media (max-width: 1366px)
-        min-height: 70px
+        min-height: 77px
     @media (max-width: 660px)
         padding: 0 30px
 .menu-toggle__title
@@ -192,16 +194,35 @@ header
             width: 11px
             height: 11px
 .menu-toggle__body
-    padding-left: 50px
+    padding: 0 60px
     padding-top: 45px
     height: 100%
     background: #fff
     @media (max-width: 660px)
-        padding-left: 30px
+        padding: 0 30px
         padding-top: 0
         height: auto
+.menu-toggle__btn
+    border-bottom: 1px solid #E4E4E4
+    padding-bottom: 8px
+    @media (min-width: 769px)
+        display: none
+    & button
+        display: block
+        padding: 0
+        font-size: 14px
+        margin-bottom: 22px
+    & .menu-toggle__opt
+        display: none
+        @media (max-width: 768px)
+            display: block
+    & .menu-toggle__call
+        display: none
+        @media (max-width: 576px)
+            display: block
 .nav-toggle
     cursor: pointer
+    padding-top: 20px
     @media (max-width: 660px)
         cursor: initial
 .nav-toggle__item
@@ -209,7 +230,7 @@ header
     font-size: 18px
     @media (max-width: 1366px)
         font-size: 16px
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         padding: 10px 0px
         & a
             font-size: 14px
@@ -229,7 +250,7 @@ header
         & a
             &::after
                 content: none
-    @media (min-width: 660px)
+    @media (min-width: 1024px)
         &:hover
             & .drop-nav-toggle__item
                 opacity: 1
@@ -253,7 +274,7 @@ header
     z-index: -1
     @media (max-width: 1366px)
         padding-top: 115px
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         opacity: 1
         visibility: visible
         pointer-events: auto
@@ -263,7 +284,7 @@ header
 .drop__inner
     transform: translate(-80px, 0px)
     transition: transform .9s
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         transform: translate(0, 0px)
         margin-left: 20px
         font-size: 14px
@@ -281,7 +302,7 @@ header
     padding: 0 50px
     padding-bottom: 50px
     background: #fff
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         padding: 30px 30px
         font-size: 14px
 .toggle-footer__item
@@ -322,16 +343,23 @@ header
     align-items: center
     padding: 0 50px
     @media (max-width: 1366px)
-        min-height: 70px
+        min-height: 77px
     @media (max-width: 660px)
         min-height: 50px
-    @media (max-width: 550px)
+    @media (max-width: 576px)
         padding: 0 10px
 .cart__title
     font-family: "Montserrat-Bold"
     font-size: 24px
+    quotes: "(" ")"
+    &::after
+        content: open-quote attr(data-orders) "" close-quote
+        color: #ff671f
+        font-size: 24px
     @media (max-width:550px)
         font-size: 16px
+        &::after
+            font-size: 16px
 .cart__close
     cursor: pointer
     font-size: 14px
@@ -352,8 +380,8 @@ header
     display: flex
     flex-direction: column
     overflow: auto
-    padding: 0 50px
-    @media (max-width: 550px)
+    padding: 0 60px
+    @media (max-width: 576px)
         padding: 0 10px
 .cart__order_item
     position: relative
@@ -416,7 +444,7 @@ header
         align-items: flex-start
 .order__title
     padding-bottom: 10px
-    @media (max-width: 550px)
+    @media (max-width: 576px)
         font-size: 14px
 .order__price
     color: #FF671F
@@ -443,13 +471,13 @@ header
     text-align: center
     & p
         font-size: 14px
-        @media (max-width: 550px)
+        @media (max-width: 576px)
             font-size: 12px
     & .cart__total
         font-family: "Montserrat-Bold"
         font-size: 18px
         color: #000000
-        @media (max-width: 550px)
+        @media (max-width: 576px)
             font-size: 14px
 .cart__order
     display: flex
@@ -481,7 +509,7 @@ header
     border-top: 1px solid #e4e4e4
     &:hover
         /** background: #D61258 **/
-    @media (max-width: 550px)
+    @media (max-width: 576px)
         font-size: 12px
 .form-buy
     display: flex

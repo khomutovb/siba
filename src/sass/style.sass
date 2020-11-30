@@ -17,8 +17,6 @@
 @import "modal"
 @import "footer"
 
-
-
 @import "public_offer_agreement"
 @import "privacy_policy"
 @import "contacts"
@@ -29,24 +27,27 @@
 body
     background: #fff
     font-family: Montserrat-Regular
-    overflow-x: hidden
-    @media (max-width: 992px)
+    overflow: overlay
+    @media (max-width: 1024px)
         overflow: auto
     &.overflow
         overflow: hidden
-/** ::-webkit-scrollbar
- width: 12px **/
+::-webkit-scrollbar
+    @media (min-width: 1024px)
+        width: 8px
 
-/** ::-webkit-scrollbar-track
- background: rgba(0, 0, 0, 0) **/
+::-webkit-scrollbar-track
+    @media (min-width: 1024px)
+        background: rgba(255, 255, 255, 1)
 
-/** ::-webkit-scrollbar-thumb
- background: #ff671f
- border-radius: 5px **/
+::-webkit-scrollbar-thumb
+    @media (min-width: 1024px)
+        background: #ff671f
 
-/** .w-ibanner.animation_nike .w-ibanner-image
- filter: grayscale(0) !important
- transform: translateY(0%) !important **/
+.w-ibanner.animation_nike .w-ibanner-image
+    @media (min-width: 1024px)
+        filter: grayscale(0) !important
+        transform: translateY(0%) !important
 
 a
     color: #000
@@ -196,9 +197,9 @@ ul.stepper.horizontal .step
         height: 52px !important
 
 ul.stepper>li:not(:last-of-type)
-    margin-bottom: 10px
-    -webkit-transition: margin-bottom 0.4s
-    transition: margin-bottom 0.4s
+        margin-bottom: 10px
+        -webkit-transition: margin-bottom 0.4s
+        transition: margin-bottom 0.4s
 
 ul.stepper .step:not(:last-of-type).active
     margin-bottom: 36px

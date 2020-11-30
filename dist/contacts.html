@@ -103,6 +103,10 @@
             </div>
         </div>
         <div class="menu-toggle__body">
+            <div class="menu-toggle__btn">
+                <button class="menu-toggle__opt" data-toggle="modal" data-target="#popup_opt_price">Оптовый прайс</button>
+                <button class="menu-toggle__call" data-toggle="modal" data-target="#popup_callback">Заказать звонок</button>
+            </div>
             <nav class="nav-toggle">
                 <div class="nav-toggle__item">
                     <a href="">Кофе оптом</a>
@@ -168,7 +172,7 @@
                 </svg>
                 Продолжить покупки
             </div>
-            <div class="cart__title">
+            <div class="cart__title" data-orders="12">
                 <span>Корзина</span>
             </div>
         </div>
@@ -404,16 +408,16 @@
                                     <div class="form-buy__inner">
                                         <span class="popup__errors"></span>
                                         <input type="text" name="name" id="name"
-                                            class="popup_opt_price__input popup_opt_price__input--name"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--name"
                                             placeholder="ФИО*" required="">
                                         <input type="text" name="company-name" id="company-name"
-                                            class="popup_opt_price__input popup_opt_price__input--company"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--company"
                                             placeholder="Название компании*" required="">
                                         <input type="tel" name="telephone" id="tel"
-                                            class="popup_opt_price__input popup_opt_price__input--tel"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--tel"
                                             placeholder="Телефон*" required="">
                                         <input type="email" name="email" id="email"
-                                            class="popup_opt_price__input popup_opt_price__input--email"
+                                            class="input-form popup_opt_price__input popup_opt_price__input--email"
                                             placeholder="Email">
                                     </div>
                                 </div>

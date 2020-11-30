@@ -79,7 +79,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        speed: 900,
+        speed: 500,
         cssEase: 'linear',
         arrows: true,
         asNavFor: '.home-slider__text'
@@ -89,7 +89,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        speed: 900,
+        speed: 500,
         arrows: false,
         fade: true,
     });
@@ -126,7 +126,7 @@ $(document).ready(function () {
                 }
             },
             {
-                breakpoint: 550,
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -193,10 +193,92 @@ $(document).ready(function () {
             },
         ]
     });
+    $(".catalog__other .catalog__other__slider .product__list").slick({
+        slidesToShow: 5,
+        slidesToScroll: 4,
+        dots: false,
+        arrows: true,
+        nextArrow: '.catalog__other .next_arrow',
+        prevArrow: '.catalog__other .previous_arrow',
+        focusOnSelect: false,
+        responsive: [
+            {
+                breakpoint: 1768,
+                settings: {
+                    dots: false,
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    dots: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    $(".catalog-review .catalog-review__slider .catalog-review__list").slick({
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        nextArrow: '.catalog-review .next_arrow',
+        prevArrow: '.catalog-review .previous_arrow',
+        focusOnSelect: false,
+        responsive: [
+            {
+                breakpoint: 1600,
+                settings: {
+                    dots: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    variableWidth: true,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
+    });
 });
 //include('jquery.inputmask.bundle.min.js');
 $(".popup_callback__input.popup_callback__input--tel").inputmask("+38(999)999-99-99");
 $(".popup_opt_price__input.popup_opt_price__input--tel").inputmask("+38(999)999-99-99");
+$(".popup_reminder__input.popup_reminder__input--tel").inputmask("+38(999)999-99-99");
 $(document).ready(function () {
     $('.stepper').activateStepper();
 })
