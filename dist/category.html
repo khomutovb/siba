@@ -69,7 +69,7 @@
     <div class="search__inner">
         <label class="search__label">
             <input type="text" value="" class="search__input" autocomplete="off" name="search"
-                placeholder="Что желаете найти?">
+                placeholder="Что желаете найти?" autocomplete="off">
             <i class="search__icon search__start">
                 <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -105,8 +105,10 @@
         </div>
         <div class="menu-toggle__body">
             <div class="menu-toggle__btn">
-                <button class="menu-toggle__opt" data-toggle="modal" data-target="#popup_opt_price">Оптовый прайс</button>
-                <button class="menu-toggle__call" data-toggle="modal" data-target="#popup_callback">Заказать звонок</button>
+                <button class="menu-toggle__opt" data-toggle="modal" data-target="#popup_opt_price">Оптовый
+                    прайс</button>
+                <button class="menu-toggle__call" data-toggle="modal" data-target="#popup_callback">Заказать
+                    звонок</button>
             </div>
             <nav class="nav-toggle">
                 <div class="nav-toggle__item">
@@ -154,10 +156,13 @@
             </nav>
         </div>
         <div class="menu-toggle__footer">
+            <div class="toggle-footer__item toggle-footer--hidden">
+                Пн-Пт 10:00 - 20:00
+            </div>
             <div class="toggle-footer__item">
-                Адрес: Киев, Здолбуновская, 3Д<br>
-                Телефон 0800 123 456<br>
-                Email: info@siba.ua<br>
+                Адрес: <a href="https://goo.gl/maps/eZhBJTRT4vhLiKZV6" target="_blank">Киев, Здолбуновская, 3Д</a><br>
+                Телефон <a href="tel:+380930921234" target="_blank">+38(093)092-12-34</a><br>
+                Email: <a href="mailto:info@siba.ua" target="_blank">info@siba.ua</a><br>
             </div>
         </div>
     </div>
@@ -171,7 +176,7 @@
                         d="M3.97949 0.178983L0.175093 4.0679C-0.0583639 4.30654 -0.0583639 4.69346 0.175093 4.9321L3.97949 8.82102C4.21294 9.05966 4.59145 9.05966 4.82491 8.82102C5.05836 8.58237 5.05836 8.19546 4.82491 7.95681L1.44322 4.5L4.82491 1.04319C5.05836 0.804543 5.05836 0.417626 4.82491 0.178983C4.59145 -0.0596608 4.21294 -0.0596608 3.97949 0.178983Z"
                         fill="black" />
                 </svg>
-                Продолжить покупки
+                Продолжить <span>покупки</span>
             </div>
             <div class="cart__title" data-orders="12">
                 <span>Корзина</span>
@@ -182,10 +187,116 @@
                 <div class="cart__body">
                     <ul class="stepper parallel horizontal">
                         <li class="step active">
-                            <div class="cart__step" data-step="1">Шаг 1. Список товара</div>
+                            <div class="cart__step" data-step="1" data-short="Шаг 1">Шаг 1. Список товаров</div>
                             <div class="step-content">
                                 <div class="cart__order">
                                     <div class="cart__order_list">
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cart__order_item">
+                                            <div class="order__inner">
+                                                <div class="order__photo">
+                                                    <img src="img/product1.png">
+                                                </div>
+                                                <div class="order__info">
+                                                    <div class="order__info__left">
+                                                        <div class="order__title">
+                                                            Lavazza Crema & Aroma
+                                                        </div>
+                                                        <div class="order__price">
+                                                            ₴325
+                                                        </div>
+                                                    </div>
+                                                    <div class="counter">
+                                                        <div class="counter__inner">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--subtract counter_subtract">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                            <input type="number" min="1" value="1"
+                                                                class="counter__input">
+                                                            <button type="button"
+                                                                class="counter__btn counter__btn--add counter_add">
+                                                                <i class="counter__btn_icon">
+                                                                    <svg class="counter__btn_svg" width="10" height="10"
+                                                                        viewBox="0 0 10 10"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M0 4H10V6H0V4Z"></path>
+                                                                        <path
+                                                                            d="M6 8.74228e-08L6 10H4L4 0L6 8.74228e-08Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="remove_item">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <use xlink:href="img/icons/icons.svg#cart-close">
+                                                        </use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
@@ -403,23 +514,42 @@
                             </div>
                         </li>
                         <li class="step">
-                            <div class="cart__step" data-step="2">Шаг 2. Оформление товара</div>
+                            <div class="cart__step" data-step="2" data-short="Шаг 2">Шаг 2. Оформление товара</div>
                             <div class="step-content">
                                 <div class="form-buy">
                                     <div class="form-buy__inner">
+                                        <p class="form-buy__title">Ваши данные</p>
                                         <span class="popup__errors"></span>
-                                        <input type="text" name="name" id="name"
-                                            class="input-form popup_opt_price__input popup_opt_price__input--name"
-                                            placeholder="ФИО*" required="">
-                                        <input type="text" name="company-name" id="company-name"
-                                            class="input-form popup_opt_price__input popup_opt_price__input--company"
-                                            placeholder="Название компании*" required="">
-                                        <input type="tel" name="telephone" id="tel"
-                                            class="input-form popup_opt_price__input popup_opt_price__input--tel"
-                                            placeholder="Телефон*" required="">
-                                        <input type="email" name="email" id="email"
-                                            class="input-form popup_opt_price__input popup_opt_price__input--email"
-                                            placeholder="Email">
+                                        <form>
+                                            <input type="text" name="name" id="name"
+                                                class="input-form form-buy__input form-buy__input--name"
+                                                placeholder="ФИО*" required="" autocomplete="off">
+                                            <input type="text" name="company-name" id="company-name"
+                                                class="input-form form-buy__input form-buy__input--company"
+                                                placeholder="Название компании*" required="" autocomplete="off">
+                                            <input type="tel" name="telephone" id="tel"
+                                                class="input-form form-buy__input form-buy__input--tel"
+                                                placeholder="Телефон*" required="" autocomplete="off">
+                                            <input type="email" name="email" id="email"
+                                                class="input-form form-buy__input form-buy__input--email"
+                                                placeholder="Email">
+                                            <input type="text" name="city" id="city"
+                                                class="input-form form-buy__input form-buy__input--city"
+                                                placeholder="Город" required="" autocomplete="off">
+                                            <input type="text" name="address" id="address"
+                                                class="input-form form-buy__input form-buy__input--address"
+                                                placeholder="Адрес" required="" autocomplete="off">
+                                            <p class="form-buy__title">Способ оплаты</p>
+                                            <select name="payment-method" id="payment-method">
+                                                <option value="Оплата при получении товара">Оплата при получении товара
+                                                </option>
+                                            </select>
+                                            <p class="form-buy__title">Способ доставки</p>
+                                            <select name="delivery-method" id="delivery-method">
+                                                <option value="Доставка по Киеву и Днепру">Доставка по Киеву и Днепру
+                                                </option>
+                                            </select>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -441,8 +571,22 @@
     <main class="main">
         <div class="catalog">
             <div class="catalog__inner">
-                <div class="left-sidebar">
-                    Фільтр товаров
+                <div class="left-sidebar" id="left-sidebar">
+                    <div class="left-sidebar__inner">
+                        <div class="left-sidebar__header">
+                            <p>Фільтр товаров</p>
+                            <button class="filter__btn__close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.186479 0.746678L0.933156 0L14 13.0669L13.2533 13.8136L0.186479 0.746678Z"
+                                        fill="#434343" />
+                                    <path d="M13.0668 0.186449L13.8135 0.933127L0.746677 14L0 13.2533L13.0668 0.186449Z"
+                                        fill="#434343" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="catalog__main">
                     <div class="catalog__header">
@@ -458,7 +602,7 @@
                         <a href="" class="catalog__banner">
                             <img src="img/catalog-banner.jpg" alt="Banner">
                         </a>
-                        <!-- Этот блок будет изменятся из админки -->
+                        <!-- Этот блок будет изменятся из админки (картинки и текст) -->
                         <div class="catalog__advantages">
                             <div class="catalog__advantages__list">
                                 <div class="catalog__advantages__item">
@@ -485,7 +629,17 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- конец блока -->
                         <div class="catalog__top__line">
+                            <button class="filter__btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.31714 7.61552C6.4654 7.7754 6.5468 7.98425 6.5468 8.2003V14.5666C6.5468 14.9498 7.01338 15.1442 7.28955 14.8749L9.08177 12.8397C9.3216 12.5545 9.45387 12.4133 9.45387 12.131V8.20174C9.45387 7.98569 9.53672 7.77684 9.68353 7.61695L14.8261 2.08746C15.2113 1.67264 14.9148 1 14.345 1H1.65563C1.08584 1 0.787863 1.6712 1.1745 2.08746L6.31714 7.61552Z"
+                                        stroke="white" stroke-width="1.5" />
+                                </svg>
+                                <span>Фильтр</span>
+                            </button>
                             <h3 class="section__title">Оптовые продажи кофе</h3>
                             <div class="settings">
                                 <div class="settings__inner">
@@ -1957,7 +2111,7 @@
                     autocomplete="off">
                     <span class="popup__errors"></span>
                     <input type="tel" name="telephone" id="tel" class="input-form popup_callback__input popup_callback__input--tel"
-                        placeholder="Телефон*" required="">
+                        placeholder="Телефон*" required="" autocomplete="off">
                     <button type="submit" class="input-form__submit popup_callback__submit">
                         Отправить заявку </button>
                 </form>
@@ -1992,14 +2146,14 @@
                     autocomplete="off">
                     <span class="popup__errors"></span>
                     <input type="text" name="name" id="name" class="input-form popup_opt_price__input popup_opt_price__input--name"
-                        placeholder="ФИО*" required="">
+                        placeholder="ФИО*" required="" autocomplete="off">
                     <input type="text" name="company-name" id="company-name"
                         class="input-form popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
-                        required="">
+                        required="" autocomplete="off">
                     <input type="tel" name="telephone" id="tel"
-                        class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="">
+                        class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="" autocomplete="off">
                     <input type="email" name="email" id="email"
-                        class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email">
+                        class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email" autocomplete="off">
                     <button type="submit" class="input-form__submit popup_opt_price__submit">
                         Отправить заявку </button>
                 </form>
@@ -2036,9 +2190,9 @@
                     <input type="text" name="name" id="name" class="input-form popup_reminder__input popup_reminder__input--name"
                         placeholder="Имя*" required="">
                     <input type="email" name="email" id="email"
-                        class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email">
-                    <input type="tel" name="telephone" id="tel" class="popup_reminder__input popup_reminder__input--tel"
-                        placeholder="Телефон*" required="">
+                        class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email" autocomplete="off">
+                    <input type="tel" name="telephone" id="tel" class="input-form popup_reminder__input popup_reminder__input--tel"
+                        placeholder="Телефон*" required="" autocomplete="off">
                     <button type="submit" class="input-form__submit popup_reminder__submit">
                         Сообщить мне на Email </button>
                 </form>

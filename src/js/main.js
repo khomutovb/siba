@@ -20,6 +20,11 @@ $(document).ready(function () {
         $(".search").removeClass("active")
         $(".search__inner").removeClass("active")
     });
+    $(".filter__btn__close").click(function () {
+        $("body").removeClass('overflow')
+        $(".left-sidebar").removeClass('active')
+        $(".left-sidebar__inner").removeClass("active")
+    });
     if ($("#menu-toggle").length) {
 
         $(document).on('click', function (e) {
@@ -30,6 +35,21 @@ $(document).ready(function () {
             }
         })
     }
+    $('.cart__step').each(function () {
+        var eventFired = 0;
+        var valueShort = $(this).attr("data-short");
+        if ($(window).width() < 476) {
+            $(this).text(valueShort)
+        }
+
+        $(window).on('resize', function () {
+            if (!eventFired) {
+                if ($(window).width() < 476) {
+                    $(this).text(valueShort)
+                }
+            }
+        });
+    });
     if ($("#cart").length) {
 
         $(document).on('click', function (e) {
@@ -53,6 +73,16 @@ $(document).ready(function () {
                 $("body").toggleClass('overflow')
                 $(".search").toggleClass('active')
                 $(".search__inner").toggleClass('active')
+            }
+        })
+    }
+    if ($("#left-sidebar").length) {
+
+        $(document).on('click', function (e) {
+            if ($(e.target).closest('.filter__btn').length || $(e.target).hasClass('left-sidebar')) {
+                $("body").toggleClass('overflow')
+                $(".left-sidebar").toggleClass('active')
+                $(".left-sidebar__inner").toggleClass("active")
             }
         })
     }
@@ -279,6 +309,7 @@ $(document).ready(function () {
 $(".popup_callback__input.popup_callback__input--tel").inputmask("+38(999)999-99-99");
 $(".popup_opt_price__input.popup_opt_price__input--tel").inputmask("+38(999)999-99-99");
 $(".popup_reminder__input.popup_reminder__input--tel").inputmask("+38(999)999-99-99");
+$(".breadcrumb-item").eq(-2).addClass("prev");
 $(document).ready(function () {
     $('.stepper').activateStepper();
 })

@@ -18,8 +18,22 @@
     <main class="main">
         <div class="catalog">
             <div class="catalog__inner">
-                <div class="left-sidebar">
-                    Фільтр товаров
+                <div class="left-sidebar" id="left-sidebar">
+                    <div class="left-sidebar__inner">
+                        <div class="left-sidebar__header">
+                            <p>Фільтр товаров</p>
+                            <button class="filter__btn__close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.186479 0.746678L0.933156 0L14 13.0669L13.2533 13.8136L0.186479 0.746678Z"
+                                        fill="#434343" />
+                                    <path d="M13.0668 0.186449L13.8135 0.933127L0.746677 14L0 13.2533L13.0668 0.186449Z"
+                                        fill="#434343" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="catalog__main">
                     <div class="catalog__header">
@@ -35,7 +49,7 @@
                         <a href="" class="catalog__banner">
                             <img src="img/catalog-banner.jpg" alt="Banner">
                         </a>
-                        <!-- Этот блок будет изменятся из админки -->
+                        <!-- Этот блок будет изменятся из админки (картинки и текст) -->
                         <div class="catalog__advantages">
                             <div class="catalog__advantages__list">
                                 <div class="catalog__advantages__item">
@@ -62,7 +76,17 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- конец блока -->
                         <div class="catalog__top__line">
+                            <button class="filter__btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.31714 7.61552C6.4654 7.7754 6.5468 7.98425 6.5468 8.2003V14.5666C6.5468 14.9498 7.01338 15.1442 7.28955 14.8749L9.08177 12.8397C9.3216 12.5545 9.45387 12.4133 9.45387 12.131V8.20174C9.45387 7.98569 9.53672 7.77684 9.68353 7.61695L14.8261 2.08746C15.2113 1.67264 14.9148 1 14.345 1H1.65563C1.08584 1 0.787863 1.6712 1.1745 2.08746L6.31714 7.61552Z"
+                                        stroke="white" stroke-width="1.5" />
+                                </svg>
+                                <span>Фильтр</span>
+                            </button>
                             <h3 class="section__title">Оптовые продажи кофе</h3>
                             <div class="settings">
                                 <div class="settings__inner">

@@ -439,6 +439,8 @@ section.offers
             margin: auto
             margin-top: 90px
             padding: 13px
+            @media (max-width: 660px)
+                width: 120px
         & + .photo-product-wrapper
             filter: none
             filter: grayscale(1)
@@ -469,6 +471,8 @@ section.offers
             margin: auto
             margin-top: 90px
             padding: 13px
+            @media (max-width: 660px)
+                width: 120px
         & + .photo-product-wrapper
             filter: none
             filter: grayscale(1)
@@ -515,6 +519,7 @@ section.offers
     display: block
     margin-top: 3px
     color: #989898
+    font-size: 14px
 .product__more-info
     width: 100%
     display: block
@@ -531,6 +536,8 @@ section.offers
     justify-content: space-between
     align-items: center
     margin-top: 55px
+    @media (max-width: 768px)
+        margin-top: 25px
 .product__cost
     display: flex
     align-items: center
@@ -547,6 +554,11 @@ section.offers
         font-size: 12px
         margin-left: 5px
 .product__buy
+    @media (max-width:576px)
+        & svg
+            width: 20px
+            height: 18px
+.product__call
     @media (max-width:576px)
         & svg
             width: 20px
@@ -672,8 +684,10 @@ section.offers
     margin-top: 100px
     @media (max-width: 992px)
         position: absolute
+    @media (max-width: 461px)
+        margin-top: 115px
     @media (max-width: 332px)
-        margin-top: 125px
+        margin-top: 140px
     & a
         display: flex
         align-items: center

@@ -13,6 +13,7 @@
 @import "header"
 @import "home"
 @import "catalog"
+@import "product"
 
 @import "modal"
 @import "footer"
@@ -28,24 +29,24 @@ body
     background: #fff
     font-family: Montserrat-Regular
     overflow: overlay
-    @media (max-width: 1024px)
+    @media (max-width: 1025px)
         overflow: auto
     &.overflow
         overflow: hidden
 ::-webkit-scrollbar
-    @media (min-width: 1024px)
+    @media (min-width: 1025px)
         width: 8px
 
 ::-webkit-scrollbar-track
-    @media (min-width: 1024px)
+    @media (min-width: 1025px)
         background: rgba(255, 255, 255, 1)
 
 ::-webkit-scrollbar-thumb
-    @media (min-width: 1024px)
+    @media (min-width: 1025px)
         background: #ff671f
 
 .w-ibanner.animation_nike .w-ibanner-image
-    @media (min-width: 1024px)
+    @media (min-width: 1025px)
         filter: grayscale(0) !important
         transform: translateY(0%) !important
 
@@ -107,12 +108,11 @@ img
 main
     max-width: 1920px
     margin: auto
-    position: relative
-    top: 97px
+    margin-top: 97px
     @media (max-width: 1366px)
-        top: 69px
+        margin-top: 69px
     @media (max-width: 768px)
-        top: 50px
+        margin-top: 50px
 .slick-slide
     outline: none !important
     & img

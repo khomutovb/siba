@@ -34,7 +34,7 @@ header
     @media (max-width:768px)
         & .header__item:nth-child(3)
             display: none
-    @media (max-width:576px)
+    @media (max-width:768px)
         & .header__item:nth-child(5)
             display: none
 .header__item
@@ -49,7 +49,7 @@ header
         padding: 0 18px
     @media (max-width: 1200px)
         font-size: 12px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         padding: 0 5px
 .menu__btn
     background: #FF671F
@@ -89,7 +89,7 @@ header
         width: 140px
         & .mobile-logo
             display: inline
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         width: 110px
         border: none
 .opt-price__btn
@@ -105,7 +105,7 @@ header
     border-right: 1px solid #E4E4E4
     @media (max-width: 1366px)
         width: 68px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         width: 50px
 .callback__btn
     width: 220px
@@ -118,7 +118,7 @@ header
     cursor: pointer
     @media (max-width: 1366px)
         width: 68px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         width: 50px
         & svg
             width: 17px
@@ -139,6 +139,13 @@ header
         font-size: 12px
         border-radius: 50%
         line-height: 18px
+        @media (max-width: 481px)
+            top: -2px
+            right: -6px
+            width: 14px
+            height: 14px
+            line-height: 14px
+            font-size: 11px
     & span
         display: none
 .menu-toggle
@@ -146,7 +153,7 @@ header
     visibility: hidden
     transition: all .4s
     width: 100%
-    height: 100%
+    height: 100vh
     background: rgba(0, 0, 0, 0.5)
     position: fixed
     top: 0
@@ -169,18 +176,20 @@ header
     @media (max-width: 1024px)
         overflow: auto
     @media (max-width: 660px)
-        width: 100%
+        width: 85%
+        overflow: auto
+    @media (max-height: 660px)
         overflow: auto
 .menu-toggle__header
     min-height: 163px
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 0 50px
+    padding: 0 40px
     background: #fff
     @media (max-width: 1366px)
         min-height: 77px
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         padding: 0 30px
 .menu-toggle__title
     font-size: 24px
@@ -194,11 +203,11 @@ header
             width: 11px
             height: 11px
 .menu-toggle__body
-    padding: 0 60px
+    padding: 0 40px
     padding-top: 45px
     height: 100%
     background: #fff
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         padding: 0 30px
         padding-top: 0
         height: auto
@@ -218,13 +227,16 @@ header
             display: block
     & .menu-toggle__call
         display: none
-        @media (max-width: 576px)
+        @media (max-width: 768px)
             display: block
 .nav-toggle
     cursor: pointer
     padding-top: 20px
-    @media (max-width: 660px)
+    @media (max-width: 1024px)
         cursor: initial
+    @media (max-width: 768px)
+        padding-bottom: 30px
+        border-bottom: 1px solid #E4E4E4
 .nav-toggle__item
     padding: 22px 0px
     font-size: 18px
@@ -250,7 +262,7 @@ header
         & a
             &::after
                 content: none
-    @media (min-width: 1024px)
+    @media (min-width: 1025px)
         &:hover
             & .drop-nav-toggle__item
                 opacity: 1
@@ -266,7 +278,7 @@ header
     background: #fff
     top: 0
     right: 0
-    padding-top: 208px
+    padding-top: 225px
     opacity: 0
     visibility: hidden
     pointer-events: none
@@ -299,14 +311,21 @@ header
             content: none
 .menu-toggle__footer
     color: #828282
-    padding: 0 50px
+    padding: 0 40px
     padding-bottom: 50px
     background: #fff
+    & a
+        color: #828282
     @media (max-width: 1024px)
         padding: 30px 30px
         font-size: 14px
 .toggle-footer__item
     line-height: 25px
+    &.toggle-footer--hidden
+        display: none
+        padding-bottom: 30px
+        @media (max-width: 1200px)
+            display: block
 /** Cart inner **/
 .cart
     opacity: 0
@@ -335,7 +354,7 @@ header
     &.active
         transform: translateX(0)
     @media (max-width:660px)
-        width: 100%
+        width: 85%
 .cart__header
     min-height: 118px
     display: flex
@@ -346,7 +365,7 @@ header
         min-height: 77px
     @media (max-width: 660px)
         min-height: 50px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         padding: 0 10px
 .cart__title
     font-family: "Montserrat-Bold"
@@ -357,14 +376,17 @@ header
         color: #ff671f
         font-size: 24px
     @media (max-width:550px)
-        font-size: 16px
+        font-size: 14px
         &::after
-            font-size: 16px
+            font-size: 14px
 .cart__close
     cursor: pointer
     font-size: 14px
     & svg
         margin-right: 10px
+    @media (max-width: 380px)
+        & span
+            display: none
 .cart__form
     height: 100%
     overflow: auto
@@ -381,7 +403,7 @@ header
     flex-direction: column
     overflow: auto
     padding: 0 60px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         padding: 0 10px
 .cart__order_item
     position: relative
@@ -422,6 +444,8 @@ header
     display: flex
     align-items: center
     justify-content: space-between
+    @media (max-width: 481px)
+        align-items: flex-start
 .counter
     margin-left: 25px
     @media (max-width:481px)
@@ -439,16 +463,24 @@ header
 .order__info
     display: flex
     align-items: center
+    @media (max-width: 550px)
+        margin-left: 15px
+        font-size: 14px
     @media (max-width: 481px)
         flex-direction: column
         align-items: flex-start
 .order__title
     padding-bottom: 10px
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         font-size: 14px
+    @media (max-width: 550px)
+        max-width: 165px
+        padding-bottom: 5px
 .order__price
     color: #FF671F
     padding-bottom: 10px
+    @media (max-width: 550px)
+        padding-bottom: 5px
 .cart__footer
     background: #F6FAFD
     height: 144px
@@ -471,13 +503,13 @@ header
     text-align: center
     & p
         font-size: 14px
-        @media (max-width: 576px)
+        @media (max-width: 768px)
             font-size: 12px
     & .cart__total
         font-family: "Montserrat-Bold"
         font-size: 18px
         color: #000000
-        @media (max-width: 576px)
+        @media (max-width: 768px)
             font-size: 14px
 .cart__order
     display: flex
@@ -509,7 +541,7 @@ header
     border-top: 1px solid #e4e4e4
     &:hover
         /** background: #D61258 **/
-    @media (max-width: 576px)
+    @media (max-width: 768px)
         font-size: 12px
 .form-buy
     display: flex
@@ -519,12 +551,18 @@ header
 .form-buy__inner
     overflow: auto
     padding: 0 60px
+    @media (max-width: 1366px)
+        padding: 0 40px
+    @media (max-width: 768px)
+        padding: 0 15px
 .remove_item
     width: 30px
     height: 30px
     text-align: center
     line-height: 30px
     cursor: pointer
+    @media (max-width: 550px)
+        margin-top: -5px
 /** Search block **/
 .search
     opacity: 0
@@ -592,3 +630,23 @@ header
         border: none
         width: 95px
         margin-left: 15px
+.form-buy__title
+    font-size: 22px
+    padding-top: 30px
+    padding-bottom: 30px
+    @media (max-width: 768px)
+        font-size: 18px
+        padding: 15px 0
+    @media (max-width: 550px)
+        font-size: 14px
+.form-buy select
+    width: 100%
+    height: 70px
+    background: #FBFBFB
+    border: 1px solid #E3EAF2
+    margin: 15px 0
+    padding-left: 28px
+    color: #000000
+    @media (max-width: 768px)
+        height: 48px
+        margin: 7px 0

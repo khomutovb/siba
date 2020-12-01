@@ -3,18 +3,46 @@
 /** Sidevar **/
 .left-sidebar
     min-width: 329px
-    background: #fbfbfb
-    padding-left: 60px
+    padding: 0 60px
     border-right: 1px solid #E4E4E4
     @media (max-width: 1366px)
         min-width: 309px
     @media (max-width: 1200px)
         min-width: 253px
     @media (max-width: 1024px)
-        transform: translate(-100%,0)
-        visibility: hidden
+        padding: 0
         opacity: 0
-        position: absolute
+        visibility: hidden
+        transition: all .4s
+        width: 100%
+        height: 100vh
+        background: rgba(0, 0, 0, 0.5)
+        position: fixed
+        top: 0
+        z-index: 100
+        &.active
+            opacity: 1
+            visibility: visible
+        & .left-sidebar__inner
+            overflow: auto
+            background: #fbfbfb
+            width: 315px
+            height: 100%
+            transform: translateX(-100%)
+            transition: transform .6s
+            padding: 0 20px
+            &.active
+                transform: translateX(0)
+            @media (max-width: 660px)
+                width: 85%
+.filter__btn__close
+    display: none
+    @media (max-width: 1024px)
+        display: block
+.left-sidebar__header
+    padding: 20px 0
+    display: flex
+    justify-content: space-between
 /** Breadcrumb **/
 .breadcrumb
     background: 0 0
@@ -31,6 +59,10 @@
         padding-left: 15px
 .breadcrumb-item
     color: #555555
+    @media (max-width: 660px)
+        display: none
+    &.prev
+        display: block
 .breadcrumb-item.active a
     color: #A8A8A8
 .breadcrumb-item+.breadcrumb-item::before
@@ -44,10 +76,17 @@
     background-position: center
     height: 10px
     width: 5px
+    @media (max-width: 660px)
+        transform: scale(-1)
+        padding: 0
+        margin-right: 1rem
 /** Main catalog **/
 .catalog__banner
     & img
         width: 100%
+    @media (max-width: 660px)
+        display: block
+        padding: 0 15px
 .catalog__main
     width: calc(100% - 329px)
     max-width: 1591px
@@ -64,12 +103,40 @@
     @media (max-width: 1600px)
         & .section__title
             font-size: 18px
+    @media (max-width: 660px)
+        padding: 0 15px
+        flex-wrap: wrap
+        & .section__title
+            order: 3
+            width: 100%
+            margin-top: 20px
+.filter__btn
+    display: none
+    background: #0057B8
+    height: 49px
+    line-height: 49px
+    color: #fff
+    font-size: 14px
+    padding: 0 22px
+    min-width: 120px
+    & svg
+        position: relative
+        top: 2px
+        left: -4px
+    @media (max-width: 1024px)
+        display: block
 .settings__inner
     display: flex
 .settings__sort
     font-size: 14px
     display: flex
     color: #A0A0A0
+.settings__showing_select
+    @media (max-width: 660px)
+        display: none
+.settings__sort_select
+    @media (max-width: 360px)
+        font-size: 12px
 .settings__showing
     display: flex
     margin-left: 80px
@@ -77,6 +144,16 @@
     color: #A0A0A0
     @media (max-width: 1366px)
         margin-left: 50px
+    @media (max-width: 1024px)
+        margin-left: 30px
+    @media (max-width: 660px)
+        margin-left: 0
+.settings__sort_title
+    @media (max-width: 1024px)
+        display: none
+.settings__showing_title
+    @media (max-width: 1024px)
+        display: none
 .catalog__body
     margin-top: 60px
     padding: 0 60px
@@ -84,6 +161,9 @@
         padding: 0 40px
     @media (max-width: 768px)
         padding: 0 15px
+    @media (max-width: 660px)
+        padding: 0px
+        margin-top: 15px
 .catalog__footer
     padding: 0 60px
     padding-top: 60px
@@ -101,6 +181,10 @@
         padding: 0 15px
 .catalog__products
     margin-top: 79px
+    @media (max-width: 768px)
+        padding: 0 15px
+    @media (max-width: 660px)
+        margin: 0
 .product__analog__btn
     color: #FF671F
 .catalog__list
@@ -119,8 +203,9 @@
             margin: 35px 15px
             width: calc( 25% - 30px )
         @media (max-width: 1200px)
-            margin: 35px 15px
             width: calc( 33.33333% - 30px )
+        @media (max-width: 768px)
+            margin: 15px
         @media (max-width: 576px)
             width: calc( 50% - 30px )
 .catalog__btn__more
@@ -131,13 +216,20 @@
     font-size: 16px
     line-height: 120px
     margin: 35px 0
+    @media (max-width: 660px)
+        min-height: 64px
+        line-height: 64px
 .pagination
     display: flex
     justify-content: center
     margin-top: 35px
     padding-bottom: 60px
+    @media (max-width: 660px)
+        margin-top: 20px
 .pagination .page-item
     margin: 0 17px
+    @media (max-width: 660px)
+        margin: 0 8px
 .pagination .page-item.disabled
     pointer-events: none
 .pagination .page-item a
@@ -167,32 +259,83 @@
     height: 298px
     border: 1px solid #E4E4E4
     margin: 60px 0
+    @media (max-width: 660px)
+        margin: 0
+        margin-bottom: 30px
+        border: none
+        height: auto
+        margin-top: 15px
 .catalog__advantages__list
     display: flex
     justify-content: space-between
     height: 100%
     align-items: flex-end
     margin: 0 60px
-    @media (max-width: 1366px)
+    @media (max-width: 1600px)
         margin: 0 40px
     @media (max-width: 768px)
         margin: 0 15px
+    @media (max-width: 660px)
+        margin: 0
+        overflow-x: scroll
+        &::before
+            content: "."
+            color: transparent
+            min-width: 15px
+        &::after
+            content: "."
+            color: transparent
+            min-width: 15px
 .catalog__advantages__item
-    max-width: 380px
     min-height: 250px
+    @media (max-width: 1600px)
+        max-width: 280px
+    @media (max-width: 1366px)
+        max-width: 258px
+    @media (max-width: 1200px)
+        max-width: 220px
+    &:nth-child(3)
+        @media (max-width: 1366px)
+            max-width: 200px
+    &:nth-child(1)
+        @media (max-width: 768px)
+            .catalog__advantages__subtitle
+                max-width: 135px
+    @media (max-width: 660px)
+        min-width: 246px
+        border: 1px solid #E4E4E4
+        padding-left: 30px
+        padding-top: 30px
+        min-height: 240px
+        &:nth-child(2)
+            border-right: 0
+            border-left: 0
 .catalog__advantages__img
     width: 57px
     height: 57px
+    @media (max-width: 660px)
+        width: 34px
+        height: 34px
+    & img
+        max-height: 100%
 .catalog__advantages__title
     font-size: 24px
     line-height: 26px
     color: #141414
     font-family: Montserrat-Bold
     margin: 41px 0 20px
+    @media (max-width: 1600px)
+        font-size: 20px
+    @media (max-width: 1366px)
+        font-size: 18px
+    @media (max-width: 768px)
+        max-width: 145px
+        margin: 20px 0
 .catalog__advantages__subtitle
     font-size: 14px
     line-height: 24px
     color: #828282
+    max-width: 370px
 /** Catalog review **/
 .catalog-review
     padding: 0 60px
