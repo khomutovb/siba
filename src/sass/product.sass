@@ -1,12 +1,564 @@
+.product-page__header
+    position: sticky
+    top: 97px
+    z-index: 5
+    background: #fff
+    @media (max-width: 1366px)
+        top: 69px
+    @media (max-width: 1024px)
+        position: static
 .product-page__body
     width: 100%
     height: 100%
     display: flex
+    padding-bottom: 105px
+    @media (max-width: 1024px)
+        flex-direction: column
+        padding-bottom: 33px
+.product-page__left__inner
+    display: flex
+    flex-direction: column
 .product-page__body__left
     max-width: 750px
     height: 100%
+    border-right: 1px solid #E3EAF2
+    @media (max-width: 1366px)
+        max-width: 564px
+    @media (max-width: 1024px)
+        order: 2
+        max-width: 100%
 .product__top__inner
     padding: 0 60px
-.product__buttons
+    margin-top: 60px
+    @media (max-width: 1366px)
+        padding: 0 40px
+    @media (max-width: 768px)
+        padding: 0 15px
+    @media (max-width: 1024px)
+        margin-top: 29px
+        order: 3
+.product-page__brand
+    font-size: 14px
+    line-height: 17px
+    color: #A8A8A8
+    @media (max-width: 1024px)
+        display: none
+.product-page__top__line
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: 10px
+    &.mobile
+        display: none
+    @media (max-width: 1024px)
+        display: none
+        &.mobile
+            display: flex
+            justify-content: space-between
+            padding: 25px 40px
+            margin-top: 0
+            & .product-page__title
+                max-width: 100%
+            & .product-page__brand
+                display: block
+            @media (max-width: 768px)
+                padding: 18px 15px
+            @media (max-width: 576px)
+                & .product-mobile__title
+                    max-width: 70%
+                & .product-mobile__price
+                    margin-top: 20px
+                & .product-page__title
+                    padding-top: 5px
+                    font-size: 16px
+                    line-height: 20px
+                & .product-page__price
+                    font-size: 16px
+                    line-height: 20px
+                & .product-page__old__price
+                    font-size: 12px
+.product-page__title
+    font-family: Montserrat-Bold
+    font-size: 26px
+    line-height: 32px
+    color: #000000
+    max-width: 348px
+    @media (max-width: 1366px)
+        font-size: 22px
+.product-page__price
+    font-family: Montserrat-Bold
+    font-size: 26px
+    line-height: 32px
+    color: #FF671F
+    @media (max-width: 1366px)
+        font-size: 22px
+.product-page__old__price
+    font-size: 16px
+    color: #a8a8a8
+    font-family: Montserrat-Regular
+    text-decoration: line-through
+.product-page__description
+    margin-top: 60px
+    font-size: 14px
+    line-height: 24px
+    color: #505050
+    @media (max-width: 1024px)
+        margin-top: 0
+.product-page__buttons
+    margin-top: 60px
     display: flex
     width: 100%
+    & button
+        width: 50%
+        height: 119px
+        line-height: 119px
+        border: 1px solid #E4E4E4
+        font-family: Montserrat-Bold
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        transition: all .4s
+        &.product-page__btn__opt
+            color: #FF671F
+            border-left: none
+            border-right: none
+            &:hover
+                background: #FF671F
+                color: #fff
+                border-color: #FF671F
+        &.product-page__btn__buy
+            &:hover
+                background: #FF671F
+                color: #fff
+                border-color: #FF671F
+                & path
+                    fill: #fff
+            & svg
+                position: relative
+                top: 4px
+                left: -9px
+                & path
+                    transition: all .4s
+        @media (max-width: 1366px)
+            height: 100px
+            line-height: 100px
+    @media (max-width: 1024px)
+        margin-top: 0
+        & button
+            border-top: none
+    @media (max-width: 400px)
+        flex-direction: column
+        & button
+            width: 100%
+            &.product-page__btn__buy
+                order: 2
+                border: none
+                border-bottom: 1px solid #E4E4E4
+            &.product-page__btn__opt
+                background: #F5F5F5
+.characteristic__row
+    display: flex
+    height: 79px
+    align-items: center
+    border-bottom: 1px solid #E4E4E4
+    @media (max-width: 1366px)
+        height: 74px
+    @media (max-width: 768px)
+        margin: 0 15px
+.characteristic__title
+    font-size: 14px
+    line-height: 17px
+    color: #a8a8a8
+    padding: 0 60px
+    width: 38%
+    @media (max-width: 1366px)
+        padding: 0 40px
+    @media (max-width: 768px)
+        padding: 0
+    @media (max-width: 481px)
+        width: 50%
+.characteristic__subtitle
+    font-size: 14px
+    line-height: 17px
+    color: #000000
+    @media (max-width: 481px)
+        padding-left: 17%
+.product-page__body__right
+    width: calc(100% - 750px)
+    position: sticky
+    top: 161px
+    height: 100%
+    @media (max-width: 1366px)
+        top: 133px
+        width: calc(100% - 564px)
+    @media (max-width: 1024px)
+        position: static
+        width: 100%
+.product-slider__container
+    position: relative
+    max-width: 85%
+    @media (max-width: 1024px)
+        max-width: 100%
+.product-slider
+    width: 100%
+    background: #FBFBFB
+    min-height: calc(100vh - 161px)
+    @media (max-width: 1366px)
+        min-height: calc(100vh - 133px)
+    @media (max-width: 1024px)
+        min-height: 300px
+    & .slick-list
+        height: calc(100vh - 161px)
+        @media (max-width: 1366px)
+            height: calc(100vh - 133px)
+        @media (max-width: 1024px)
+            height: 300px
+            border-top: 1px solid #E4E4E4
+    & .slick-track
+        height: 100%
+    & .slick-slide
+        display: flex
+        flex-direction: column
+        height: 100%
+        justify-content: center
+        align-items: center
+        & img
+            height: 75%
+            max-height: 600px
+        @media (max-width: 1366px)
+            & img
+                height: 60%
+                object-fit: contain
+        @media (max-width: 1024px)
+            & img
+                height: 200px
+    &.slick-dotted
+        margin-bottom: 0
+    & .slick-dots
+        position: absolute
+        top: 0
+        display: block
+        right: -17.6%
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(auto-fit, minmax(50px, 1fr))
+        height: 100%
+        width: 20%
+        background: #fff
+        & li
+            width: 100%
+            height: 100%
+            border: 1px solid #e3eaf2
+            border-top: 0
+            display: flex
+            flex-direction: column
+            justify-content: center
+            margin: 0
+            & img
+                width: 100%
+                height: 30%
+                object-fit: contain
+        @media (max-width: 1024px)
+            position: static
+            display: flex
+            justify-content: space-between
+            width: 100%
+            height: 80px
+            & li
+                border: 1px solid #e3eaf2
+                border-right: none
+    & .slick-prev
+        left: 60px
+        z-index: 2
+        &::before
+            content: url(../img/svg/product-arrow-left.svg)
+        @media (max-width: 1366px)
+            left: 40px
+        @media (max-width: 768px)
+            left: 15px
+    & .slick-next
+        right: 60px
+        z-index: 2
+        &::before
+            content: url(../img/svg/product-arrow-right.svg)
+        @media (max-width: 1366px)
+            right: 40px
+        @media (max-width: 768px)
+            right: 15px
+    & iframe
+        width: 80%
+        height: 80%
+.product-page__label
+    position: absolute
+    top: 0
+    padding: 0 16px
+    height: 34px
+    font-weight: 600
+    line-height: 34px
+    font-size: 14px
+    color: #fff
+    text-align: center
+    background: #EB0E0E
+    &.label__new
+        &::before
+            content: "New"
+    &.label__sale
+        &::before
+            content: "Sale"
+    &.label__top
+        &::before
+            content: "Top"
+    &.label__unavailable
+        &::before
+            content: "Нет в наличии"
+    &.label__discontinued
+        &::before
+            content: "Снят с производства"
+.fixed
+    position: fixed
+    right: 0
+    background: #fff
+    z-index: 2
+
+.product_review__header, .product_review_addreview_title
+    padding: 30px 0px
+    & h3
+        font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
+        font-weight: 400
+        @media (max-width: 576px)
+            font-size: 16px
+.product_review
+    display: flex
+.product_reviews
+    width: 70%
+.product_addreview
+    width: 30%
+.product_reviews > div
+    display: flex
+    margin-right: 50px
+.product_reviews_item_name
+    width: 33.3%
+    font-family: Montserrat-Regular, Arial
+    font-style: normal
+    font-weight: bold
+    font-size: 14px
+    line-height: 27px
+.product_reviews_item_txt
+    width: 66.7%
+    font-family: Montserrat-Regular, Arial
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 27px
+.home-review__rating
+    display: inline-block
+    font-size: 0
+    & span
+        padding: 0
+        font-size: 16px
+        line-height: 1
+        color: #D1D1D1
+        &:before
+            content: '★'
+        &.star--active
+            color: #FF671F
+.product_reviews_item_name_date
+    font-family: Montserrat-Regular, Arial
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 27px
+.product_reviews_item_name
+    padding-right: 30px
+.product_review_addreview_form
+    min-height: 300px
+.product_review_addreview_button
+    width: 182px
+    height: 60px
+    background-color: #FF671F
+    text-align: center
+    line-height: 60px
+    color: #FFFFFF
+.product_reviews_item
+    padding: 20px 0
+    border-top: 1px solid #e4e4e4
+.product_reviews_item_hide
+    display: none!important
+.product_reviews_show
+    width: 300px
+    height: 30px
+    margin-left: 40%
+    cursor: pointer
+    text-align: center
+    font-family: Montserrat-Regular, Arial
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 30px
+    & :after
+        display: inline-block
+        content: "\276E"
+        transform: rotate(-90deg)
+        margin-left: 20px
+.product_reviews_item_name
+    display: flex
+.product_reviews_item_name_left
+    width: 50%
+.product_reviews_item_name_date
+    width: 50%
+.product_reviews_item_name_name
+    overflow: hidden
+    p
+        max-width: 98%
+        overflow: hidden !important
+        text-overflow: ellipsis
+        max-height: 110px
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+.close
+    span
+        width: 40px
+        height: 40px
+        font-size: 40px
+#exampleModalLabel
+    float: left
+.product_reviews_button1
+    display: none !important
+
+@media (max-width: 1024px)
+    .product_reviews_button1
+        display: block !important
+    .product_reviews_button2
+        display: none
+    .product_review
+        flex-direction: column-reverse
+        margin: 30px 0px
+    .product_reviews, .product_addreview
+        width: 100%
+    .product_reviews>div
+        margin-right: 0
+    .product_review_addreview_form
+        display: none
+    .product_review_addreview_button
+        position: absolute
+        right: 15px
+        margin-left: 32%
+        margin-top: -70px
+    .product_review_addreview_title
+        width: 40%
+    .product_addreview
+        position: relative
+        padding: 30px
+        background-image: url(../img/addreview.png)
+        background-size: cover
+@media (max-width: 768px)
+    .product_reviews_item_name_date
+        text-align: right
+    .product_reviews>div
+        flex-direction: column
+    .product_reviews_item_name
+        width: 100%
+        padding-right: 0
+    .product_reviews_item_txt
+        width: 100%
+    .product_reviews_show
+        margin-left: 0
+    .product_addreview
+        background-image: url(../img/addreview320.png)
+    .product_review_addreview_title
+        width: 100%
+        text-align: center
+    .product_addreview
+        padding: 15px
+        background-size: cover
+    .product_review_addreview_button
+        position: sticky
+        width: 100%
+        margin: 0
+
+/** modal style **/
+.modal
+    padding: 0 !important
+.modal-header
+    border: none
+.modal-content
+    border: none
+    border-radius: 0
+    padding: 86px
+    @media (max-width: 768px)
+        padding: 40px
+    @media (max-width: 576px)
+        padding: 15px
+.modal-dialog
+    max-width: 500px
+    margin: 1.75rem auto
+    @media (min-width: 576px)
+        max-width: 864px
+.modal-title
+    font-size: 22px
+    line-height: 27px
+    color: #000000
+    @media (max-width: 768px)
+        font-size: 18px
+.modal-body__coffe
+    position: absolute
+    z-index: 0
+    pointer-events: none
+    &.coffe1
+        bottom: -4px
+        right: 0
+    &.coffe2
+        top: 0
+        left: 0
+    @media (max-width: 576px)
+        width: 100px
+.popup_callback__form
+    width: 100%
+    height: 100%
+
+    height: 70px
+    background: #FBFBFB
+    border: 1px solid #E3EAF2
+    margin: 15px 0
+    padding-left: 28px
+    color: #000000
+    &::placeholder
+        color: #000
+    @media (max-width: 576px)
+        height: 48px
+        margin: 7px 0
+.input-form__submit
+    background: #FF671F
+    font-family: Montserrat-Bold
+    color: #fff
+    width: 202px
+    height: 70px
+    line-height: 70px
+    margin-top: 15px
+    @media (max-width: 576px)
+        width: 100%
+        height: 50px
+        line-height: 50px
+        /**  add style to review modal **/
+.review-captcha
+    text-align: center
+    float: left
+    background-color: aqua
+    width: 150px
+    height: 60px
+    line-height: 60px
+    @media (max-width: 576px)
+        width: 100%
+.input-form-textarea
+    padding-top: 24px
+    @media (max-width: 576px)
+        padding-top: 13px
+.btn-review-modal
+    padding: 20px 35px !important
+    @media (max-width: 576px)
+        width: 100%
+        margin-top: 10px
+.modal-body
+    @media (min-width: 1024px)
+        padding: 0 !important

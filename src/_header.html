@@ -53,7 +53,7 @@
     <div class="search__inner">
         <label class="search__label">
             <input type="text" value="" class="search__input" autocomplete="off" name="search"
-                placeholder="Что желаете найти?" autocomplete="off">
+                placeholder="Что желаете найти?">
             <i class="search__icon search__start">
                 <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -178,7 +178,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -231,7 +231,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -284,7 +284,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -337,7 +337,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -390,7 +390,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -432,8 +432,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="remove_item">
-                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" Богдан
-                                                        Хомутов, [25.11.20 17:02] xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
                                                         <use xlink:href="img/icons/icons.svg#cart-close">
                                                         </use>
                                                     </svg>
@@ -443,7 +443,7 @@
                                         <div class="cart__order_item">
                                             <div class="order__inner">
                                                 <div class="order__photo">
-                                                    <img src="img/product1.png">
+                                                    <img src="img/product1.png" alt="product">
                                                 </div>
                                                 <div class="order__info">
                                                     <div class="order__info__left">
@@ -504,36 +504,34 @@
                                     <div class="form-buy__inner">
                                         <p class="form-buy__title">Ваши данные</p>
                                         <span class="popup__errors"></span>
-                                        <form>
-                                            <input type="text" name="name" id="name"
-                                                class="input-form form-buy__input form-buy__input--name"
-                                                placeholder="ФИО*" required="" autocomplete="off">
-                                            <input type="text" name="company-name" id="company-name"
-                                                class="input-form form-buy__input form-buy__input--company"
-                                                placeholder="Название компании*" required="" autocomplete="off">
-                                            <input type="tel" name="telephone" id="tel"
-                                                class="input-form form-buy__input form-buy__input--tel"
-                                                placeholder="Телефон*" required="" autocomplete="off">
-                                            <input type="email" name="email" id="email"
-                                                class="input-form form-buy__input form-buy__input--email"
-                                                placeholder="Email">
-                                            <input type="text" name="city" id="city"
-                                                class="input-form form-buy__input form-buy__input--city"
-                                                placeholder="Город" required="" autocomplete="off">
-                                            <input type="text" name="address" id="address"
-                                                class="input-form form-buy__input form-buy__input--address"
-                                                placeholder="Адрес" required="" autocomplete="off">
-                                            <p class="form-buy__title">Способ оплаты</p>
-                                            <select name="payment-method" id="payment-method">
-                                                <option value="Оплата при получении товара">Оплата при получении товара
-                                                </option>
-                                            </select>
-                                            <p class="form-buy__title">Способ доставки</p>
-                                            <select name="delivery-method" id="delivery-method">
-                                                <option value="Доставка по Киеву и Днепру">Доставка по Киеву и Днепру
-                                                </option>
-                                            </select>
-                                        </form>
+                                        <input type="text" name="name" id="name"
+                                            class="input-form form-buy__input form-buy__input--name" placeholder="ФИО*"
+                                            required="" autocomplete="off">
+                                        <input type="text" name="company-name" id="company-name"
+                                            class="input-form form-buy__input form-buy__input--company"
+                                            placeholder="Название компании*" required="" autocomplete="off">
+                                        <input type="tel" name="telephone" id="tel"
+                                            class="input-form form-buy__input form-buy__input--tel"
+                                            placeholder="Телефон*" required="" autocomplete="off">
+                                        <input type="email" name="email" id="email"
+                                            class="input-form form-buy__input form-buy__input--email"
+                                            placeholder="Email">
+                                        <input type="text" name="city" id="city"
+                                            class="input-form form-buy__input form-buy__input--city" placeholder="Город"
+                                            required="" autocomplete="off">
+                                        <input type="text" name="address" id="address"
+                                            class="input-form form-buy__input form-buy__input--address"
+                                            placeholder="Адрес" required="" autocomplete="off">
+                                        <p class="form-buy__title">Способ оплаты</p>
+                                        <select name="payment-method" id="payment-method">
+                                            <option value="Оплата при получении товара">Оплата при получении товара
+                                            </option>
+                                        </select>
+                                        <p class="form-buy__title">Способ доставки</p>
+                                        <select name="delivery-method" id="delivery-method">
+                                            <option value="Доставка по Киеву и Днепру">Доставка по Киеву и Днепру
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

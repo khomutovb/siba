@@ -1,0 +1,126 @@
+.product_review
+	margin: 30px
+.product_review__header, .product_review_addreview_title
+	padding: 30px 0px
+.product_review
+	display: flex
+.product_reviews
+	width: 70%
+.product_addreview
+	width: 30%
+.product_reviews > div
+	display: flex
+	margin-right: 50px
+.product_reviews_item_name
+	width: 33.3%
+	font-family: Montserrat-Regular, Arial
+	font-style: normal
+	font-weight: bold
+	font-size: 14px
+	line-height: 27px
+.product_reviews_item_txt
+	width: 66.7%
+	font-family: Montserrat-Regular, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 27px
+.home-review__rating
+    display: inline-block
+    font-size: 0
+    & span
+        padding: 0
+        font-size: 16px
+        line-height: 1
+        color: #D1D1D1
+        &:before
+            content: '★'
+        &.star--active
+            color: #FF671F
+.product_reviews_item_name_date
+	float: right
+	font-family: Montserrat-Regular, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 27px
+.product_reviews_item_name
+	padding-right: 30px
+.product_review_addreview_form
+	min-height: 300px
+	color: #FF671F
+	font-weight: bold
+.product_review_addreview_button
+	width: 182px
+	height: 60px
+	background-color: #FF671F
+	text-align: center
+	line-height: 60px
+	color: #FFFFFF
+.product_reviews_item
+	padding: 20px 0
+	border-top: 1px solid #e4e4e4
+.product_reviews_item_hide
+	display: none!important
+.product_reviews_show
+	width: 300px
+	height: 30px
+	margin-left: 40%
+	cursor: pointer
+	text-align: center
+	font-family: Montserrat-Regular, Arial
+	font-style: normal
+	font-weight: normal
+	font-size: 14px
+	line-height: 30px
+	& :after
+		display: inline-block
+		content: "\276E"
+		transform: rotate(-90deg)
+		margin-left: 20px
+
+@media (max-width: 768px)
+	.product_review
+		flex-direction: column-reverse
+		margin: 30px 15px
+	.product_reviews, .product_addreview
+		width: 100%
+	.product_reviews>div
+		margin-right: 0
+	.product_review_addreview_form
+		display: none
+	.product_review_addreview_button
+		position: absolute
+		right: 15px
+		float: left
+		margin-left: 32%
+		margin-top: 10px
+	.product_review_addreview_title
+		width: 40%
+		float: left
+	.product_addreview
+		position: relative
+		padding: 30px
+		background-image: url(../img/addreview.png)
+@media (max-width: 560px)
+	.product_reviews>div
+		flex-direction: column
+	.product_reviews_item_name
+		width: 100%
+		padding-right: 0
+	.product_reviews_item_txt
+		width: 100%
+	.product_reviews_show
+		margin-left: 0
+	.product_addreview
+		background-image: url(../img/addreview320.png)
+	.product_review_addreview_title
+		width: 100%
+		text-align: center
+	.product_addreview
+		padding: 15px
+		background-size: cover
+	.product_review_addreview_button
+		position: sticky
+		width: 100%
+		margin: 0

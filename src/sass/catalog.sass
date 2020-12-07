@@ -31,6 +31,7 @@
             transform: translateX(-100%)
             transition: transform .6s
             padding: 0 20px
+            will-change: transform
             &.active
                 transform: translateX(0)
             @media (max-width: 660px)
@@ -55,12 +56,15 @@
     padding-left: 60px
     @media (max-width: 1366px)
         padding-left: 40px
+    @media (max-width: 1024px)
+        padding: 14px 40px
     @media (max-width: 768px)
         padding-left: 15px
 .breadcrumb-item
     color: #555555
     @media (max-width: 660px)
         display: none
+        font-size: 12px
     &.prev
         display: block
 .breadcrumb-item.active a
@@ -237,22 +241,29 @@
 .page-link.page--active
     font-family: Montserrat-Bold
     color: #FF671F
-.catalog__footer__description
+.catalog__footer
     position: relative
-    margin-top: 60px
-    margin-bottom: 60px
     &::after
         content: ""
         position: absolute
         bottom: 0
         left: 0
-        width: 100%
-        height: 103px
+        width: 95%
+        height: 65px
         opacity: 0.8
         background: linear-gradient(0deg, #FFFFFF 10.19%, rgba(255, 255, 255, 0) 148.54%)
-    & p
-        line-height: 27px
-        font-size: 14px
+.catalog__footer__description
+    position: relative
+    margin-top: 60px
+    margin-bottom: 60px
+    line-height: 27px
+    font-size: 14px
+    max-height: 170px
+    overflow: scroll
+    padding-bottom: 20px
+    & ul
+        list-style: revert
+        padding: revert
 /** Сatalog advantages **/
 .catalog__advantages
     width: 100%
@@ -430,3 +441,17 @@
     margin-top: 58px
     @media (max-width: 1366px)
         margin-top: 27px
+.catalog__products .product__item
+    will-change: transform
+    opacity: 0
+@for $i from 1 through 30
+    & .catalog__products .product__item:nth-child(#{$i})
+        animation-delay: $i * (0.09s) !important
+@keyframes fade-in
+    0%
+        opacity: 0
+        transform: scale(0)
+
+    100%
+        opacity: 1
+        transform: scale(1)

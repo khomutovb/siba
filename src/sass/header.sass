@@ -6,9 +6,13 @@ header
     top: 0px
     z-index: 9
     background: #fff
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.03)
     left: 0
     right: 0
+    border-bottom: 1px solid #e4e4e4
+    transition: all .4s
+.home-page .header
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.03)
+    border-color: transparent
 .header__inner
     height: 97px
     display: flex
@@ -57,8 +61,17 @@ header
     font-weight: 600
     color: #fff
     cursor: pointer
+    position: relative
+    top: 1px
     & svg
         margin-right: 15px
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 1px
+        background: #FF671F
+        top: -1px
     @media (max-width: 1366px)
         padding: 0
         width: 113px
@@ -203,7 +216,7 @@ header
             width: 11px
             height: 11px
 .menu-toggle__body
-    padding: 0 40px
+    padding-left: 40px
     padding-top: 45px
     height: 100%
     background: #fff
@@ -283,6 +296,7 @@ header
     visibility: hidden
     pointer-events: none
     transition: all .4s
+    will-change: transform
     z-index: -1
     @media (max-width: 1366px)
         padding-top: 115px
@@ -296,6 +310,7 @@ header
 .drop__inner
     transform: translate(-80px, 0px)
     transition: transform .9s
+    will-change: transform
     @media (max-width: 1024px)
         transform: translate(0, 0px)
         margin-left: 20px
@@ -331,6 +346,7 @@ header
     opacity: 0
     visibility: hidden
     transition: all .4s
+    will-change: transform
     width: 100%
     height: 100%
     background: rgba(0, 0, 0, 0.5)
@@ -532,6 +548,7 @@ header
     -webkit-transition: background .4s
     -o-transition: background .4s
     transition: background .4s
+    will-change: transform
     height: 100%
     margin: auto
     display: flex

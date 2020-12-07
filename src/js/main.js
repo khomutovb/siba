@@ -1,11 +1,36 @@
 //include('bootstrap.min.js')
+//include('jquery.spincrement.min.js')
+if ($(".rellax").length) {
+    const rellaxin = document.querySelectorAll(".rellax");
+
+    rellaxin.forEach(el => {
+
+        const rellax = new Rellax(el, {
+            relativeToWrapper: true,
+            wrapper: el.parentElement
+        });
+
+        window.addEventListener("scroll", () => { // fix to init
+            rellax.refresh();
+        });
+
+    });
+}
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 $(document).ready(function () {
     $(".menu-toggle__close").click(function () {
         $(".menu-toggle").removeClass("active")
         $(".menu-toggle__inner").removeClass("active")
         $("body").removeClass("overflow")
     });
-    $(".product__buy").click(function () {
+    $(".product__buy, .product-page__btn__buy").click(function () {
         $(".cart").addClass("active")
         $(".cart__inner").addClass("active")
         $("body").addClass("overflow")
@@ -24,6 +49,10 @@ $(document).ready(function () {
         $("body").removeClass('overflow')
         $(".left-sidebar").removeClass('active')
         $(".left-sidebar__inner").removeClass("active")
+    });
+    $('.product_reviews_show').click(function () {
+        $('.product_reviews_item').removeClass("product_reviews_item_hide");
+        $('.product_reviews_show').addClass("product_reviews_item_hide");
     });
     if ($("#menu-toggle").length) {
 
@@ -305,6 +334,217 @@ $(document).ready(function () {
         ]
     });
 });
+$(".product-slider").slick({
+    slidesToShow: 1,
+    infinite: true,
+    dots: true,
+    arrows: true,
+    cssEase: 'linear',
+    customPaging: function (slick, index) {
+        var image = $(slick.$slides[index]).find('img').attr('src');
+        if (image === undefined) {
+            return (
+                '<img style="height: 24px" src="img/svg/product-youtube.svg" alt="youtube" /> '
+            )
+        }
+        else {
+            return (
+                '<img src="' + image + '" alt="" /> '
+            )
+        }
+    }
+});
+$(".similar-product .similar-product__slider .product__list").slick({
+    slidesToShow: 6,
+    slidesToScroll: 5,
+    dots: false,
+    arrows: true,
+    nextArrow: '.similar-product .next_arrow',
+    prevArrow: '.similar-product .previous_arrow',
+    focusOnSelect: false,
+    responsive: [
+        {
+            breakpoint: 1700,
+            settings: {
+                dots: false,
+                slidesToShow: 5,
+                slidesToScroll: 4,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                dots: false,
+                slidesToShow: 4,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
+$(".viewed-product .viewed-product__slider .product__list").slick({
+    slidesToShow: 6,
+    slidesToScroll: 5,
+    dots: false,
+    arrows: true,
+    nextArrow: '.viewed-product .next_arrow',
+    prevArrow: '.viewed-product .previous_arrow',
+    focusOnSelect: false,
+    responsive: [
+        {
+            breakpoint: 1700,
+            settings: {
+                dots: false,
+                slidesToShow: 5,
+                slidesToScroll: 4,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                dots: false,
+                slidesToShow: 4,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
+$(".analog-product .analog-product__slider .product__list").slick({
+    slidesToShow: 6,
+    slidesToScroll: 5,
+    dots: false,
+    arrows: true,
+    nextArrow: '.analog-product .next_arrow',
+    prevArrow: '.analog-product .previous_arrow',
+    focusOnSelect: false,
+    responsive: [
+        {
+            breakpoint: 1700,
+            settings: {
+                dots: false,
+                slidesToShow: 5,
+                slidesToScroll: 4,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                dots: false,
+                slidesToShow: 4,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
+/* $(window).scroll(function () {
+    if ($(window).scrollTop() >= 20) {
+        $('header').addClass('shadow');
+    } else {
+        $('header').removeClass('shadow');
+    }
+}) */
+if ($("#similar-product").length) {
+    $(window).scroll(function () {
+        var hT = $('#similar-product').offset().top,
+            hH = $('#similar-product').outerHeight(),
+            wH = $(window).height(),
+            wS = $(this).scrollTop();
+        console.log((hT - wH), wS);
+        if (wS > (hT + hH - wH + 350)) {
+            $('header').addClass('shadow');
+        }
+        else {
+            $('header').removeClass('shadow');
+        }
+    });
+}
+if ($(".benefits__inner").length) {
+    $(document).ready(function () {
+
+        var show = true;
+        var countbox = ".benefits__inner";
+        $(window).on("scroll load resize", function () {
+            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+            var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+            var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+            var w_height = $(window).height(); // Высота окна браузера
+            var d_height = $(document).height(); // Высота всего документа
+            var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $(".counter-animation__title").css('opacity', '1');
+                $('.benefits__number').css('opacity', '1');
+                $('.benefits__number').spincrement({
+                    thousandSeparator: "",
+                    duration: 2000
+                });
+
+                show = false;
+            }
+        });
+
+    });
+}
+if ($(".catalog__products").length) {
+    $(document).ready(function () {
+
+        var show = true;
+        var countbox = ".catalog__products";
+        $(window).on("scroll load resize", function () {
+            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+            var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+            var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+            var w_height = $(window).height(); // Высота окна браузера
+            var d_height = $(document).height(); // Высота всего документа
+            var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+            if (w_top + 800 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $(".catalog__products .product__item").css('animation', '0.3s ease-in-out both fade-in');
+                show = false;
+            }
+        });
+
+    });
+}
 //include('jquery.inputmask.bundle.min.js');
 $(".popup_callback__input.popup_callback__input--tel").inputmask("+38(999)999-99-99");
 $(".popup_opt_price__input.popup_opt_price__input--tel").inputmask("+38(999)999-99-99");
