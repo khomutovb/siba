@@ -81,6 +81,7 @@
         height: calc(100vh - 50px)
     @media (max-width: 576px)
         height: calc(var(--vh, 1vh) * 100 - 230px)
+        min-height: 330px
     & .home-slider__item
         display: flex
         flex-direction: column
@@ -185,9 +186,9 @@
 section
     padding: 20px 60px
     @media (max-width: 1366px)
-        padding: 0 40px
+        padding: 20px 40px
     @media (max-width: 768px)
-        padding: 0 15px
+        padding: 10px 15px
 .section__title
     font-size: calc(20px + 4 * ((100vw - 320px)/ 1600))
     font-weight: 400
@@ -261,7 +262,9 @@ section.offers
         background: #FCF2F2
         & .offers__item__img
             &::after
-                left: -35px
+                left: 0
+                @media (max-width: 1366px)
+                    left: -35px
         &:hover
             background: #FFE9E9
     &:nth-child(2)
@@ -1072,6 +1075,8 @@ section.home-review
     margin-top: 40px
     font-size: 14px
     line-height: 27px
+    max-height: 165px
+    overflow-y: scroll
 .home-review__rating
     display: inline-block
     font-size: 0
@@ -1094,8 +1099,10 @@ section.subscribe
     height: 344px
     margin-top: 100px
     background: linear-gradient(73.49deg, #F0F7FF 12.45%, #FFF3EF 97.56%)
-    @media (max-width: 768px)
+    @media (max-width: 992px)
         height: auto
+        padding: 40px 40px
+    @media (max-width: 768px)
         padding: 40px 15px
     @media (max-width: 481px)
         margin-top: 30px
@@ -1108,7 +1115,7 @@ section.subscribe
     display: flex
     justify-content: space-between
     margin: 0 -19px
-    @media (max-width: 768px)
+    @media (max-width: 992px)
         flex-direction: column
         margin: 0
 .subscribe__input__container__right
@@ -1117,21 +1124,31 @@ section.subscribe
     align-items: center
     @media (max-width: 481px)
         flex-direction: column
+.subscribe__input__group
+    margin: 15px 19px
+    width: 100%
+    position: relative
+    @media (max-width: 992px)
+        margin: 15px 0
+.subscribe__group__name, .subscribe__group__email
+    width: 35%
+    @media (max-width: 1366px)
+        width: 55%
+    @media (max-width: 992px)
+        width: 100%
 .subscribe__input
     width: 100%
     height: 70px
     background: #fff
     border: 1px solid #E3EAF2
-    margin: 15px 19px
     padding-left: 28px
     color: #000000
     &::placeholder
         color: #000
-    @media (max-width:768px)
-        margin: 7px 0
-        width: 100%
     @media (max-width: 481px)
         height: 48px
+    &.invalid
+        border: 1px solid red
 .subscribe_button
     background: #FF671F
     font-family: Montserrat-Bold
@@ -1143,15 +1160,9 @@ section.subscribe
     @media (max-width: 481px)
         width: 100%
         margin-left: 0
-        margin-top: 7px
+        margin-top: 14px
         height: 48px
         line-height: 48px
-.subscribe__input--name
-    width: 25%
-.subscribe__input--email
-    width: 25%
-.subscribe__input--massage
-    width: 80%
 /** Section seo-text **/
 .seo-text__inner
     min-height: 300px
@@ -1163,3 +1174,10 @@ section.subscribe
     color: #606060
     font-size: 14px
     line-height: 24px
+.subscribe__form label.invalid
+    position: absolute
+    left: 0
+    bottom: -20px
+    font-size: 10px
+    font-weight: 500
+    color: red

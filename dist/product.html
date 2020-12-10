@@ -2,13 +2,13 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <link rel="stylesheet" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css" />
 
     <title>Siba</title>
 </head>
@@ -182,7 +182,7 @@
                 <span>Корзина</span>
             </div>
         </div>
-        <form class="cart__form" action="">
+        <form class="cart__form" action="" name="cart__form">
             <div class="cart__wrap">
                 <div class="cart__body">
                     <ul class="stepper parallel horizontal">
@@ -519,25 +519,43 @@
                                 <div class="form-buy">
                                     <div class="form-buy__inner">
                                         <p class="form-buy__title">Ваши данные</p>
-                                        <span class="popup__errors"></span>
-                                        <input type="text" name="name" id="name"
-                                            class="input-form form-buy__input form-buy__input--name" placeholder="ФИО*"
-                                            required="" autocomplete="off">
-                                        <input type="text" name="company-name" id="company-name"
-                                            class="input-form form-buy__input form-buy__input--company"
-                                            placeholder="Название компании*" required="" autocomplete="off">
-                                        <input type="tel" name="telephone" id="tel"
-                                            class="input-form form-buy__input form-buy__input--tel"
-                                            placeholder="Телефон*" required="" autocomplete="off">
-                                        <input type="email" name="email" id="email"
-                                            class="input-form form-buy__input form-buy__input--email"
-                                            placeholder="Email">
-                                        <input type="text" name="city" id="city"
-                                            class="input-form form-buy__input form-buy__input--city" placeholder="Город"
-                                            required="" autocomplete="off">
-                                        <input type="text" name="address" id="address"
-                                            class="input-form form-buy__input form-buy__input--address"
-                                            placeholder="Адрес" required="" autocomplete="off">
+                                        <div class="input__group">
+                                            <input type="text" name="name" id="name"
+                                                class="input-form form-buy__input form-buy__input--name"
+                                                placeholder="ФИО*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="tel" name="telephone" id="tel"
+                                                class="input-form form-buy__input form-buy__input--tel"
+                                                placeholder="Телефон*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="email" name="email" id="email"
+                                                class="input-form form-buy__input form-buy__input--email"
+                                                placeholder="Email*" autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                                        </div>
+                                        <div class="input__group group--radio">
+                                            <div class="radio">
+                                                <input class="organizationalType-radio" type="radio" id="organizationalType-1" name="organizationalType"
+                                                    value="Юридическое лицо" checked>
+                                                <label for="organizationalType-1">Юридическое лицо</label>
+                                            </div>
+                                            <div class="radio">
+                                                <input class="organizationalType-radio" type="radio" id="organizationalType-2" name="organizationalType"
+                                                    value="Физическое лицо">
+                                                <label for="organizationalType-2">Физическое лицо</label>
+                                            </div>
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="text" name="city" id="city"
+                                                class="input-form form-buy__input form-buy__input--city"
+                                                placeholder="Город" autocomplete="off">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="text" name="address" id="address"
+                                                class="input-form form-buy__input form-buy__input--address"
+                                                placeholder="Адрес" autocomplete="off">
+                                        </div>
                                         <p class="form-buy__title">Способ оплаты</p>
                                         <select name="payment-method" id="payment-method">
                                             <option value="Оплата при получении товара">Оплата при получении товара
@@ -1844,9 +1862,11 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="tel" name="telephone" id="callback-tel" class="input-form popup_callback__input popup_callback__input--tel"
-                        placeholder="Телефон*" required="" autocomplete="off">
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="callback-tel"
+                            class="input-form popup_callback__input popup_callback__input--tel" placeholder="Телефон*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
                     <button type="submit" class="input-form__submit popup_callback__submit">
                         Отправить заявку </button>
                 </form>
@@ -1879,16 +1899,26 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_opt_price__form" name="opt_price" id="opt_price"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="text" name="name" id="opt_price-name" class="input-form popup_opt_price__input popup_opt_price__input--name"
-                        placeholder="ФИО*" required="" autocomplete="off">
-                    <input type="text" name="company-name" id="opt_price-company-name"
-                        class="input-form popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
-                        required="" autocomplete="off">
-                    <input type="tel" name="telephone" id="opt_price-tel"
-                        class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="" autocomplete="off">
-                    <input type="email" name="email" id="opt_price-email"
-                        class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email" autocomplete="off">
+                    <div class="input__group">
+                        <input type="text" name="name" id="opt_price-name"
+                            class="input-form popup_opt_price__input popup_opt_price__input--name" placeholder="ФИО*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="text" name="companyName" id="opt_price-company-name"
+                            class="input-form popup_opt_price__input popup_opt_price__input--company"
+                            placeholder="Название компании*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="opt_price-tel"
+                            class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="email" name="email" id="opt_price-email"
+                            class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email"
+                            autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                    </div>
                     <button type="submit" class="input-form__submit popup_opt_price__submit">
                         Отправить заявку </button>
                 </form>
@@ -1921,13 +1951,21 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_reminder__form" name="reminder" id="reminder"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="text" name="name" id="reminder-name" class="input-form popup_reminder__input popup_reminder__input--name"
-                        placeholder="Имя*" required="">
-                    <input type="email" name="email" id="reminder-email"
-                        class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email" autocomplete="off">
-                    <input type="tel" name="telephone" id="reminder-tel" class="input-form popup_reminder__input popup_reminder__input--tel"
-                        placeholder="Телефон*" required="" autocomplete="off">
+                    <div class="input__group">
+                        <input type="text" name="name" id="reminder-name"
+                            class="input-form popup_reminder__input popup_reminder__input--name" placeholder="Имя*"
+                            required="" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="email" name="email" id="reminder-email"
+                            class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email"
+                            autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                    </div>
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="reminder-tel"
+                            class="input-form popup_reminder__input popup_reminder__input--tel" placeholder="Телефон*"
+                            required="" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
                     <button type="submit" class="input-form__submit popup_reminder__submit">
                         Сообщить мне на Email </button>
                 </form>
@@ -2001,6 +2039,7 @@
 </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 

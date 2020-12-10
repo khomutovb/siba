@@ -17,9 +17,11 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_callback__form" name="callback" id="callback"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="tel" name="telephone" id="callback-tel" class="input-form popup_callback__input popup_callback__input--tel"
-                        placeholder="Телефон*" required="" autocomplete="off">
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="callback-tel"
+                            class="input-form popup_callback__input popup_callback__input--tel" placeholder="Телефон*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
                     <button type="submit" class="input-form__submit popup_callback__submit">
                         Отправить заявку </button>
                 </form>
@@ -52,16 +54,26 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_opt_price__form" name="opt_price" id="opt_price"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="text" name="name" id="opt_price-name" class="input-form popup_opt_price__input popup_opt_price__input--name"
-                        placeholder="ФИО*" required="" autocomplete="off">
-                    <input type="text" name="company-name" id="opt_price-company-name"
-                        class="input-form popup_opt_price__input popup_opt_price__input--company" placeholder="Название компании*"
-                        required="" autocomplete="off">
-                    <input type="tel" name="telephone" id="opt_price-tel"
-                        class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*" required="" autocomplete="off">
-                    <input type="email" name="email" id="opt_price-email"
-                        class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email" autocomplete="off">
+                    <div class="input__group">
+                        <input type="text" name="name" id="opt_price-name"
+                            class="input-form popup_opt_price__input popup_opt_price__input--name" placeholder="ФИО*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="text" name="companyName" id="opt_price-company-name"
+                            class="input-form popup_opt_price__input popup_opt_price__input--company"
+                            placeholder="Название компании*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="opt_price-tel"
+                            class="input-form popup_opt_price__input popup_opt_price__input--tel" placeholder="Телефон*"
+                            autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="email" name="email" id="opt_price-email"
+                            class="input-form popup_opt_price__input popup_opt_price__input--email" placeholder="Email"
+                            autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                    </div>
                     <button type="submit" class="input-form__submit popup_opt_price__submit">
                         Отправить заявку </button>
                 </form>
@@ -94,13 +106,21 @@
             <div class="modal-body">
                 <form action="" method="post" class="popup_reminder__form" name="reminder" id="reminder"
                     autocomplete="off">
-                    <span class="popup__errors"></span>
-                    <input type="text" name="name" id="reminder-name" class="input-form popup_reminder__input popup_reminder__input--name"
-                        placeholder="Имя*" required="">
-                    <input type="email" name="email" id="reminder-email"
-                        class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email" autocomplete="off">
-                    <input type="tel" name="telephone" id="reminder-tel" class="input-form popup_reminder__input popup_reminder__input--tel"
-                        placeholder="Телефон*" required="" autocomplete="off">
+                    <div class="input__group">
+                        <input type="text" name="name" id="reminder-name"
+                            class="input-form popup_reminder__input popup_reminder__input--name" placeholder="Имя*"
+                            required="" data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <input type="email" name="email" id="reminder-email"
+                            class="input-form popup_reminder__input popup_reminder__input--email" placeholder="Email"
+                            autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                    </div>
+                    <div class="input__group">
+                        <input type="tel" name="telephone" id="reminder-tel"
+                            class="input-form popup_reminder__input popup_reminder__input--tel" placeholder="Телефон*"
+                            required="" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
                     <button type="submit" class="input-form__submit popup_reminder__submit">
                         Сообщить мне на Email </button>
                 </form>

@@ -189,9 +189,7 @@ header
     @media (max-width: 1024px)
         overflow: auto
     @media (max-width: 660px)
-        width: 85%
-        overflow: auto
-    @media (max-height: 660px)
+        width: calc(100% - 50px)
         overflow: auto
 .menu-toggle__header
     min-height: 163px
@@ -370,7 +368,7 @@ header
     &.active
         transform: translateX(0)
     @media (max-width:660px)
-        width: 85%
+        width: calc(100% - 50px)
 .cart__header
     min-height: 118px
     display: flex
@@ -568,10 +566,14 @@ header
 .form-buy__inner
     overflow: auto
     padding: 0 60px
+    padding-bottom: 60px
+    margin-top: 1px
     @media (max-width: 1366px)
         padding: 0 40px
+        padding-bottom: 60px
     @media (max-width: 768px)
         padding: 0 15px
+        padding-bottom: 60px
 .remove_item
     width: 30px
     height: 30px
@@ -664,6 +666,43 @@ header
     margin: 15px 0
     padding-left: 28px
     color: #000000
+    font-size: 14px
     @media (max-width: 768px)
         height: 48px
-        margin: 7px 0
+        margin: 10px 0
+    @media (max-width: 576px)
+        font-size: 12px
+.group--radio
+    display: flex
+    margin: 45px 0
+    & .radio
+        margin-right: 40px
+    @media (max-width: 481px)
+        flex-direction: column
+        margin: 20px 0
+.organizationalType-radio
+    position: absolute
+    z-index: -1
+    opacity: 0
+    &+label
+        display: inline-flex
+        align-items: center
+        user-select: none
+        font-size: 14px
+        @media (max-width: 576px)
+            font-size: 12px
+    &+label::before
+        content: ''
+        display: inline-block
+        width: 20px
+        height: 20px
+        flex-shrink: 0
+        flex-grow: 0
+        border: 1px solid #adb5bd
+        border-radius: 50%
+        margin-right: 0.5em
+        background-repeat: no-repeat
+        background-position: center center
+    &:checked+label::before
+        border-color: #FF671F
+        background-image: url("../img/svg/radio.svg")

@@ -166,7 +166,7 @@
                 <span>Корзина</span>
             </div>
         </div>
-        <form class="cart__form" action="">
+        <form class="cart__form" action="" name="cart__form">
             <div class="cart__wrap">
                 <div class="cart__body">
                     <ul class="stepper parallel horizontal">
@@ -503,25 +503,43 @@
                                 <div class="form-buy">
                                     <div class="form-buy__inner">
                                         <p class="form-buy__title">Ваши данные</p>
-                                        <span class="popup__errors"></span>
-                                        <input type="text" name="name" id="name"
-                                            class="input-form form-buy__input form-buy__input--name" placeholder="ФИО*"
-                                            required="" autocomplete="off">
-                                        <input type="text" name="company-name" id="company-name"
-                                            class="input-form form-buy__input form-buy__input--company"
-                                            placeholder="Название компании*" required="" autocomplete="off">
-                                        <input type="tel" name="telephone" id="tel"
-                                            class="input-form form-buy__input form-buy__input--tel"
-                                            placeholder="Телефон*" required="" autocomplete="off">
-                                        <input type="email" name="email" id="email"
-                                            class="input-form form-buy__input form-buy__input--email"
-                                            placeholder="Email">
-                                        <input type="text" name="city" id="city"
-                                            class="input-form form-buy__input form-buy__input--city" placeholder="Город"
-                                            required="" autocomplete="off">
-                                        <input type="text" name="address" id="address"
-                                            class="input-form form-buy__input form-buy__input--address"
-                                            placeholder="Адрес" required="" autocomplete="off">
+                                        <div class="input__group">
+                                            <input type="text" name="name" id="name"
+                                                class="input-form form-buy__input form-buy__input--name"
+                                                placeholder="ФИО*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="tel" name="telephone" id="tel"
+                                                class="input-form form-buy__input form-buy__input--tel"
+                                                placeholder="Телефон*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="email" name="email" id="email"
+                                                class="input-form form-buy__input form-buy__input--email"
+                                                placeholder="Email*" autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                                        </div>
+                                        <div class="input__group group--radio">
+                                            <div class="radio">
+                                                <input class="organizationalType-radio" type="radio" id="organizationalType-1" name="organizationalType"
+                                                    value="Юридическое лицо" checked>
+                                                <label for="organizationalType-1">Юридическое лицо</label>
+                                            </div>
+                                            <div class="radio">
+                                                <input class="organizationalType-radio" type="radio" id="organizationalType-2" name="organizationalType"
+                                                    value="Физическое лицо">
+                                                <label for="organizationalType-2">Физическое лицо</label>
+                                            </div>
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="text" name="city" id="city"
+                                                class="input-form form-buy__input form-buy__input--city"
+                                                placeholder="Город" autocomplete="off">
+                                        </div>
+                                        <div class="input__group">
+                                            <input type="text" name="address" id="address"
+                                                class="input-form form-buy__input form-buy__input--address"
+                                                placeholder="Адрес" autocomplete="off">
+                                        </div>
                                         <p class="form-buy__title">Способ оплаты</p>
                                         <select name="payment-method" id="payment-method">
                                             <option value="Оплата при получении товара">Оплата при получении товара

@@ -18,6 +18,10 @@
 @import "modal"
 @import "footer"
 
+@import "about_us"
+@import "repair_equipment"
+@import "spares_repair"
+@import "spares"
 @import "public_offer_agreement"
 @import "privacy_policy"
 @import "contacts"
@@ -36,7 +40,6 @@ body
 ::-webkit-scrollbar
     @media (min-width: 1025px)
         width: 8px
-
 ::-webkit-scrollbar-track
     @media (min-width: 1025px)
         background: rgba(255, 255, 255, 1)
@@ -44,11 +47,11 @@ body
 ::-webkit-scrollbar-thumb
     @media (min-width: 1025px)
         background: #ff671f
-
 .w-ibanner.animation_nike .w-ibanner-image
     @media (min-width: 1025px)
         filter: grayscale(0) !important
         transform: translateY(0%) !important
+
 .rellax
     transition: transform 900ms cubic-bezier(0, 0, .2, 1)
     will-change: transform
@@ -78,9 +81,8 @@ button
 ul
     list-style: none
     padding: 0
-input
-    font-family: Montserrat-Regular
 input, button, textarea
+    font-family: Montserrat-Regular
     outline: none
     margin: 0
     border-radius: 0
@@ -123,17 +125,6 @@ main
     outline: none !important
     & img
         margin: auto
-
-label.invalid
-    font-size: 12.8px
-    font-size: 0.8rem
-    font-weight: 500
-    color: red !important
-    top: 50px !important
-
-label.invalid.active
-    -webkit-transform: translateY(0%) !important
-    transform: translateY(0%) !important
 
 ul.stepper
     counter-reset: section

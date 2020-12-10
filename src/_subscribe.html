@@ -5,13 +5,19 @@
         </div>
         <form name="subscribe" action="" method="post" class="subscribe__form" id="subscribe-form">
             <div class="subscribe__input__container">
-                <input class="subscribe__input subscribe__input--name" type="text" name="name"
-                    placeholder="Имя*" autocomplete="off" required="">
-                <input class="subscribe__input subscribe__input--email" type="email" name="email"
-                    placeholder="Email*" autocomplete="off" required="">
+                <div class="subscribe__input__group subscribe__group__name">
+                    <input class="subscribe__input subscribe__input--name" type="text" name="name" placeholder="Имя*"
+                        autocomplete="off" data-msg-required="Поле не может быть пустым">
+                </div>
+                <div class="subscribe__input__group subscribe__group__email">
+                    <input class="subscribe__input subscribe__input--email" type="email" name="email"
+                        placeholder="Email*" autocomplete="off" data-msg-required="Некорректный адрес электронной почты!">
+                </div>
                 <div class="subscribe__input__container__right">
-                    <input class="subscribe__input subscribe__input--massage" type="text" name="massage"
-                        placeholder="Сообщение*" autocomplete="off" required="">
+                    <div class="subscribe__input__group">
+                        <input class="subscribe__input subscribe__input--massage" type="text" name="massage"
+                            placeholder="Сообщение*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                    </div>
                     <button class="subscribe_button" type="submit">Отправить</button>
                 </div>
             </div>
