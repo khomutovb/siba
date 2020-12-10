@@ -1127,7 +1127,8 @@
                     <div class="input__group">
                         <input type="text" name="companyName" id="opt_price-company-name"
                             class="input-form popup_opt_price__input popup_opt_price__input--company"
-                            placeholder="Название компании*" autocomplete="off" data-msg-required="Поле не может быть пустым">
+                            placeholder="Название компании*" autocomplete="off"
+                            data-msg-required="Поле не может быть пустым">
                     </div>
                     <div class="input__group">
                         <input type="tel" name="telephone" id="opt_price-tel"
@@ -1195,6 +1196,53 @@
             </div>
             <div class="modal-body__coffe coffe2">
                 <img src="img/zerno2.png" alt="Coffe">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal review -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Оставьте Ваш отзыв о продукте</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" name="modal__product_respond" id="modal__product_respond"
+                    autocomplete="off">
+                    <div class="input__group">
+                        <input type="text" name="name" class="input-form" placeholder="Имя*" autocomplete="off"
+                            data-msg-required="Поле не может быть пустым">
+                    </div>
+                    <div class="input__group">
+                        <textarea name="massage" class="input-form input-form-textarea" placeholder="Текст отзыва*"
+                            rows="3" data-msg-required="Поле не может быть пустым"></textarea>
+                    </div>
+                    <div class="home-review__rating_title">
+                        <p>На сколько вы оцениваете товар?</p>
+                    </div>
+                    <div class="rating_stars input__group">
+                        <input type="radio" id="mr1" name="rating" value="1"
+                            data-msg-required="Пожалуйста поставьте оценку!" />
+                        <label for="mr1">&#9733;</label>
+                        <input type="radio" id="mr2" name="rating" value="2" />
+                        <label for="mr2">&#9733;</label>
+                        <input type="radio" id="mr3" name="rating" value="3" />
+                        <label for="mr3">&#9733;</label>
+                        <input type="radio" id="mr4" name="rating" value="4" />
+                        <label for="mr4">&#9733;</label>
+                        <input type="radio" id="mr5" name="rating" value="5" />
+                        <label for="mr5">&#9733;</label>
+                    </div>
+                    <div class="review-captcha">CAPTCHA</div>
+                    <button type="submit" class="product_review_addreview_button">
+                        <p>Оставить отзыв</p>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

@@ -4595,7 +4595,7 @@ section.subscribe {
 
 .review-captcha {
   text-align: center;
-  float: left;
+  margin: 10px 0;
   background-color: aqua;
   width: 150px;
   height: 60px;
@@ -4608,6 +4608,43 @@ section.subscribe {
 
 .btn-review-modal {
   padding: 20px 35px !important;
+}
+
+.rating_stars {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 22px 0;
+}
+
+.rating_stars input {
+  display: none;
+}
+
+.rating_stars label {
+  font-size: 24px;
+  color: #c8c8c8;
+  margin-right: 10px;
+}
+
+.rating_stars input:checked ~ label {
+  color: #FF671F;
+}
+
+.home-review__rating_title {
+  margin-top: 15px;
+}
+
+#rating-error {
+  top: -12px;
 }
 
 /** modal style **/
@@ -4720,6 +4757,8 @@ label.invalid {
   position: absolute;
   bottom: -6px;
   left: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .input-form.invalid {

@@ -7,59 +7,59 @@
 //# sourceMappingURL=bootstrap.min.js.map
 !function(t){t.extend(t.easing,{spincrementEasing:function(t,a,e,n,r){return a===r?e+n:n*(-Math.pow(2,-10*a/r)+1)+e}}),t.fn.spincrement=function(a){function e(t,a){if(t=t.toFixed(a),a>0&&"."!==r.decimalPoint&&(t=t.replace(".",r.decimalPoint)),r.thousandSeparator)for(;o.test(t);)t=t.replace(o,"$1"+r.thousandSeparator+"$2");return t}var n={from:0,to:null,decimalPlaces:null,decimalPoint:".",thousandSeparator:",",duration:1e3,leeway:50,easing:"spincrementEasing",fade:!0,complete:null},r=t.extend(n,a),o=new RegExp(/^(-?[0-9]+)([0-9]{3})/);return this.each(function(){var a=t(this),n=r.from;a.attr("data-from")&&(n=parseFloat(a.attr("data-from")));var o;if(a.attr("data-to"))o=parseFloat(a.attr("data-to"));else if(null!==r.to)o=r.to;else{var i=t.inArray(r.thousandSeparator,["\\","^","$","*","+","?","."])>-1?"\\"+r.thousandSeparator:r.thousandSeparator,l=new RegExp(i,"g");o=parseFloat(a.text().replace(l,""))}var c=r.duration;r.leeway&&(c+=Math.round(r.duration*(2*Math.random()-1)*r.leeway/100));var s;if(a.attr("data-dp"))s=parseInt(a.attr("data-dp"),10);else if(null!==r.decimalPlaces)s=r.decimalPlaces;else{var d=a.text().indexOf(r.decimalPoint);s=d>-1?a.text().length-(d+1):0}a.css("counter",n),r.fade&&a.css("opacity",0),a.animate({counter:o,opacity:1},{easing:r.easing,duration:c,step:function(t){a.html(e(t*o,s))},complete:function(){a.css("counter",null),a.html(e(o,s)),r.complete&&r.complete(a)}})})}}(jQuery);
 $(document).ready(function () {
-    // accordions
-   (function($) {
-      var allPanels = $('.accordion_left > dd').hide();
-      $('.accordion_left > dt > a').click(function() {
-        allPanels.slideUp();
-        $('.accordion_left > dt > a > .repair_equipment_services_closeimg').removeClass("show_closeimg");
-        $('.accordion_left > dt > a > .repair_equipment_services_openimg').removeClass("hide_openimg");
-        $(this).parent().next().slideDown();
-        $('.accordion_left > dt > a').removeClass("main_color");
-        $(this).addClass("main_color");
-        var acc = $(this).children('div:nth(1)');
-        $(acc).addClass("show_closeimg");
-        var acc = $(this).children('div:nth(0)');
-        $(acc).addClass("hide_openimg");
-        return false;
-      });
-    })(jQuery);
-    (function($) {
-      var allPanels2 = $('.accordion_left > dd');
-      $('.repair_equipment_services_closeimg').click(function() {
-        allPanels2.slideUp();
-        $('.accordion_left > dt > a').removeClass("main_color");
-        $('.repair_equipment_services_closeimg').removeClass("show_closeimg");
-        $('.repair_equipment_services_openimg').removeClass("hide_openimg");
-        return false;
-      });
-    })(jQuery);
-    (function($) {
-      var allPanels = $('.accordion_right > dd').hide();
-      $('.accordion_right > dt > a').click(function() {
-        allPanels.slideUp();
-        $('.accordion_right > dt > a > .repair_equipment_services_closeimg').removeClass("show_closeimg");
-        $('.accordion_right > dt > a > .repair_equipment_services_openimg').removeClass("hide_openimg");
-        $(this).parent().next().slideDown();
-        $('.accordion_right > dt > a').removeClass("main_color");
-        $(this).addClass("main_color");
-        var acc = $(this).children('div:nth(1)');
-        $(acc).addClass("show_closeimg");
-        var acc = $(this).children('div:nth(0)');
-        $(acc).addClass("hide_openimg");
-        return false;
-      });
-    })(jQuery);
-    (function($) {
-      var allPanels2 = $('.accordion_right > dd');
-      $('.repair_equipment_services_closeimg').click(function() {
-        allPanels2.slideUp();
-        $('.accordion_right > dt > a').removeClass("main_color");
-        $('.repair_equipment_services_closeimg').removeClass("show_closeimg");
-        $('.repair_equipment_services_openimg').removeClass("hide_openimg");
-        return false;
-      });
-    })(jQuery);
+  // accordions
+  (function ($) {
+    var allPanels = $('.accordion_left > dd').hide();
+    $('.accordion_left > dt > a').click(function () {
+      allPanels.slideUp();
+      $('.accordion_left > dt > a > .repair_equipment_services_closeimg').removeClass("show_closeimg");
+      $('.accordion_left > dt > a > .repair_equipment_services_openimg').removeClass("hide_openimg");
+      $(this).parent().next().slideDown();
+      $('.accordion_left > dt > a').removeClass("main_color");
+      $(this).addClass("main_color");
+      var acc = $(this).children('div:nth(1)');
+      $(acc).addClass("show_closeimg");
+      var acc = $(this).children('div:nth(0)');
+      $(acc).addClass("hide_openimg");
+      return false;
+    });
+  })(jQuery);
+  (function ($) {
+    var allPanels2 = $('.accordion_left > dd');
+    $('.repair_equipment_services_closeimg').click(function () {
+      allPanels2.slideUp();
+      $('.accordion_left > dt > a').removeClass("main_color");
+      $('.repair_equipment_services_closeimg').removeClass("show_closeimg");
+      $('.repair_equipment_services_openimg').removeClass("hide_openimg");
+      return false;
+    });
+  })(jQuery);
+  (function ($) {
+    var allPanels = $('.accordion_right > dd').hide();
+    $('.accordion_right > dt > a').click(function () {
+      allPanels.slideUp();
+      $('.accordion_right > dt > a > .repair_equipment_services_closeimg').removeClass("show_closeimg");
+      $('.accordion_right > dt > a > .repair_equipment_services_openimg').removeClass("hide_openimg");
+      $(this).parent().next().slideDown();
+      $('.accordion_right > dt > a').removeClass("main_color");
+      $(this).addClass("main_color");
+      var acc = $(this).children('div:nth(1)');
+      $(acc).addClass("show_closeimg");
+      var acc = $(this).children('div:nth(0)');
+      $(acc).addClass("hide_openimg");
+      return false;
+    });
+  })(jQuery);
+  (function ($) {
+    var allPanels2 = $('.accordion_right > dd');
+    $('.repair_equipment_services_closeimg').click(function () {
+      allPanels2.slideUp();
+      $('.accordion_right > dt > a').removeClass("main_color");
+      $('.repair_equipment_services_closeimg').removeClass("show_closeimg");
+      $('.repair_equipment_services_openimg').removeClass("hide_openimg");
+      return false;
+    });
+  })(jQuery);
 });
 $(document).ready(function () {
     if ($(".rellax").length) {
@@ -142,7 +142,7 @@ $(document).ready(function () {
     if ($("#cart").length) {
 
         $(document).on('click', function (e) {
-            if ($(e.target).closest('.cart__btn, .product__buy__btn').length || $(e.target).hasClass('cart')) {
+            if ($(e.target).closest('.cart__btn').length || $(e.target).hasClass('cart')) {
                 $("body").toggleClass('overflow')
                 $(".cart").toggleClass('active')
                 $(".cart__inner").toggleClass('active')
@@ -677,6 +677,57 @@ $(document).ready(function () {
                 form.submit();
             }
         });
+        $("form[name='product_respond']").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+                massage: {
+                    required: true
+                },
+                rating: {
+                    required: true
+                }
+
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.input__group'));
+                }
+                else { // This is the default behavior 
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+        $("form[name='modal__product_respond']").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+                massage: {
+                    required: true
+                },
+                rating: {
+                    required: true
+                }
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.input__group'));
+                }
+                else { // This is the default behavior 
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
     });
     $('.stepper').activateStepper();
 });
@@ -895,9 +946,9 @@ $.fn.openStep = function (step, callback) {
 $.fn.closeAction = function (order, callback) {
     var closable = this.removeClass('active').find('.step-content');
     if (order == 1) {
-        closable.animate({ left: '-100%' }, function () { closable.css({ display: 'none', left: '0%' }, callback); });
+        closable.animate({ left: '-100%' }, function () { closable.css({}, callback); });
     } else {
-        closable.animate({ left: '100%' }, function () { closable.css({ display: 'none', left: '0%' }, callback); });
+        closable.animate({ left: '100%' }, function () { closable.css({}, callback); });
     }
 };
 

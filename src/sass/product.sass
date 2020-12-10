@@ -479,7 +479,7 @@
         margin: 0
 .review-captcha
     text-align: center
-    float: left
+    margin: 10px 0
     background-color: aqua
     width: 150px
     height: 60px
@@ -498,3 +498,22 @@
 .modal-body
     @media (min-width: 1024px)
         padding: 0 !important
+
+.rating_stars
+    position: relative
+    display: flex
+    flex-direction: row-reverse
+    justify-content: flex-end
+    margin: 22px 0
+    & input
+        display: none
+    & label
+        font-size: 24px
+        color: #c8c8c8
+        margin-right: 10px
+    & input:checked ~ label
+        color: #FF671F
+.home-review__rating_title
+    margin-top: 15px
+#rating-error
+    top: -12px

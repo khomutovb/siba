@@ -82,7 +82,7 @@ $(document).ready(function () {
     if ($("#cart").length) {
 
         $(document).on('click', function (e) {
-            if ($(e.target).closest('.cart__btn, .product__buy__btn').length || $(e.target).hasClass('cart')) {
+            if ($(e.target).closest('.cart__btn').length || $(e.target).hasClass('cart')) {
                 $("body").toggleClass('overflow')
                 $(".cart").toggleClass('active')
                 $(".cart__inner").toggleClass('active')
@@ -611,6 +611,57 @@ $(document).ready(function () {
                 },
                 massage: {
                     required: true
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+        $("form[name='product_respond']").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+                massage: {
+                    required: true
+                },
+                rating: {
+                    required: true
+                }
+
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.input__group'));
+                }
+                else { // This is the default behavior 
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+        $("form[name='modal__product_respond']").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+                massage: {
+                    required: true
+                },
+                rating: {
+                    required: true
+                }
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(":radio")) {
+                    error.appendTo(element.parents('.input__group'));
+                }
+                else { // This is the default behavior 
+                    error.insertAfter(element);
                 }
             },
             submitHandler: function (form) {
